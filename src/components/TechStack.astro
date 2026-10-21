@@ -16,6 +16,7 @@ interface TechItem {
   href?: string;
   evidenceLabel?: string;
   highlight?: boolean;
+  invertDark?: boolean;
 }
 
 const skills: TechItem[] = [
@@ -154,6 +155,7 @@ const skills: TechItem[] = [
     badge: '2021 LTS Engine',
     href: '/it/plant-escape-ar',
     evidenceLabel: 'Plant Escape AR (HKI)',
+    invertDark: true,
   },
   {
     name: 'Vuforia Engine',
@@ -201,6 +203,7 @@ const skills: TechItem[] = [
     badge: 'Embedded DB',
     href: '/international/fpt-mobile-programming-2020',
     evidenceLabel: 'Mobile Offline Storage',
+    invertDark: true,
   },
   {
     name: 'SQL',
@@ -273,6 +276,7 @@ const skills: TechItem[] = [
     badge: 'RouterOS & VLAN',
     href: '/credentials/bnsp-network-administrator-muda',
     evidenceLabel: 'BNSP Network Administrator',
+    invertDark: true,
   },
 
   // 3. Creative Design & Video Editing (CorelDRAW 2025, Canva, CapCut, Blender, Figma, OBS Studio)
@@ -476,6 +480,7 @@ const defaultCategory = 'web-ar';
                   src={item.icon}
                   alt={item.name}
                   loading="lazy"
+                  data-invert-dark={item.invertDark ? 'true' : undefined}
                   class="skill-icon h-6 w-6 sm:h-7 sm:w-7 object-contain"
                 />
               </div>
@@ -552,6 +557,21 @@ const defaultCategory = 'web-ar';
 
   .skills-group .skill-item:hover .skill-icon {
     filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.15);
+  }
+
+  :global(.dark) .skill-icon[data-invert-dark="true"] {
+    filter: brightness(0) invert(1);
+  }
+
+  :global(.dark) .skills-group:hover .skill-icon[data-invert-dark="true"] {
+    filter: brightness(0) invert(1);
+    opacity: 0.55;
+  }
+
+  :global(.dark) .skills-group .skill-item:hover .skill-icon[data-invert-dark="true"] {
+    filter: brightness(0) invert(1);
     opacity: 1;
     transform: scale(1.15);
   }

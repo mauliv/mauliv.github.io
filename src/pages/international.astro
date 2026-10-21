@@ -70,14 +70,16 @@ const delegationPartnerships = {
               />
             )}
             {m.data.institution_logo && (
-              <img
-                src={m.data.institution_logo}
-                alt=""
-                width="40"
-                height="40"
-                class="h-10 w-10 shrink-0 rounded-sm object-contain"
-                loading="lazy"
-              />
+              <span class="inline-flex h-10 w-10 min-w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-neutral-200 bg-white p-1.5 shadow-xs dark:border-neutral-300 dark:bg-white">
+                <img
+                  src={m.data.slug === 'pknu-iss-2024' ? '/logos/pknu.png' : m.data.institution_logo}
+                  alt=""
+                  width="40"
+                  height="40"
+                  class="h-full w-full object-contain"
+                  loading="lazy"
+                />
+              </span>
             )}
             <div class="min-w-0 flex-1">
               <div class="flex items-center justify-between gap-2 pr-12">
@@ -238,7 +240,9 @@ const delegationPartnerships = {
     <div class="mt-4 rounded-xl border border-neutral-200 bg-white p-5 shadow-xs dark:border-neutral-800 dark:bg-[#222226]">
       <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div class="flex items-start gap-3.5">
-          <img src="/logos/uny.svg" alt="UNY Logo" class="h-10 w-10 shrink-0 object-contain" />
+          <span class="inline-flex h-10 w-10 min-w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-neutral-200 bg-white p-1.5 shadow-xs dark:border-neutral-300 dark:bg-white">
+            <img src="/logos/uny.svg" alt="UNY Logo" class="h-full w-full object-contain" />
+          </span>
           <div>
             <div class="flex flex-wrap items-center gap-2">
               <span class="font-mono text-[10px] uppercase tracking-wide text-neutral-500 dark:text-neutral-400">Operational Stewardship</span>

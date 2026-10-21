@@ -59,17 +59,17 @@ const crumbs = [
   <div class="mt-1.5 flex flex-wrap items-center gap-3">
     {
       ('project_logo' in d && d.project_logo && 'institution_logo' in d && d.institution_logo) ? (
-        <div class="inline-flex shrink-0 items-center gap-2.5 rounded-xl border border-neutral-200 bg-white px-3 py-1.5 shadow-xs dark:border-neutral-300 dark:bg-white" title={collectionId === 'operations' ? 'Sending / Program & Host Institution' : 'Project & Institution Logos'}>
+        <div class="inline-flex shrink-0 items-center gap-2.5 rounded-xl border border-neutral-200 bg-white px-3 py-1.5 shadow-xs dark:border-neutral-300 dark:bg-white" title={d.slug === 'io-operations' ? 'UNY International Office & Universitas Negeri Yogyakarta' : (collectionId === 'operations' ? 'Sending / Program & Host Institution' : 'Project & Institution Logos')}>
           <img
             src={d.project_logo}
-            alt={collectionId === 'operations' ? 'Program / Sending institution logo' : 'Project logo'}
+            alt={d.slug === 'io-operations' ? 'UNY International Office logo' : (collectionId === 'operations' ? 'Program / Sending institution logo' : 'Project logo')}
             class="h-8 w-auto max-w-[160px] object-contain"
           />
           <span class="h-4 w-px bg-neutral-200 dark:bg-neutral-300" aria-hidden="true" />
           <img
             src={d.institution_logo}
             alt={collectionId === 'operations' ? 'Host institution logo' : 'Institution logo'}
-            class="h-7 w-auto max-w-[40px] object-contain"
+            class="h-7 w-auto max-w-[160px] object-contain"
           />
         </div>
       ) : ('institution_logo' in d && d.institution_logo) ? (

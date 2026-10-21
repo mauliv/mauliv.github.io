@@ -2,6 +2,7 @@
 id: "ops-international-office"
 title: "UNY International Office — Visa, Immigration & Campus Operations"
 slug: "io-operations"
+project_logo: "/logos/io-uny.png"
 institution_logo: "/logos/uny.svg"
 summary: "Five-plus years of International Office campus operations experience spanning legal immigration compliance, foreign student pastoral care, and institutional clearance paperwork, verified by formal university appointment records."
 excerpt: "Five years of hands-on higher education operations in international student compliance, diplomatic delegations, and campus services, backed by sequential institutional appointment records from 2021 to present."
