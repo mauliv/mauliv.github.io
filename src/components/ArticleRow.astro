@@ -1,0 +1,90 @@
+---
+import EvidencePill from './EvidencePill.astro';
+
+interface ProjectRef {
+  title: string;
+  href: string;
+}
+interface Props {
+  title: string;
+  publisher: string;
+  date: string;
+  language?: string;
+  url: string;
+  summary?: string;
+  pending?: boolean;
+  project?: ProjectRef | null;
+  projects?: ProjectRef[];
+  logo?: string;
+}
+const { title, publisher, date, language, url, summary, pending = false, project = null, projects = [], logo } = Astro.props;
+---
+<div class="flex flex-col gap-2">
+  <div class="h-6">
+    {logo ? <img src={logo} alt={publisher} class="h-full w-auto object-contain" /> : <span class="font-mono text-xs font-semibold text-neutral-700 dark:text-neutral-300">{publisher}</span>}
+  </div>
+  {
+    pending ? (
+      <h2 class="text-base font-semibold leading-tight break-words text-neutral-900 dark:text-neutral-100">{title}</h2>
+    ) : (
+      <h2 class="text-base font-semibold leading-tight break-words">
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline decoration-neutral-300 underline-offset-4 transition-colors hover:decoration-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-1 rounded-sm dark:decoration-neutral-700 dark:hover:decoration-neutral-100"
+        >
+          {title}
+        </a>
+      </h2>
+    )
+  }
+  <p class="font-mono text-[10px] uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+    {language ? `${language} · ` : ''}{date}
+    {
+      pending && (
+        <span class="ml-2 inline-flex rounded-sm border border-dashed border-neutral-400 px-1.5 py-0.5 text-neutral-500 dark:border-neutral-600 dark:text-neutral-400">
+          link unavailable (site under maintenance)
+        </span>
+      )
+    }
+  </p>
+  {summary && <p class="font-serif text-sm text-neutral-600 dark:text-neutral-300">{summary}</p>}
+  <div class="mt-2 flex items-center gap-4">
+    <EvidencePill
+      type="external-press"
+      label={pending ? 'Coverage (pending)' : 'Read the article'}
+      url={url}
+      is_internal={false}
+      status={pending ? 'needs-confirmation' : 'available'}
+    />
+    {
+      projects && projects.length > 0 ? (
+        <span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">
+          For:{' '}
+          {projects.map((proj, idx) => (
+            <>
+              <a
+                href={proj.href}
+                class="text-neutral-700 underline underline-offset-4 transition-colors hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-1 rounded-sm dark:text-neutral-300 dark:hover:text-neutral-100"
+              >
+                {proj.title}
+              </a>
+              {idx < projects.length - 1 && <span class="mx-1 text-neutral-400 dark:text-neutral-600">·</span>}
+            </>
+          ))}
+        </span>
+      ) : project ? (
+        <span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">
+          For:{' '}
+          <a
+            href={project.href}
+            class="text-neutral-700 underline underline-offset-4 transition-colors hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-1 rounded-sm dark:text-neutral-300 dark:hover:text-neutral-100"
+          >
+            {project.title}
+          </a>
+        </span>
+      ) : null
+    }
+  </div>
+</div>

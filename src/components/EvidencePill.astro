@@ -1,0 +1,62 @@
+---
+interface Props {
+  type: 'internal-pdf' | 'journal' | 'hki' | 'external-press' | 'video' | 'live' | 'repository';
+  label: string;
+  url: string;
+  status: 'available' | 'needs-confirmation' | 'restricted';
+}
+
+const { type, label, url, status } = Astro.props;
+
+// Lucide icon geometry (ISC license), inlined — zero dependency.
+const icons: Record<Props['type'], string> = {
+  'internal-pdf':
+    '<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/>',
+  journal: '<path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/>',
+  hki: '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>',
+  'external-press':
+    '<path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0V6"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/>',
+  video: '<circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/>',
+  live: '<circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>',
+  repository:
+    '<line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/>',
+};
+
+const styles: Record<Props['type'], string> = {
+  'internal-pdf':
+    'border-neutral-400 text-neutral-600 hover:bg-neutral-100 dark:border-neutral-600 dark:text-neutral-300 dark:hover:bg-neutral-800',
+  journal:
+    'border-emerald-600 text-emerald-700 hover:bg-emerald-50 dark:border-emerald-500 dark:text-emerald-400 dark:hover:bg-emerald-950/40',
+  hki: 'border-amber-600 text-amber-700 hover:bg-amber-50 dark:border-amber-500 dark:text-amber-400 dark:hover:bg-amber-950/40',
+  'external-press':
+    'border-blue-600 text-blue-700 hover:bg-blue-50 dark:border-blue-500 dark:text-blue-400 dark:hover:bg-blue-950/40',
+  video:
+    'border-purple-600 text-purple-700 hover:bg-purple-50 dark:border-purple-500 dark:text-purple-400 dark:hover:bg-purple-950/40',
+  live: 'border-teal-600 text-teal-700 hover:bg-teal-50 dark:border-teal-500 dark:text-teal-400 dark:hover:bg-teal-950/40',
+  repository:
+    'border-zinc-600 text-zinc-700 hover:bg-zinc-100 dark:border-zinc-500 dark:text-zinc-300 dark:hover:bg-zinc-800/60',
+};
+
+const base =
+  'inline-flex max-w-full items-center gap-1.5 px-2 py-1 text-[11px] font-mono rounded-sm border transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-1';
+const available = status === 'available';
+---
+{
+  available ? (
+    <a href={url} target="_blank" rel="noopener noreferrer" class={`${base} ${styles[type]}`} title={label}>
+      <svg aria-hidden="true" class="h-3 w-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" set:html={icons[type]} />
+      {type === 'live' && <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-teal-500 animate-pulse dark:bg-teal-400" aria-hidden="true" />}
+      <span class="truncate">{label}</span>
+    </a>
+  ) : (
+    <span
+      class={`${base} border-dashed border-neutral-500 text-neutral-600 cursor-not-allowed dark:border-neutral-600 dark:text-neutral-400`}
+      aria-disabled="true"
+      title={label || "Pending verification"}
+    >
+      <svg aria-hidden="true" class="h-3 w-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" set:html={icons[type]} />
+      {type === 'live' && <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-300 dark:bg-neutral-700" aria-hidden="true" />}
+      <span class="truncate">{label}</span>
+    </span>
+  )
+}

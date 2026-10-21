@@ -1,0 +1,46 @@
+---
+interface Project {
+  title: string;
+  href: string;
+}
+interface Props {
+  name: string;
+  initials: string;
+  role: string;
+  company: string;
+  quote: string;
+  date?: string;
+  /** Present only on the Testimonials list; omitted on the project's own page (no self-link). */
+  project?: Project | null;
+}
+const { name, initials, role, company, quote, date, project = null } = Astro.props;
+---
+<figure class="rounded-md border border-neutral-200 p-5 dark:border-neutral-800">
+  <div class="flex items-start gap-3">
+    <span
+      class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-neutral-300 font-mono text-xs text-neutral-600 dark:border-neutral-700 dark:text-neutral-300"
+      aria-hidden="true"
+    >
+      {initials}
+    </span>
+    <div class="min-w-0 flex-1">
+      <blockquote class="font-serif text-sm italic leading-relaxed text-neutral-700 dark:text-neutral-300">"{quote}"</blockquote>
+      <figcaption class="mt-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">
+        — {name}, {role}, {company}{date && ` · ${date}`}
+      </figcaption>
+      {
+        project && (
+          <p class="mt-1.5 font-mono text-xs text-neutral-500 dark:text-neutral-400">
+            For:{' '}
+            <a
+              href={project.href}
+              class="text-neutral-700 underline underline-offset-4 transition-colors hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-1 rounded-sm dark:text-neutral-300 dark:hover:text-neutral-100"
+            >
+              {project.title}
+            </a>
+          </p>
+        )
+      }
+    </div>
+  </div>
+</figure>

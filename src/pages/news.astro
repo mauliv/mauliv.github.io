@@ -1,0 +1,64 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import ArticleRow from '../components/ArticleRow.astro';
+import ProjectIcon from '../components/ProjectIcon.astro';
+import { resolveProject } from '../lib/relations';
+
+const press = await getCollection('press');
+const publisherLogos: Record<string, string> = {
+  'FEB UNY': '/logos/feb-uny.png',
+  'UNY News': '/logos/uny.png',
+  'SDGs UNY': '/logos/uny.png',
+  'UNY International Office': '/logos/io-uny.png',
+  'SMK Negeri 3 Yogyakarta': '/logos/smkn3.png',
+  'SMKN 3 Yogyakarta': '/logos/smkn3.png',
+};
+const sorted = [...press].sort((a, b) => b.data.date.localeCompare(a.data.date));
+const rows = await Promise.all(
+  sorted.map(async (p) => {
+    const slugs = [
+      ...(p.data.related_project_slug ? [p.data.related_project_slug] : []),
+      ...(p.data.related_project_slugs ? p.data.related_project_slugs : []),
+    ];
+    const uniqueSlugs = [...new Set(slugs)];
+    const resolvedProjects = await Promise.all(uniqueSlugs.map((s) => resolveProject(s)));
+    const validProjects = resolvedProjects.filter((proj): proj is NonNullable<typeof proj> => proj !== null);
+    return {
+      p,
+      projects: validProjects,
+    };
+  }),
+);
+---
+<Layout title="News" description="Press coverage and articles featuring this work, each linked back to the project it covers.">
+  <Breadcrumb crumbs={[{ label: 'Home', href: '/' }, { label: 'News' }]} />
+  <div class="mt-4 flex items-center gap-2.5">
+    <ProjectIcon name="news" size="sm" />
+    <h1 class="text-2xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">News</h1>
+  </div>
+  <p class="mt-2 font-serif text-neutral-500 dark:text-neutral-400">
+    Press coverage and articles featuring this work, each linked back to the project it covers.
+  </p>
+
+  <div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+    {
+      rows.map(({ p, projects }) => (
+        <div class="rounded-lg border border-[#eeeeee] bg-[#ffffff] p-5 transition-all duration-200 dark:border-[#333333] dark:bg-[#2e2e33]">
+          <ArticleRow
+            title={p.data.title}
+            publisher={p.data.publisher}
+            date={p.data.date}
+            language={p.data.language}
+            url={p.data.url}
+            summary={p.data.summary}
+            pending={p.data.pending}
+            projects={projects}
+            logo={publisherLogos[p.data.publisher]}
+          />
+        </div>
+      ))
+    }
+  </div>
+</Layout>

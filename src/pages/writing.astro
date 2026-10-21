@@ -1,0 +1,38 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import ProjectIcon from '../components/ProjectIcon.astro';
+import { entryHref } from '../lib/routes';
+
+const entries = await getCollection('writings');
+const sorted = [...entries].sort((a, b) => (a.data.date < b.data.date ? 1 : -1));
+---
+<Layout title="Field notes" description="Technical post-mortems and engineering reflections.">
+  <Breadcrumb crumbs={[{ label: 'Home', href: '/' }, { label: 'Field notes' }]} />
+  <div class="mt-4 flex items-center gap-2.5">
+    <ProjectIcon name="writing" size="sm" />
+    <h1 class="text-2xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">Field notes</h1>
+  </div>
+  <p class="mt-2 font-serif text-neutral-500 dark:text-neutral-400">
+    Technical post-mortems and engineering reflections — the reasoning behind the systems.
+  </p>
+  <div class="mt-6 space-y-4">
+    {
+      sorted.map((entry) => (
+        <ProjectCard
+          title={entry.data.title}
+          role={entry.data.role}
+          period={entry.data.period}
+          track="field note"
+          metrics={entry.data.metrics}
+          evidence={entry.data.evidence}
+          summary={entry.data.summary}
+          headingLevel="h2"
+          href={entryHref('writings', entry.data.slug)}
+        />
+      ))
+    }
+  </div>
+</Layout>

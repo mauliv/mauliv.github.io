@@ -1,0 +1,94 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import ProjectIcon from '../components/ProjectIcon.astro';
+import { entryHref } from '../lib/routes';
+
+const EDTECH_SLUGS = ['plant-escape-ar', 'ar-kitchen'];
+const all = await getCollection('systems');
+const byDateDesc = (a: { data: { period: { start: string } } }, b: { data: { period: { start: string } } }) =>
+  a.data.period.start < b.data.period.start ? 1 : a.data.period.start > b.data.period.start ? -1 : 0;
+
+const sections = [
+  {
+    id: 'web-platforms',
+    title: 'Web platforms',
+    iconName: 'web-platforms',
+    blurb: 'Production web systems in live institutional use — elections, CRMs, portals, gateways.',
+    entries: all.filter((e) => !EDTECH_SLUGS.includes(e.data.slug)).sort(byDateDesc),
+    track: 'web platform',
+  },
+  {
+    id: 'edtech-xr',
+    title: 'EdTech & XR',
+    iconName: 'xr',
+    blurb: 'Augmented reality learning tools built with Unity and Vuforia — field-tested, published, copyrighted.',
+    entries: all.filter((e) => EDTECH_SLUGS.includes(e.data.slug)).sort(byDateDesc),
+    track: 'edtech & xr',
+  },
+];
+---
+<Layout title="IT — Web Systems, AR & Infrastructure" description="Production web platforms built for real concurrency, spatial AR learning tools, and the network infrastructure underneath them.">
+  <Breadcrumb crumbs={[{ label: 'Home', href: '/' }, { label: 'IT' }]} />
+  
+  <div class="mt-4 flex items-center gap-2.5">
+    <ProjectIcon name="terminal" size="sm" />
+    <h1 class="text-2xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
+      IT — Web Systems, AR &amp; Infrastructure
+    </h1>
+  </div>
+  <p class="mt-2 font-serif text-neutral-500 dark:text-neutral-400">
+    Production web platforms built for real concurrency, spatial AR learning tools, and the network infrastructure underneath them.
+  </p>
+
+  {
+    sections.map((s) => (
+      <section class="mt-12 border-t border-neutral-300 pt-6 dark:border-neutral-700" aria-labelledby={`sec-${s.id}`}>
+        <div class="flex items-center gap-2.5">
+          <ProjectIcon name={s.iconName} size="sm" />
+          <h2 id={`sec-${s.id}`} class="text-balance text-xl font-semibold tracking-tight dark:text-neutral-100">
+            {s.title}
+          </h2>
+        </div>
+        <p class="mt-1.5 font-serif text-sm text-neutral-500 dark:text-neutral-400">{s.blurb}</p>
+        <div class="mt-4 space-y-4">
+          {s.entries.map((entry) => (
+            <ProjectCard
+              title={entry.data.title}
+              role={entry.data.role}
+              period={entry.data.period}
+              track={s.track}
+              slug={entry.data.slug}
+              project_logo={entry.data.project_logo}
+              tech_stack={entry.data.tech_stack}
+              metrics={entry.data.metrics}
+              evidence={entry.data.evidence}
+              summary={entry.data.summary}
+              institution_logo={entry.data.institution_logo}
+              headingLevel="h3"
+              href={entryHref('systems', entry.data.slug)}
+            />
+          ))}
+        </div>
+      </section>
+    ))
+  }
+
+  <section class="mt-12 border-t border-neutral-300 pt-6 dark:border-neutral-700" aria-labelledby="sec-networks">
+    <div class="flex items-center gap-2.5">
+      <ProjectIcon name="terminal" size="sm" />
+      <h2 id="sec-networks" class="text-balance text-xl font-semibold tracking-tight dark:text-neutral-100">IT Support &amp; Networks</h2>
+    </div>
+    <p class="mt-1.5 font-serif text-sm text-neutral-500 dark:text-neutral-400">Network infrastructure, server administration, and campus technical support.</p>
+    <div class="mt-5">
+      <a
+        href="/networks"
+        class="inline-flex min-h-11 items-center border border-neutral-900 bg-neutral-900 px-4 font-mono text-xs text-white transition-colors hover:bg-neutral-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-1 dark:border-neutral-100 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-300"
+      >
+        [View IT &amp; Network Projects]
+      </a>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,412 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import EvidencePill from '../../components/EvidencePill.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import ProjectIcon from '../../components/ProjectIcon.astro';
+import TestimonialCard from '../../components/TestimonialCard.astro';
+import ArticleRow from '../../components/ArticleRow.astro';
+import { testimonialsFor } from '../../lib/testimonials';
+import { assertRelationsResolve, pressFor } from '../../lib/relations';
+import { parentLabels, collectionSegments, detailCollections, type CollectionId } from '../../lib/routes';
+
+export async function getStaticPaths() {
+  await assertRelationsResolve();
+  const paths = [];
+  for (const collectionId of detailCollections) {
+    const entries = await getCollection(collectionId);
+    for (const entry of entries) {
+      paths.push({
+        params: { collection: collectionSegments[collectionId], slug: entry.data.slug },
+        props: { entry, collectionId },
+      });
+    }
+  }
+  return paths;
+}
+
+interface Props {
+  entry: CollectionEntry<CollectionId>;
+  collectionId: CollectionId;
+}
+
+const { entry, collectionId } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+const attached = await testimonialsFor(d.slug);
+const attachedPress = await pressFor(d.slug);
+
+const publisherLogos: Record<string, string> = {
+  'FEB UNY': '/logos/feb-uny.png',
+  'UNY News': '/logos/uny.png',
+  'SDGs UNY': '/logos/uny.png',
+  'UNY International Office': '/logos/io-uny.png',
+  'SMK Negeri 3 Yogyakarta': '/logos/smkn3.png',
+  'SMKN 3 Yogyakarta': '/logos/smkn3.png',
+};
+
+const parent = parentLabels[collectionId];
+const crumbs = [
+  { label: 'Home', href: '/' },
+  ...(parent ? [{ label: parent.label, href: parent.href }] : []),
+  { label: d.title },
+];
+---
+<Layout title={d.title} description={d.summary}>
+  <Breadcrumb crumbs={crumbs} clampCurrent />
+
+  <p class="mt-4 font-mono text-[10px] uppercase tracking-wide text-neutral-500 dark:text-neutral-400">{collectionId}</p>
+  <div class="mt-1.5 flex flex-wrap items-center gap-3">
+    {
+      ('project_logo' in d && d.project_logo && 'institution_logo' in d && d.institution_logo) ? (
+        <div class="inline-flex shrink-0 items-center gap-2.5 rounded-xl border border-neutral-200 bg-white px-3 py-1.5 shadow-xs dark:border-neutral-300 dark:bg-white" title={collectionId === 'operations' ? 'Sending / Program & Host Institution' : 'Project & Institution Logos'}>
+          <img
+            src={d.project_logo}
+            alt={collectionId === 'operations' ? 'Program / Sending institution logo' : 'Project logo'}
+            class="h-8 w-auto max-w-[160px] object-contain"
+          />
+          <span class="h-4 w-px bg-neutral-200 dark:bg-neutral-300" aria-hidden="true" />
+          <img
+            src={d.institution_logo}
+            alt={collectionId === 'operations' ? 'Host institution logo' : 'Institution logo'}
+            class="h-7 w-auto max-w-[40px] object-contain"
+          />
+        </div>
+      ) : ('institution_logo' in d && d.institution_logo) ? (
+        <div class="inline-flex shrink-0 items-center gap-2.5 rounded-xl border border-neutral-200 bg-white px-2.5 py-1.5 shadow-xs dark:border-neutral-800 dark:bg-[#222226]" title="Project Icon & Institution Logo">
+          <ProjectIcon slug={d.slug} size="sm" />
+          <span class="h-4 w-px bg-neutral-200 dark:bg-neutral-700" aria-hidden="true" />
+          <img
+            src={d.institution_logo}
+            alt="Institution logo"
+            class="h-7 w-auto max-w-[40px] object-contain"
+          />
+        </div>
+      ) : collectionId === 'systems' ? (
+        <ProjectIcon slug={d.slug} size="md" />
+      ) : (
+        'project_logo' in d && d.project_logo && (
+          <div class="inline-flex shrink-0 items-center rounded-xl border border-neutral-200 bg-white px-3 py-1.5 shadow-xs dark:border-neutral-300 dark:bg-white">
+            <img
+              src={d.project_logo}
+              alt="Project logo"
+              class="h-8 w-auto max-w-[90px] object-contain"
+            />
+          </div>
+        )
+      )
+    }
+    {
+      'flag' in d && d.flag && (
+        <img
+          src={d.flag}
+          alt=""
+          class="h-5 w-7 shrink-0 rounded-[2px] object-cover shadow-sm ring-1 ring-neutral-200 dark:ring-neutral-700"
+        />
+      )
+    }
+    <h1 class="text-2xl font-semibold tracking-tight break-words dark:text-neutral-100">{d.title}</h1>
+  </div>
+  <p class="mt-2 font-mono text-xs break-words text-neutral-500 dark:text-neutral-400">{d.role} · {d.period.start} – {d.period.end}</p>
+  {
+    'organization' in d && 'leadership_scope' in d && (
+      <p class="mt-1 font-mono text-xs break-words text-neutral-500 dark:text-neutral-400">{d.organization}</p>
+    )
+  }
+  {
+    'credential_type' in d && (
+      <p class="mt-1 font-mono text-[10px] uppercase tracking-wide text-neutral-400 dark:text-neutral-500">
+        {d.credential_type}
+        {'issuing_body' in d && d.issuing_body ? ` · ${d.issuing_body}` : ''}
+        {'institution' in d && d.institution ? ` · ${d.institution}` : ''}
+      </p>
+    )
+  }
+  {
+    'mandate_type' in d && (
+      <p class="mt-1 font-mono text-[10px] uppercase tracking-wide text-neutral-400 dark:text-neutral-500">
+        {d.mandate_type} · {d.decree_records.status}
+      </p>
+    )
+  }
+  {
+    'host_institution' in d && 'program_type' in d && (
+      <dl class="mt-4 rounded-lg border border-[#eeeeee] bg-[#f5f5f5] p-4 font-mono text-xs text-neutral-600 space-y-1.5 dark:border-[#333333] dark:bg-[#2e2e33] dark:text-neutral-300">
+        <div class="flex gap-2"><dt class="w-32 shrink-0 text-neutral-500 dark:text-neutral-500">host</dt><dd class="break-words">{d.host_institution}</dd></div>
+        <div class="flex gap-2"><dt class="w-32 shrink-0 text-neutral-500 dark:text-neutral-500">location</dt><dd class="break-words">{d.location}</dd></div>
+        <div class="flex gap-2"><dt class="w-32 shrink-0 text-neutral-500 dark:text-neutral-500">program type</dt><dd class="break-words">{d.program_type}</dd></div>
+        {'selection_context' in d && d.selection_context && (
+          <div class="flex gap-2"><dt class="w-32 shrink-0 text-neutral-500 dark:text-neutral-500">selection</dt><dd class="break-words">{d.selection_context}</dd></div>
+        )}
+      </dl>
+    )
+  }
+  {
+    'event_type' in d && (
+      <dl class="mt-4 rounded-lg border border-[#eeeeee] bg-[#f5f5f5] p-4 font-mono text-xs text-neutral-600 space-y-1.5 dark:border-[#333333] dark:bg-[#2e2e33] dark:text-neutral-300">
+        <div class="flex gap-2"><dt class="w-32 shrink-0 text-neutral-500 dark:text-neutral-400">event type</dt><dd class="break-words capitalize">{d.event_type.replace('-', ' ')}</dd></div>
+        <div class="flex gap-2"><dt class="w-32 shrink-0 text-neutral-500 dark:text-neutral-400">role</dt><dd class="break-words font-semibold text-neutral-900 dark:text-neutral-100">{d.committee_role}</dd></div>
+        <div class="flex gap-2"><dt class="w-32 shrink-0 text-neutral-500 dark:text-neutral-400">host</dt><dd class="break-words">{d.host_institution}</dd></div>
+        {'venue' in d && d.venue && (
+          <div class="flex gap-2"><dt class="w-32 shrink-0 text-neutral-500 dark:text-neutral-400">venue</dt><dd class="break-words">{d.venue}, {d.location}</dd></div>
+        )}
+        {'theme' in d && d.theme && (
+          <div class="flex gap-2"><dt class="w-32 shrink-0 text-neutral-500 dark:text-neutral-400">theme</dt><dd class="break-words italic font-serif text-neutral-800 dark:text-neutral-200">"{d.theme}"</dd></div>
+        )}
+      </dl>
+    )
+  }
+  {
+    'tiered_committee' in d && d.tiered_committee && (
+      <div class="mt-4 rounded-lg border border-neutral-200 bg-neutral-50/70 p-4 dark:border-neutral-700/80 dark:bg-neutral-800/40">
+        <p class="font-mono text-[10px] font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Institutional Governance &amp; Committee Structure</p>
+        <div class="mt-2.5 grid gap-2.5 sm:grid-cols-2 text-xs">
+          <div class="rounded-md border border-neutral-200/80 bg-white p-3 dark:border-neutral-700 dark:bg-neutral-900/60">
+            <span class="font-mono text-[10px] uppercase text-neutral-500 dark:text-neutral-400">Steering Layer</span>
+            <p class="mt-1 font-medium leading-snug text-neutral-900 dark:text-neutral-100">{d.tiered_committee.steering}</p>
+          </div>
+          <div class="rounded-md border border-blue-200 bg-blue-50/40 p-3 dark:border-blue-900/60 dark:bg-blue-950/20">
+            <span class="font-mono text-[10px] uppercase font-semibold text-blue-600 dark:text-blue-400">Operational Layer (Student Leadership)</span>
+            <p class="mt-1 font-medium leading-snug text-neutral-900 dark:text-neutral-100">{d.tiered_committee.operational}</p>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  {d.summary && <p class="mt-4 font-serif text-[0.95rem] leading-relaxed text-neutral-700 dark:text-neutral-300">{d.summary}</p>}
+  {
+    'excerpt' in d && d.excerpt && (
+      <pre class="mt-4 whitespace-pre-wrap break-words rounded-lg border border-[#eeeeee] bg-[#f5f5f5] p-4 font-mono text-xs leading-relaxed text-neutral-600 dark:border-[#333333] dark:bg-[#2e2e33] dark:text-neutral-400">{d.excerpt}</pre>
+    )
+  }
+
+  {
+    d.metrics.length > 0 && (
+      <ul class="mt-4 space-y-1">
+        {d.metrics.map((m) => (
+          <li class="font-mono text-xs text-neutral-600 dark:text-neutral-300">
+            <span class="text-neutral-500 dark:text-neutral-500">▸</span> {m.label}: {m.value}
+          </li>
+        ))}
+      </ul>
+    )
+  }
+
+  <!-- Entry-specific detail, selected by field presence (collection-agnostic). -->
+  {
+    'database' in d && 'security_profile' in d && (
+      <dl class="mt-5 rounded-lg border border-[#eeeeee] bg-[#f5f5f5] p-4 font-mono text-xs text-neutral-600 space-y-1.5 dark:border-[#333333] dark:bg-[#2e2e33] dark:text-neutral-300">
+        <div class="flex gap-2"><dt class="w-28 shrink-0 text-neutral-500">architecture</dt><dd class="break-words">{d.architecture_type}</dd></div>
+        <div class="flex gap-2"><dt class="w-28 shrink-0 text-neutral-500">db.dev</dt><dd class="break-words">{d.database.local_development}</dd></div>
+        <div class="flex gap-2"><dt class="w-28 shrink-0 text-neutral-500">db.production</dt><dd class="break-words">{d.database.production_cluster}</dd></div>
+        <div class="flex gap-2"><dt class="w-28 shrink-0 text-neutral-500">concurrency</dt><dd class="break-words">{d.database.concurrency_mechanism}</dd></div>
+        <div class="flex gap-2"><dt class="w-28 shrink-0 text-neutral-500">auth</dt><dd class="break-words">{d.security_profile.auth_provider}</dd></div>
+        <div class="flex gap-2"><dt class="w-28 shrink-0 text-neutral-500">perimeter</dt><dd class="break-words">{d.security_profile.network_perimeter}</dd></div>
+      </dl>
+    )
+  }
+  {
+    'intellectual_property' in d && (
+      <div class="mt-5 space-y-3">
+        {d.intellectual_property.length > 0 && (
+          <div class="rounded-lg border border-[#eeeeee] bg-[#f5f5f5] p-4 dark:border-[#333333] dark:bg-[#2e2e33]">
+            <p class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">Intellectual Property</p>
+            <ul class="mt-2 space-y-1 font-mono text-xs text-neutral-600 dark:text-neutral-300">
+              {d.intellectual_property.map((ip) => (
+                <li><span class="text-neutral-500">▸</span> {ip.type} No. {ip.number} — {ip.issuing_body}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {d.publications.length > 0 && (
+          <div class="rounded-lg border border-[#eeeeee] bg-[#f5f5f5] p-4 dark:border-[#333333] dark:bg-[#2e2e33]">
+            <p class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">Publications</p>
+            <ul class="mt-2 space-y-1 font-serif text-sm text-neutral-700 dark:text-neutral-300">
+              {d.publications.map((p) => (
+                <li>{p.journal}, {p.volume} ({p.date}) — {p.focus}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {d.grants_and_honors.length > 0 && (
+          <div class="rounded-lg border border-[#eeeeee] bg-[#f5f5f5] p-4 dark:border-[#333333] dark:bg-[#2e2e33]">
+            <p class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">Grants &amp; Honors</p>
+            <ul class="mt-2 space-y-1 font-mono text-xs text-neutral-600 dark:text-neutral-300">
+              {d.grants_and_honors.map((g) => (
+                <li><span class="text-neutral-500">▸</span> {g}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    )
+  }
+  {
+    'functional_domains' in d && (
+      <div class="mt-5 space-y-4">
+        <div class="grid gap-3 sm:grid-cols-2">
+          <div class="rounded-lg border border-[#eeeeee] bg-[#f5f5f5] p-4 dark:border-[#333333] dark:bg-[#2e2e33]">
+            <p class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">Functional Domains</p>
+            <ul class="mt-2 space-y-1 font-mono text-xs text-neutral-600 dark:text-neutral-300">
+              {d.functional_domains.map((f: string) => (
+                <li><span class="text-neutral-500">▸</span> {f}</li>
+              ))}
+            </ul>
+          </div>
+          {'regulatory_frameworks' in d && d.regulatory_frameworks && d.regulatory_frameworks.length > 0 ? (
+            <div class="rounded-lg border border-[#eeeeee] bg-[#f5f5f5] p-4 dark:border-[#333333] dark:bg-[#2e2e33]">
+              <p class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">Regulatory Frameworks &amp; Compliance</p>
+              <ul class="mt-2 space-y-1 font-mono text-xs text-neutral-600 dark:text-neutral-300">
+                {d.regulatory_frameworks.map((r: string) => (
+                  <li><span class="text-neutral-500">▸</span> {r}</li>
+                ))}
+              </ul>
+            </div>
+          ) : 'delegations_hosted' in d && (
+            <div class="rounded-lg border border-[#eeeeee] bg-[#f5f5f5] p-4 dark:border-[#333333] dark:bg-[#2e2e33]">
+              <p class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">Delegations Hosted</p>
+              <ul class="mt-2 space-y-1 font-mono text-xs text-neutral-600 dark:text-neutral-300">
+                {d.delegations_hosted.map((x: string) => (
+                  <li><span class="text-neutral-500">▸</span> {x}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+
+        {'scholarship_programs_supported' in d && d.scholarship_programs_supported && d.scholarship_programs_supported.length > 0 && (
+          <div class="rounded-lg border border-[#eeeeee] bg-[#f5f5f5] p-4 dark:border-[#333333] dark:bg-[#2e2e33]">
+            <p class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">Scholarship Programs Supported</p>
+            <div class="mt-2 flex flex-wrap gap-2">
+              {d.scholarship_programs_supported.map((s: string) => (
+                <span class="inline-flex items-center rounded-md border border-neutral-200 bg-white px-2.5 py-1 font-mono text-xs text-neutral-700 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300">
+                  {s}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {'delegation_partnerships' in d && d.delegation_partnerships && (
+          <div class="rounded-lg border border-[#eeeeee] bg-[#ffffff] p-5 dark:border-[#333333] dark:bg-[#2e2e33]">
+            <p class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">Delegation Hosting &amp; Bilateral Partnerships</p>
+            <p class="mt-1 font-serif text-xs text-neutral-500 dark:text-neutral-400">Core recurring programs and bilateral academic visits hosted under office mandate.</p>
+
+            <div class="mt-4">
+              <p class="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Core Recurring Partnerships</p>
+              <div class="mt-2.5 grid gap-3 sm:grid-cols-2">
+                {d.delegation_partnerships.core_recurring.map((p) => (
+                  <div class="rounded-md border border-[#eeeeee] bg-neutral-50/50 p-4 dark:border-[#333333] dark:bg-neutral-800/40">
+                    <div class="flex items-center justify-between gap-3">
+                      {p.institution_logo ? (
+                        <img src={p.institution_logo} alt="" class="h-8 w-auto max-w-[110px] shrink-0 object-contain" loading="lazy" />
+                      ) : (
+                        <div />
+                      )}
+                      <span class="flex items-baseline gap-1.5 font-mono">
+                        <span class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100">{p.batches}</span>
+                        <span class="text-xs text-neutral-500 dark:text-neutral-400">batches</span>
+                      </span>
+                    </div>
+                    <h3 class="mt-2 text-sm font-medium dark:text-neutral-100">{p.institution}</h3>
+                    <p class="font-mono text-xs text-neutral-500 dark:text-neutral-400">{p.location}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div class="mt-5">
+              <p class="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Bilateral &amp; Custom Visits</p>
+              <div class="mt-2.5 divide-y divide-neutral-200 dark:divide-neutral-700/60">
+                {d.delegation_partnerships.bilateral.map((p) => (
+                  <div class="flex flex-col gap-2 py-3 first:pt-0 last:pb-0 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                    <div class="min-w-0">
+                      <span class="text-sm font-medium dark:text-neutral-100">{p.institution}</span>
+                      <span class="ml-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">{p.location}</span>
+                    </div>
+                    {p.evidence && p.evidence.length > 0 && (
+                      <div class="flex flex-wrap gap-1.5">
+                        {p.evidence.map((e) => (
+                          <EvidencePill type={e.type} label={e.label} url={e.url} status={e.status} />
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    )
+  }
+
+  {
+    d.evidence.length > 0 && (
+      <div class="mt-5 flex flex-wrap gap-1.5 border-t border-neutral-100 pt-4 dark:border-neutral-800">
+        {d.evidence.map((e) => (
+          <EvidencePill type={e.type} label={e.label} url={e.url} status={e.status} />
+        ))}
+      </div>
+    )
+  }
+
+  {
+    attached.length > 0 && (
+      <section class="mt-8 border-t border-neutral-200 pt-6 dark:border-neutral-800" aria-label="Testimonials">
+        <h2 class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">Testimonials</h2>
+        <div class="mt-3 space-y-4">
+          {attached.map((t) => (
+            <TestimonialCard
+              name={t.data.name}
+              initials={t.data.initials}
+              role={t.data.role}
+              company={t.data.company}
+              quote={t.data.quote}
+              date={t.data.date}
+            />
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  {
+    attachedPress.length > 0 && d.slug !== 'io-operations' && (
+      <section class="mt-8 border-t border-neutral-200 pt-6 dark:border-neutral-800" aria-label="Press Coverage">
+        <div class="flex items-center justify-between">
+          <h2 class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">Press &amp; Media Coverage</h2>
+          <a
+            href="/news"
+            class="font-mono text-xs text-neutral-500 underline underline-offset-2 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-200"
+          >
+            All news →
+          </a>
+        </div>
+        <div class="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
+          {attachedPress.map((p) => (
+            <div class="rounded-lg border border-neutral-200 bg-white p-4 shadow-xs dark:border-neutral-800 dark:bg-[#222226]">
+              <ArticleRow
+                title={p.data.title}
+                publisher={p.data.publisher}
+                date={p.data.date}
+                language={p.data.language}
+                url={p.data.url}
+                summary={p.data.summary}
+                pending={p.data.pending}
+                logo={publisherLogos[p.data.publisher]}
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <hr class="my-8 border-neutral-200 dark:border-neutral-800" />
+
+  <div class="markdown">
+    <Content />
+  </div>
+</Layout>

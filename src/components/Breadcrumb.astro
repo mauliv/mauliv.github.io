@@ -1,0 +1,48 @@
+---
+interface Crumb {
+  label: string;
+  href?: string;
+}
+interface Props {
+  crumbs: Crumb[];
+  /** Clamp the final (current-page) crumb so long titles never blow up the trail. */
+  clampCurrent?: boolean;
+}
+const { crumbs, clampCurrent = false } = Astro.props;
+---
+<nav aria-label="Breadcrumb" class="font-mono text-xs">
+  <ol class="flex flex-wrap items-center gap-x-1.5 gap-y-1">
+    {
+      crumbs.map((c, i) => (
+        <>
+          {i > 0 && (
+            <li class="text-neutral-400 dark:text-neutral-600" aria-hidden="true">
+              /
+            </li>
+          )}
+          {c.href ? (
+            <li>
+              <a
+                href={c.href}
+                class="rounded-sm text-neutral-600 transition-colors hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-1 dark:text-neutral-300 dark:hover:text-neutral-100"
+              >
+                {c.label}
+              </a>
+            </li>
+          ) : (
+            <li
+              aria-current="page"
+              title={c.label}
+              class:list={[
+                'rounded-sm text-neutral-500 dark:text-neutral-400',
+                clampCurrent && 'min-w-0 max-w-[42ch] truncate',
+              ]}
+            >
+              {c.label}
+            </li>
+          )}
+        </>
+      ))
+    }
+  </ol>
+</nav>

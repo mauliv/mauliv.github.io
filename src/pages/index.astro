@@ -1,0 +1,580 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import EvidencePill from '../components/EvidencePill.astro';
+import ProjectIcon from '../components/ProjectIcon.astro';
+import TechStack from '../components/TechStack.astro';
+import { entryHref, siteIndex, type CollectionId } from '../lib/routes';
+import { gatherEvidence, certificatesRows } from '../lib/evidence-index';
+import { publishedTestimonials } from '../lib/testimonials';
+
+const systems = await getCollection('systems');
+const operations = await getCollection('operations');
+const credentials = await getCollection('credentials');
+const writings = await getCollection('writings');
+const press = await getCollection('press');
+const ops = operations.find((e) => e.data.slug === 'io-operations');
+const opsData = ops?.data;
+
+// Featured rows pull real evidence from real entries (nothing hardcoded).
+const pemilwa = await getEntry('systems', 'pemilwa-evoting');
+const plantEscape = await getEntry('systems', 'plant-escape-ar');
+const mtqmEntry = await getEntry('systems', 'mtqm-competition-portal');
+const php2d = await getEntry('credentials', 'php2d-msme');
+const restek = await getEntry('credentials', 'restek-chairman');
+const gcfEntry = await getEntry('operations', 'gcf-2024');
+const gloshipEntry = await getEntry('operations', 'gloship-2025');
+const aasvetEntry = await getEntry('operations', 'aasvet-2023');
+const etssEntry = await getEntry('operations', 'etss-2024');
+const incotepdEntry = await getEntry('operations', 'incotepd-2024');
+
+interface Row {
+  title: string;
+  meta: string;
+  summary: string;
+  href: string;
+  pills: { type: any; label: string; url: string; is_internal: boolean; status: any }[];
+  excerpt?: string;
+  slug?: string;
+  iconName?: string;
+  image?: string;
+}
+
+const mkRow = (
+  title: string,
+  meta: string,
+  summary: string,
+  href: string,
+  pills: { type: any; label: string; url: string; is_internal: boolean; status: any }[] | undefined,
+  excerpt?: string,
+  slug?: string,
+  iconName?: string,
+  image?: string,
+): Row => ({ title, meta, summary, href, pills: (pills ?? []).slice(0, 3), excerpt, slug, iconName, image });
+
+const sectionIcons: Record<string, string> = {
+  it: 'terminal',
+  international: 'operations',
+};
+
+const competencies = [
+  {
+    id: 'it',
+    track: 'web-systems',
+    title: 'IT — Web Systems, AR & Infrastructure',
+    blurb:
+      'Production web platforms built for real concurrency, spatial AR learning tools, and the network infrastructure underneath them.',
+    rows: [
+      pemilwa && mkRow(pemilwa.data.title, `${pemilwa.data.role} · ${pemilwa.data.period.start}–${pemilwa.data.period.end}`, pemilwa.data.summary ?? '', entryHref('systems', pemilwa.data.slug), pemilwa.data.evidence, pemilwa.data.excerpt, 'pemilwa-evoting'),
+      plantEscape && mkRow(plantEscape.data.title, `${plantEscape.data.role} · ${plantEscape.data.period.start}`, plantEscape.data.summary ?? '', entryHref('systems', plantEscape.data.slug), plantEscape.data.evidence, plantEscape.data.excerpt, 'plant-escape-ar'),
+      mtqmEntry && mkRow(mtqmEntry.data.title, `${mtqmEntry.data.role} · ${mtqmEntry.data.period.start}–${mtqmEntry.data.period.end}`, mtqmEntry.data.summary ?? '', entryHref('systems', mtqmEntry.data.slug), mtqmEntry.data.evidence, mtqmEntry.data.excerpt, 'mtqm-competition-portal', undefined, mtqmEntry.data.project_logo),
+    ].filter(Boolean) as Row[],
+    more: [
+      { label: `[View all ${systems.length} projects]`, href: '/it' },
+      { label: 'EdTech & XR section', href: '/it#sec-edtech-xr' },
+      { label: 'Networks & IT support', href: '/networks' },
+    ],
+  },
+  {
+    id: 'international',
+    track: 'leadership',
+    title: 'International Affairs — Campus Operations, Delegations & Events',
+    blurb:
+      'Five years of higher education operations experience: legal immigration compliance, diplomatic delegation hosting, flagship cultural festivals, and international mobility administration.',
+    rows: [
+      mkRow(
+        'International Office operations & institutional mandates',
+        'Student Employee, International Office · 2021–present',
+        'Five consecutive years of campus operations experience at the International Office. Managed legal immigration compliance for foreign nationals (E-Visa, ITAS, STM, SKTT), foreign student pastoral care, and institutional digital PR, backed by official university appointments.',
+        '/international/io-operations',
+        opsData?.evidence.filter((e: any) => e.type === 'internal-pdf' && e.status === 'available'),
+        opsData?.excerpt,
+        undefined,
+        'operations',
+      ),
+      mkRow(
+        'Flagship international event operations & student committee coordination',
+        'GCF 2024, GLOSHIP 2025, InCoTEPD 2024, ETSS 2024 & AASVET 2023 · Student Committee Coordinator',
+        'Operational committee leadership across UNY flagship events: 11th Global Culture Festival, Global Partnership Forum, InCoTEPD 2024 (SEAMEO QITEP), EcoEduTech Doctoral Summer School, and the 19th AASVET International Conference.',
+        '/international#sec-events',
+        [
+          ...(gcfEntry?.data.evidence.filter((e: any) => e.type === 'external-press') ?? []),
+          ...(gloshipEntry?.data.evidence.filter((e: any) => e.type === 'external-press') ?? []),
+          ...(incotepdEntry?.data.evidence.filter((e: any) => e.type === 'live') ?? []),
+          ...(aasvetEntry?.data.evidence.filter((e: any) => e.type === 'live') ?? []),
+          ...(etssEntry?.data.evidence.filter((e: any) => e.type === 'live') ?? []),
+        ],
+        undefined,
+        undefined,
+        'events',
+      ),
+      mkRow(
+        'Diplomatic delegation hosting & bilateral partnerships',
+        'Nanyang Poly (7 batches) · Western Sydney Univ (3 batches) · Bilateral visits',
+        'Protocol logistics, campus immersion programs, and bilateral academic visits for 10 recurring short-course batches from Singapore and Australia, alongside delegations from UiTM, UMPSA, PKNU, and Philippine Normal University.',
+        '/international#sec-delegations',
+        [
+          {
+            type: 'external-press',
+            label: 'NYP Delegation Coverage',
+            url: 'https://io.uny.ac.id/content/nyp-singapore-visits-uny',
+            is_internal: false,
+            status: 'available',
+          },
+        ],
+        undefined,
+        undefined,
+        'delegations',
+      ),
+      mkRow(
+        'Global academic mobility programs: Japan, South Korea, Vietnam, Malaysia',
+        '4 programs · 2018–2024',
+        'In-person and virtual exchange programs across four countries, from the JST Sakura Science Program to the PKNU International Summer School.',
+        '/international#sec-mobility',
+        undefined,
+        undefined,
+        undefined,
+        'mobility',
+      ),
+    ] as Row[],
+    more: [
+      { label: '[View all international programs & operations]', href: '/international' },
+      { label: 'Open the operations dossier', href: '/international/io-operations' },
+      { label: 'Credentials & documents', href: '/credentials' },
+    ],
+  },
+];
+
+interface ImpactItem {
+  value: string;
+  label: string;
+  href: string;
+  slug?: string;
+  name?: string;
+  pill?: { type: any; label: string; url: string; status?: any };
+  pillLabel?: string;
+}
+
+const impact: ImpactItem[] = [
+  {
+    value: '100%',
+    label: 'zero-downtime university elections',
+    href: entryHref('systems', 'pemilwa-evoting'),
+    slug: 'pemilwa-evoting',
+    pill: pemilwa?.data.evidence.find((e) => e.type === 'live'),
+    pillLabel: 'Live System',
+  },
+  {
+    value: '2',
+    label: 'official HKI copyrights granted',
+    href: entryHref('systems', 'plant-escape-ar'),
+    slug: 'plant-escape-ar',
+    pill: plantEscape?.data.evidence.find((e) => e.type === 'hki'),
+    pillLabel: 'HKI Copyrights',
+  },
+  {
+    value: '8,000+',
+    label: 'organic @io.uny followers',
+    href: '/social-media',
+    name: 'social',
+    pill: opsData?.evidence.find((e) => e.type === 'external-press'),
+    pillLabel: '@io.uny Channel',
+  },
+  {
+    value: 'IDR 44.6M',
+    label: 'national PHP2D grant secured & deployed',
+    href: entryHref('credentials', 'php2d-msme'),
+    slug: 'php2d-msme',
+    pill: php2d?.data.evidence.find((e) => e.type === 'internal-pdf'),
+    pillLabel: 'PHP2D Award Certificate',
+  },
+];
+
+const languages = [
+  { flag: '/flags/id.svg', name: 'Indonesian', level: 'Native' },
+  { flag: null, script: '\uA997\uA9AE', name: 'Javanese', level: 'Native' },
+  { flag: '/flags/my.svg', name: 'Malay', level: 'Working Familiarity' },
+  { flag: '/flags/gb.svg', name: 'English', level: 'Professional' },
+];
+
+const counts: Record<string, number> = {
+  '/it': systems.length,
+  '/international': operations.length,
+  '/credentials': credentials.length,
+  '/social-media': 1,
+  '/writing': writings.length,
+  '/news': press.length,
+  '/certificates': (await certificatesRows()).length,
+  '/publications': (await gatherEvidence()).filter((r) => r.pill.type === 'journal').length,
+  '/networks': 6,
+  '/testimonials': (await publishedTestimonials()).length,
+};
+const indexLinks = siteIndex.map((i) => ({ href: i.href, label: i.label, count: counts[i.href] ?? 0 }));
+---
+<Layout title="Home">
+  <!-- Masthead: face + name -->
+  <div class="flex items-center gap-4">
+    <img
+      src="/photo.jpg"
+      alt="Portrait of Alifah Mauliddin Nur Ikhsan"
+      width="64"
+      height="64"
+      class="h-16 w-16 shrink-0 rounded-full object-cover object-top ring-1 ring-neutral-200 dark:ring-neutral-700"
+    />
+    <div class="min-w-0">
+      <h1 class="text-xl sm:text-2xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 sm:whitespace-nowrap">Alifah Mauliddin Nur Ikhsan, S.T.</h1>
+      <p class="mt-1 font-serif text-neutral-500 dark:text-neutral-400">Multidisciplinary IT Engineer — Web, EdTech &amp; Campus Operations</p>
+    </div>
+  </div>
+
+  <p class="mt-5 max-w-2xl font-serif text-sm leading-relaxed text-neutral-600 dark:text-neutral-300">
+    I work across three intersecting domains: high-concurrency web systems (zero-downtime campus
+    elections), interactive XR software (Unity AR learning tools with national IP patents), and
+    higher-education operations (5+ years in Indonesian immigration compliance, stay permits, and
+    Moodle VLE administration). Grounded in UNY’s pedagogical heritage, my engineering bridges
+    technical reliability with real-world institutional impact.
+  </p>
+  <p class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1.5 font-mono text-xs text-neutral-500 dark:text-neutral-400">
+    <span class="text-neutral-600 dark:text-neutral-400">Languages:</span>
+    {
+      languages.map((l) => (
+        <span class="inline-flex items-center gap-1.5">
+          {l.flag ? (
+            <img src={l.flag} alt="" width="16" height="12" class="inline-block h-3 w-4 shrink-0 rounded-[2px] object-cover shadow-sm ring-1 ring-neutral-200 dark:ring-neutral-700" />
+          ) : (
+            <span class="leading-none" aria-hidden="true">{l.script}</span>
+          )}
+          <span>{l.name} ({l.level})</span>
+        </span>
+      ))
+    }
+  </p>
+
+  <!-- Featured artifact: the work itself, with its proof -->
+  {
+    pemilwa && (
+      <section class="mt-16" aria-labelledby="featured">
+        <div class="overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm transition-all duration-200 dark:border-neutral-800 dark:bg-[#222226]">
+          <a
+            href={entryHref('systems', pemilwa.data.slug)}
+            class="group relative block h-64 w-full overflow-hidden border-b border-neutral-200 bg-neutral-100 sm:h-72 md:h-80 lg:h-96 dark:border-neutral-800 dark:bg-neutral-900"
+            aria-label="View Pemilwa E-Voting Platform case study"
+          >
+            <div class="relative h-full w-full">
+              <img
+                src="/images/pemilwa/01_landing_page.png"
+                alt="Pemilwa E-Voting Platform Landing Page"
+                width="1922"
+                height="1001"
+                class="pemilwa-slide pemilwa-slide-1 absolute inset-0 h-full w-full object-cover object-top"
+                loading="eager"
+              />
+              <img
+                src="/images/pemilwa/02_live_count_fakultas.png"
+                alt="Pemilwa Real-Time Faculty Turnout Telemetry"
+                width="1922"
+                height="1085"
+                class="pemilwa-slide pemilwa-slide-2 absolute inset-0 h-full w-full object-cover object-top"
+                loading="lazy"
+              />
+              <img
+                src="/images/pemilwa/03_rekap_split_columns.png"
+                alt="Pemilwa Tabulated Election Results Dashboard"
+                width="1440"
+                height="940"
+                class="pemilwa-slide pemilwa-slide-3 absolute inset-0 h-full w-full object-cover object-top"
+                loading="lazy"
+              />
+            </div>
+
+            <!-- Slide indicator dots -->
+            <div class="pointer-events-none absolute bottom-3 right-3 z-10 flex items-center gap-1.5 rounded-full bg-neutral-900/60 px-2.5 py-1 backdrop-blur-xs">
+              <span class="pemilwa-dot pemilwa-dot-1 h-1.5 w-1.5 rounded-full bg-white"></span>
+              <span class="pemilwa-dot pemilwa-dot-2 h-1.5 w-1.5 rounded-full bg-white"></span>
+              <span class="pemilwa-dot pemilwa-dot-3 h-1.5 w-1.5 rounded-full bg-white"></span>
+            </div>
+          </a>
+          <div class="p-5 sm:p-6">
+            <div class="flex items-center gap-2">
+              <ProjectIcon slug="pemilwa-evoting" size="sm" />
+              <p class="font-mono text-[11px] font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400" id="featured">
+                Featured System
+              </p>
+            </div>
+            <a href={entryHref('systems', pemilwa.data.slug)} class="mt-2 block text-balance text-xl font-semibold leading-snug tracking-tight hover:underline md:text-2xl dark:text-neutral-100">
+              High-concurrency campus election engine with 100% uptime since 2020.
+            </a>
+            <p class="mt-2 font-serif text-sm leading-relaxed text-neutral-600 dark:text-neutral-300">
+              Serving 39,725 eligible voters across 8 faculties with lightweight Native PHP,
+              atomic PostgreSQL row locking, and institutional CAS single sign-on on university
+              on-premise servers — zero failed requests across 5 consecutive election cycles.
+            </p>
+            <div class="mt-3.5 flex flex-wrap gap-1.5">
+              {pemilwa.data.evidence.map((e) => (
+                <EvidencePill type={e.type} label={e.label} url={e.url} status={e.status} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <!-- Three competencies -->
+  {
+    competencies.map((c) => (
+      <section class="mt-16" aria-labelledby={`comp-${c.id}`}>
+        <div class="flex items-center gap-2.5">
+          <ProjectIcon name={sectionIcons[c.id]} size="sm" />
+          <h2 id={`comp-${c.id}`} class="text-balance text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
+            {c.title}
+          </h2>
+        </div>
+        <p class="mt-1.5 font-serif text-sm text-neutral-500 dark:text-neutral-400">{c.blurb}</p>
+        <div class="mt-4 rounded-xl border border-neutral-200 bg-white p-6 shadow-sm dark:border-neutral-800 dark:bg-[#222226]">
+        <ul class="divide-y divide-neutral-100 dark:divide-neutral-800">
+          {c.rows.map((r) => (
+            <li class="py-4 first:pt-0 last:pb-0">
+              <div class="flex items-start gap-3.5">
+                <ProjectIcon slug={r.slug} name={r.iconName} image={r.image} size="sm" class="mt-0.5" />
+                <div class="min-w-0 flex-1">
+                  <a
+                    href={r.href}
+                    class="group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-1 rounded-sm"
+                  >
+                    <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                      <span class="min-w-0 break-words text-base font-semibold group-hover:underline underline-offset-2 dark:text-neutral-100">
+                        {r.title}
+                      </span>
+                      <span class="break-words font-mono text-xs text-neutral-500 dark:text-neutral-400">{r.meta}</span>
+                    </div>
+                    <p class="mt-1 font-serif text-sm leading-relaxed text-neutral-600 dark:text-neutral-300">{r.summary}</p>
+                  </a>
+                  {
+                    r.excerpt && (
+                      <blockquote class="mt-2.5 border-l-2 border-neutral-300 pl-3 font-serif italic text-xs leading-relaxed text-neutral-600 dark:border-neutral-700 dark:text-neutral-400">
+                        {r.excerpt}
+                      </blockquote>
+                    )
+                  }
+                  {r.pills.length > 0 && (
+                    <div class="mt-2.5 flex flex-wrap gap-1.5">
+                      {r.pills.map((e) => (
+                        <EvidencePill type={e.type} label={e.label} url={e.url} status={e.status} />
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+        </div>
+        <div class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
+          <a
+            href={c.more[0].href}
+            class="inline-flex min-h-11 items-center border border-neutral-900 bg-neutral-900 px-4 font-mono text-xs text-white transition-colors hover:bg-neutral-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-1 dark:border-neutral-100 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-300"
+          >
+            {c.more[0].label}
+          </a>
+          {
+            c.more.slice(1).map((m) => (
+              <a
+                href={m.href}
+                class="inline-flex min-h-11 items-center font-mono text-xs text-neutral-500 underline underline-offset-4 transition-colors hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-1 rounded-sm dark:text-neutral-400 dark:hover:text-neutral-100"
+              >
+                {m.label}
+              </a>
+            ))
+          }
+        </div>
+      </section>
+    ))
+  }
+
+  <!-- Impact by the numbers: every claim linked to its evidence -->
+  <section class="mt-16" aria-label="Impact by the numbers">
+    <h2 class="text-balance text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">Impact by the numbers</h2>
+    <div class="mt-4 rounded-lg border border-[#eeeeee] bg-[#ffffff] p-6 dark:border-[#333333] dark:bg-[#2e2e33]">
+    <dl class="grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        impact.map((i) => (
+          <div class="flex flex-col justify-between rounded-md border border-neutral-200 bg-neutral-50/50 p-4 dark:border-neutral-800 dark:bg-neutral-900/40">
+            <div>
+              <div class="mb-3">
+                <a href={i.href} tabindex="-1" aria-hidden="true" class="inline-block transition-transform hover:scale-105">
+                  <ProjectIcon slug={i.slug} name={i.name} size="sm" />
+                </a>
+              </div>
+              <dt>
+                <a
+                  href={i.href}
+                  class="font-mono text-2xl font-bold tracking-tight text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition-colors hover:decoration-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-1 rounded-sm dark:text-neutral-100 dark:decoration-neutral-700 dark:hover:decoration-neutral-100"
+                >
+                  {i.value}
+                </a>
+              </dt>
+              <dd class="mt-1 font-serif text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">{i.label}</dd>
+            </div>
+            {i.pill && (
+              <div class="mt-3">
+                <EvidencePill type={i.pill.type} label={i.pillLabel ?? i.pill.label} url={i.pill.url} status={i.pill.status} />
+              </div>
+            )}
+          </div>
+        ))
+      }
+    </dl>
+    </div>
+  </section>
+
+  <!-- Index: every track, one taxonomy -->
+  <section class="mt-16" aria-label="All sections">
+    <h2 class="text-balance text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">Index</h2>
+    <div class="mt-4 rounded-lg border border-[#eeeeee] bg-[#ffffff] p-6 dark:border-[#333333] dark:bg-[#2e2e33]">
+    <ul class="grid grid-cols-1 gap-x-8 sm:grid-cols-2">
+      {
+        indexLinks.map((l) => (
+          <li class="border-b border-neutral-200 py-1 last:border-b-0 sm:last:border-b dark:border-neutral-700">
+            <a
+              href={l.href}
+              class="flex min-h-11 items-baseline justify-between gap-3 py-1 text-sm transition-colors hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-1 rounded-sm dark:text-neutral-300 dark:hover:text-neutral-100"
+            >
+              <span class="min-w-0 break-words">{l.label}</span>
+              {l.count > 0 && <span class="font-mono text-xs text-neutral-400 dark:text-neutral-600">{l.count}</span>}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    </div>
+  </section>
+
+  <!-- Skills & Tech Stack -->
+  <TechStack />
+</Layout>
+
+<style>
+  @keyframes pemilwaFade1 {
+    0%, 28% {
+      opacity: 1;
+      visibility: visible;
+    }
+    33.33%, 94.67% {
+      opacity: 0;
+      visibility: hidden;
+    }
+    100% {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @keyframes pemilwaFade2 {
+    0%, 28% {
+      opacity: 0;
+      visibility: hidden;
+    }
+    33.33%, 61.33% {
+      opacity: 1;
+      visibility: visible;
+    }
+    66.67%, 100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  @keyframes pemilwaFade3 {
+    0%, 61.33% {
+      opacity: 0;
+      visibility: hidden;
+    }
+    66.67%, 94.67% {
+      opacity: 1;
+      visibility: visible;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  @keyframes pemilwaDot1 {
+    0%, 28%, 100% {
+      opacity: 1;
+      transform: scale(1.3);
+    }
+    33.33%, 94.67% {
+      opacity: 0.35;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes pemilwaDot2 {
+    0%, 28%, 66.67%, 100% {
+      opacity: 0.35;
+      transform: scale(1);
+    }
+    33.33%, 61.33% {
+      opacity: 1;
+      transform: scale(1.3);
+    }
+  }
+
+  @keyframes pemilwaDot3 {
+    0%, 61.33%, 100% {
+      opacity: 0.35;
+      transform: scale(1);
+    }
+    66.67%, 94.67% {
+      opacity: 1;
+      transform: scale(1.3);
+    }
+  }
+
+  .pemilwa-slide-1 {
+    animation: pemilwaFade1 12s ease-in-out infinite;
+  }
+  .pemilwa-slide-2 {
+    animation: pemilwaFade2 12s ease-in-out infinite;
+  }
+  .pemilwa-slide-3 {
+    animation: pemilwaFade3 12s ease-in-out infinite;
+  }
+
+  .pemilwa-dot-1 {
+    animation: pemilwaDot1 12s ease-in-out infinite;
+  }
+  .pemilwa-dot-2 {
+    animation: pemilwaDot2 12s ease-in-out infinite;
+  }
+  .pemilwa-dot-3 {
+    animation: pemilwaDot3 12s ease-in-out infinite;
+  }
+
+  .group:hover .pemilwa-slide,
+  .group:hover .pemilwa-dot {
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pemilwa-slide-1 {
+      animation: none;
+      opacity: 1;
+      visibility: visible;
+    }
+    .pemilwa-slide-2,
+    .pemilwa-slide-3 {
+      display: none;
+    }
+    .pemilwa-dot-2,
+    .pemilwa-dot-3 {
+      display: none;
+    }
+    .pemilwa-dot-1 {
+      animation: none;
+      opacity: 1;
+    }
+  }
+</style>

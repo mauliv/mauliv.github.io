@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import EvidencePill from '../components/EvidencePill.astro';
+import ProjectIcon from '../components/ProjectIcon.astro';
+import { relatedHref, certificatesRows, type EvidenceRow } from '../lib/evidence-index';
+
+const rows = await certificatesRows();
+
+// Master repository grouping: credentials first, then the rest of the collections.
+const groupOrder = ['systems', 'credentials', 'operations', 'writings'] as const;
+const groups = groupOrder
+  .map((c) => ({ collection: c, rows: rows.filter((r) => r.collection === c) }))
+  .filter((g) => g.rows.length > 0);
+---
+<Layout title="Certificates" description="Master document repository: degrees, licenses, certifications, language tests, and IP registrations -- every verifiable paper trail.">
+  <Breadcrumb crumbs={[{ label: 'Home', href: '/' }, { label: 'Certificates' }]} />
+  <div class="mt-4 flex items-center gap-2.5">
+    <ProjectIcon name="certificates" size="sm" />
+    <h1 class="text-2xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">Certificates</h1>
+  </div>
+  <p class="mt-2 font-serif text-neutral-500 dark:text-neutral-400">Master document repository -- degrees, licenses, certifications, language tests, and IP registrations. Every verifiable paper trail.</p>
+
+  {
+    groups.map((g) => (
+      <section class="mt-6" aria-labelledby={`grp-${g.collection}`}>
+        <h2
+          id={`grp-${g.collection}`}
+          class="border-t border-[#eeeeee] pt-5 text-sm font-semibold text-neutral-900 dark:border-[#333333] dark:text-neutral-100"
+        >
+          {g.collection} ({g.rows.length})
+        </h2>
+        <div class="mt-2 rounded-lg border border-[#eeeeee] bg-[#ffffff] p-5 transition-all duration-200 dark:border-[#333333] dark:bg-[#2e2e33]">
+          {g.rows.map((r: EvidenceRow) => (
+            <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2 border-b border-neutral-200 py-3 last:border-b-0 dark:border-neutral-700">
+              <span class="text-sm font-medium break-words dark:text-neutral-100">{r.pill.label}</span>
+              <span class="flex flex-wrap items-center gap-2">
+                <EvidencePill type={r.pill.type} label={r.pill.label} url={r.pill.url} status={r.pill.status} />
+                <a
+                  href={relatedHref(r)}
+                  class="font-mono text-xs text-neutral-500 underline underline-offset-2 transition-colors hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-1 rounded-sm dark:text-neutral-400 dark:hover:text-neutral-100"
+                >
+                  {r.entry.data.title}
+                </a>
+              </span>
+            </div>
+          ))}
+        </div>
+      </section>
+    ))
+  }
+</Layout>

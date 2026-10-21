@@ -1,0 +1,621 @@
+---
+/**
+ * TechStack.astro
+ * Interactive Skills & Tech Stack showcase inspired by https://personal-site-kit-v2.21st.app/
+ * Compact footprint with group-hover grayscale effect, category filtering,
+ * and comprehensive coverage across Web, AR, Cloud, Creative (CorelDRAW 2025/Canva),
+ * Video (CapCut/OBS), and Office & Indonesian Immigration.
+ */
+
+interface TechItem {
+  name: string;
+  category: 'web-ar' | 'cloud-infra' | 'creative-video' | 'office-ops';
+  categoryLabel: string;
+  icon: string;
+  badge?: string;
+  href?: string;
+  evidenceLabel?: string;
+  highlight?: boolean;
+}
+
+const skills: TechItem[] = [
+  // 1. Web, Systems & Mobile AR
+  {
+    name: 'PHP 8.x',
+    category: 'web-ar',
+    categoryLabel: 'Web & AR',
+    icon: '/logos/tech/php.svg',
+    badge: 'Native Concurrency',
+    href: '/it/pemilwa-evoting',
+    evidenceLabel: 'Pemilwa e-voting engine',
+  },
+  {
+    name: 'Laravel',
+    category: 'web-ar',
+    categoryLabel: 'Web & AR',
+    icon: '/logos/tech/laravel.svg',
+    badge: 'MVC Framework',
+    href: '/it/mtqm-competition-portal',
+    evidenceLabel: 'MTQM portal',
+  },
+  {
+    name: 'Yii 2',
+    category: 'web-ar',
+    categoryLabel: 'Web & AR',
+    icon: '/logos/tech/yii.svg',
+    badge: 'Enterprise Portals',
+    href: '/it/simoby-crm',
+    evidenceLabel: 'SIMOBY CRM & Gateways',
+  },
+  {
+    name: 'JavaScript',
+    category: 'web-ar',
+    categoryLabel: 'Web & AR',
+    icon: '/logos/tech/javascript.svg',
+    badge: 'ES6+ & Async',
+    href: '/credentials/dicoding-javascript',
+    evidenceLabel: 'Dicoding JS Certification',
+  },
+  {
+    name: 'TypeScript',
+    category: 'web-ar',
+    categoryLabel: 'Web & AR',
+    icon: '/logos/tech/typescript.svg',
+    badge: 'Strict Types',
+    href: '/it',
+    evidenceLabel: 'Portfolio Codebase',
+  },
+  {
+    name: 'C# (.NET)',
+    category: 'web-ar',
+    categoryLabel: 'Web & AR',
+    icon: '/logos/tech/csharp.svg',
+    badge: 'State Architecture',
+    href: '/it/plant-escape-ar',
+    evidenceLabel: 'Plant Escape AR Scripts',
+  },
+  {
+    name: 'Java Android',
+    category: 'web-ar',
+    categoryLabel: 'Web & AR',
+    icon: '/logos/tech/openjdk.svg',
+    badge: 'Android SDK',
+    href: '/international/fpt-mobile-programming-2020',
+    evidenceLabel: 'FPT Mobile Programming',
+  },
+  {
+    name: 'HTML5',
+    category: 'web-ar',
+    categoryLabel: 'Web & AR',
+    icon: '/logos/tech/html5.svg',
+    badge: 'Semantic Web',
+    href: '/it',
+    evidenceLabel: 'Responsive UI Platforms',
+  },
+  {
+    name: 'CSS3',
+    category: 'web-ar',
+    categoryLabel: 'Web & AR',
+    icon: '/logos/tech/css3.svg',
+    badge: 'Responsive Layouts',
+    href: '/it',
+    evidenceLabel: 'Modern UI/UX',
+  },
+  {
+    name: 'Tailwind CSS',
+    category: 'web-ar',
+    categoryLabel: 'Web & AR',
+    icon: '/logos/tech/tailwindcss.svg',
+    badge: 'v4 Utility Styling',
+    href: '/it',
+    evidenceLabel: 'Site Design System',
+  },
+  {
+    name: 'Bootstrap',
+    category: 'web-ar',
+    categoryLabel: 'Web & AR',
+    icon: '/logos/tech/bootstrap.svg',
+    badge: 'Inspinia & Argon',
+    href: '/it/simoby-crm',
+    evidenceLabel: 'Campus Admin Portals',
+  },
+  {
+    name: 'Astro',
+    category: 'web-ar',
+    categoryLabel: 'Web & AR',
+    icon: '/logos/tech/astro.svg',
+    badge: 'Static & Islands',
+    href: '/it',
+    evidenceLabel: 'Portfolio Engine',
+  },
+  {
+    name: 'jQuery',
+    category: 'web-ar',
+    categoryLabel: 'Web & AR',
+    icon: '/logos/tech/jquery.svg',
+    badge: 'DOM & DataTables',
+    href: '/it/mtqm-competition-portal',
+    evidenceLabel: 'Server-side DataTables',
+  },
+  {
+    name: 'Android Studio',
+    category: 'web-ar',
+    categoryLabel: 'Web & AR',
+    icon: '/logos/tech/android.svg',
+    badge: 'Native Mobile',
+    href: '/it/plant-escape-ar',
+    evidenceLabel: 'AR APK Release Workflow',
+  },
+  {
+    name: 'Unity 3D',
+    category: 'web-ar',
+    categoryLabel: 'Web & AR',
+    icon: '/logos/tech/unity.svg',
+    badge: '2021 LTS Engine',
+    href: '/it/plant-escape-ar',
+    evidenceLabel: 'Plant Escape AR (HKI)',
+  },
+  {
+    name: 'Vuforia Engine',
+    category: 'web-ar',
+    categoryLabel: 'Web & AR',
+    icon: '/logos/tech/vuforia.svg',
+    badge: 'Target Tracking',
+    href: '/it/ar-kitchen',
+    evidenceLabel: 'AR Kitchen & EdTech',
+  },
+  {
+    name: 'Drupal 7',
+    category: 'web-ar',
+    categoryLabel: 'Web & AR',
+    icon: '/logos/tech/drupal.svg',
+    badge: 'Multisite CMS',
+    href: '/it/io-uny-homepage',
+    evidenceLabel: 'io.uny.ac.id Gateway',
+  },
+
+  // 2. Cloud, Database & Infrastructure
+  {
+    name: 'MySQL',
+    category: 'cloud-infra',
+    categoryLabel: 'Cloud & Infra',
+    icon: '/logos/tech/mysql.svg',
+    badge: 'Relational DB',
+    href: '/it/pemilwa-evoting',
+    evidenceLabel: 'High-concurrency votes',
+  },
+  {
+    name: 'PostgreSQL',
+    category: 'cloud-infra',
+    categoryLabel: 'Cloud & Infra',
+    icon: '/logos/tech/postgresql.svg',
+    badge: 'PostgreSQL 15',
+    href: '/it/mtqm-competition-portal',
+    evidenceLabel: 'Production Participant DB',
+  },
+  {
+    name: 'SQLite',
+    category: 'cloud-infra',
+    categoryLabel: 'Cloud & Infra',
+    icon: '/logos/tech/sqlite.svg',
+    badge: 'Embedded DB',
+    href: '/international/fpt-mobile-programming-2020',
+    evidenceLabel: 'Mobile Offline Storage',
+  },
+  {
+    name: 'SQL',
+    category: 'cloud-infra',
+    categoryLabel: 'Cloud & Infra',
+    icon: '/logos/tech/sql.svg',
+    badge: 'Queries & Schemas',
+    href: '/credentials/coursera-bigquery',
+    evidenceLabel: 'Data Analysis & Indexing',
+  },
+  {
+    name: 'Google Cloud',
+    category: 'cloud-infra',
+    categoryLabel: 'Cloud & Infra',
+    icon: '/logos/tech/googlecloud.svg',
+    badge: 'Bangkit 2023 Cohort',
+    href: '/credentials/bangkit-academy-cloud-2023',
+    evidenceLabel: 'Bangkit Cloud Graduate',
+  },
+  {
+    name: 'BigQuery',
+    category: 'cloud-infra',
+    categoryLabel: 'Cloud & Infra',
+    icon: '/logos/tech/googlebigquery.svg',
+    badge: 'Cloud Analytics',
+    href: '/credentials/coursera-bigquery',
+    evidenceLabel: 'Coursera BigQuery Specialization',
+  },
+  {
+    name: 'Linux Server',
+    category: 'cloud-infra',
+    categoryLabel: 'Cloud & Infra',
+    icon: '/logos/tech/linux.svg',
+    badge: 'Ubuntu / Debian',
+    href: '/credentials/coursera-system-admin',
+    evidenceLabel: 'System Administration',
+  },
+  {
+    name: 'Nginx',
+    category: 'cloud-infra',
+    categoryLabel: 'Cloud & Infra',
+    icon: '/logos/tech/nginx.svg',
+    badge: 'Reverse Proxy & SSL',
+    href: '/it/pemilwa-evoting',
+    evidenceLabel: 'High-traffic Gateway',
+  },
+  {
+    name: 'Cloudflare',
+    category: 'cloud-infra',
+    categoryLabel: 'Cloud & Infra',
+    icon: '/logos/tech/cloudflare.svg',
+    badge: 'DNS & Edge Security',
+    href: '/it/kerupuk-patilo-msme',
+    evidenceLabel: 'SSL & CDN Deployment',
+  },
+  {
+    name: 'Cisco Routing',
+    category: 'cloud-infra',
+    categoryLabel: 'Cloud & Infra',
+    icon: '/logos/tech/cisco.svg',
+    badge: 'Catalyst Switches',
+    href: '/networks',
+    evidenceLabel: 'UPN Veteran Telematika',
+  },
+  {
+    name: 'MikroTik',
+    category: 'cloud-infra',
+    categoryLabel: 'Cloud & Infra',
+    icon: '/logos/tech/mikrotik.svg',
+    badge: 'RouterOS & VLAN',
+    href: '/credentials/bnsp-network-administrator-muda',
+    evidenceLabel: 'BNSP Network Administrator',
+  },
+
+  // 3. Creative Design & Video Editing (CorelDRAW 2025, Canva, CapCut, Blender, Figma, OBS Studio)
+  {
+    name: 'CorelDRAW',
+    category: 'creative-video',
+    categoryLabel: 'Design & Media',
+    icon: '/logos/tech/coreldraw.png',
+    badge: 'Vector & Packaging',
+    href: '/it/kerupuk-patilo-msme',
+    evidenceLabel: 'Packaging Graphic Design',
+    highlight: true,
+  },
+  {
+    name: 'Canva',
+    category: 'creative-video',
+    categoryLabel: 'Design & Media',
+    icon: '/logos/tech/canva.svg',
+    badge: 'Digital Branding',
+    href: '/social-media',
+    evidenceLabel: 'Institutional PR Visuals',
+    highlight: true,
+  },
+  {
+    name: 'CapCut',
+    category: 'creative-video',
+    categoryLabel: 'Design & Media',
+    icon: '/logos/tech/capcut.svg',
+    badge: 'Video Production',
+    href: '/social-media',
+    evidenceLabel: 'Event & Mobility Reels',
+    highlight: true,
+  },
+  {
+    name: 'Blender 3D',
+    category: 'creative-video',
+    categoryLabel: 'Design & Media',
+    icon: '/logos/tech/blender.svg',
+    badge: 'Spatial 3D Assets',
+    href: '/it/plant-escape-ar',
+    evidenceLabel: 'Photogrammetry Assets',
+  },
+  {
+    name: 'Figma',
+    category: 'creative-video',
+    categoryLabel: 'Design & Media',
+    icon: '/logos/tech/figma.svg',
+    badge: 'UI/UX Interfaces',
+    href: '/it',
+    evidenceLabel: 'App & Web Wireframing',
+  },
+  {
+    name: 'OBS Studio',
+    category: 'creative-video',
+    categoryLabel: 'Design & Media',
+    icon: '/logos/tech/obsstudio.png',
+    badge: 'Live AV Desks',
+    href: '/international/aasvet-2023',
+    evidenceLabel: 'International Conferences',
+  },
+
+  // 4. Office Suite & Indonesian Immigration (Merged as requested)
+  {
+    name: 'MS Word',
+    category: 'office-ops',
+    categoryLabel: 'Office & Immigration',
+    icon: '/logos/tech/word.svg',
+    badge: 'Decrees & Legal LoA',
+    href: '/international/io-operations',
+    evidenceLabel: 'SK Rektor Mandates Dossier',
+    highlight: true,
+  },
+  {
+    name: 'MS Excel',
+    category: 'office-ops',
+    categoryLabel: 'Office & Immigration',
+    icon: '/logos/tech/excel.svg',
+    badge: 'Financial & Stats',
+    href: '/credentials/php2d-msme',
+    evidenceLabel: 'PHP2D Budget & Bookkeeping',
+    highlight: true,
+  },
+  {
+    name: 'MS PowerPoint',
+    category: 'office-ops',
+    categoryLabel: 'Office & Immigration',
+    icon: '/logos/tech/powerpoint.svg',
+    badge: 'Diplomatic Keynotes',
+    href: '/international/gloship-2025',
+    evidenceLabel: 'GLOSHIP & GCF Decks',
+    highlight: true,
+  },
+  {
+    name: 'Indonesian Immigration',
+    category: 'office-ops',
+    categoryLabel: 'Office & Immigration',
+    icon: '/logos/tech/imigrasi.webp',
+    badge: 'E-Visa, ITAS & STM',
+    href: '/international/io-operations',
+    evidenceLabel: '5+ yrs higher-ed operations experience',
+    highlight: true,
+  },
+  {
+    name: 'Diplomatic Protocol',
+    category: 'office-ops',
+    categoryLabel: 'Office & Immigration',
+    icon: '/logos/tech/protocol.svg',
+    badge: 'Bilateral Hosting',
+    href: '/international#sec-delegations',
+    evidenceLabel: 'Nanyang Poly & WSU Hosting',
+  },
+];
+
+// Reordered tabs: Web & AR first (default), All on the very right
+const categories = [
+  { id: 'web-ar', label: 'Web & AR', count: skills.filter((s) => s.category === 'web-ar').length },
+  { id: 'cloud-infra', label: 'Cloud & Infra', count: skills.filter((s) => s.category === 'cloud-infra').length },
+  { id: 'creative-video', label: 'Design & Video', count: skills.filter((s) => s.category === 'creative-video').length },
+  { id: 'office-ops', label: 'Office & Immigration', count: skills.filter((s) => s.category === 'office-ops').length },
+  { id: 'all', label: 'All', count: skills.length },
+];
+
+const defaultCategory = 'web-ar';
+---
+
+<section id="stack" class="mt-16 scroll-mt-20" aria-label="Skills & Tech Stack">
+  <!-- Section Title with Code/Stack Icon -->
+  <div class="flex flex-wrap items-center justify-between gap-3">
+    <div class="flex items-center gap-2.5">
+      <div class="flex h-8 w-8 items-center justify-center rounded-md bg-neutral-200/70 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-200">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="h-4.5 w-4.5" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+        </svg>
+      </div>
+      <div>
+        <h2 class="text-balance text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
+          Skills & Tech Stack
+        </h2>
+        <p class="font-serif text-xs text-neutral-500 dark:text-neutral-400">
+          Full-stack web systems, mobile AR, cloud architecture, creative media, office productivity, and legal immigration operations.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Category Pills (Web & AR default, All on the very right) -->
+  <div class="mt-4 flex flex-wrap items-center gap-1.5" role="tablist" aria-label="Filter skills by category">
+    {
+      categories.map((c, i) => (
+        <button
+          type="button"
+          data-filter={c.id}
+          class={`skill-tab-btn inline-flex min-h-8 items-center gap-1.5 rounded-full px-3 py-1 font-mono text-xs transition-all cursor-pointer ${
+            i === 0
+              ? 'bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 shadow-xs'
+              : 'border border-neutral-200 bg-white text-neutral-600 hover:border-neutral-400 hover:text-neutral-900 dark:border-neutral-700 dark:bg-neutral-800/80 dark:text-neutral-300 dark:hover:border-neutral-500 dark:hover:text-neutral-100'
+          }`}
+          role="tab"
+          aria-selected={i === 0 ? 'true' : 'false'}
+        >
+          <span>{c.label}</span>
+          <span class="text-[10px] opacity-70">({c.count})</span>
+        </button>
+      ))
+    }
+  </div>
+
+  <!-- Tech Grid Container -->
+  <div class="mt-4 rounded-lg border border-[#eeeeee] bg-[#ffffff] p-4 sm:p-5 dark:border-[#333333] dark:bg-[#2e2e33]">
+    <!-- 
+      21st.dev personal-site-kit-v2 hover effect:
+      The parent UL has `skills-group`. When hovering anywhere over the group,
+      all icons dim to grayscale. The actively hovered `skill-item` retains full color
+      and smoothly scales up via CSS transform.
+    -->
+    <ul
+      id="skills-grid"
+      class="skills-group grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 gap-1.5 sm:gap-2"
+    >
+      {
+        skills.map((item) => (
+          <li
+            data-category={item.category}
+            style={item.category === defaultCategory ? '' : 'display: none;'}
+            class="skill-item relative flex flex-col items-center justify-between rounded-lg border border-transparent p-2 transition-all duration-200 hover:border-neutral-200 hover:bg-neutral-50/90 dark:hover:border-neutral-700/80 dark:hover:bg-neutral-800/60"
+            title={`${item.name} — ${item.badge ?? item.categoryLabel}`}
+          >
+            <a
+              href={item.href ?? '#'}
+              class="flex h-full w-full flex-col items-center justify-center gap-1.5 text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-1 rounded-sm"
+              aria-label={`${item.name}: ${item.badge ?? item.categoryLabel}`}
+            >
+              <div class="relative flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center">
+                {item.highlight && (
+                  <span class="absolute -top-1 -right-1 flex h-2 w-2" title="Featured specialization">
+                    <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75" />
+                    <span class="relative inline-flex h-2 w-2 rounded-full bg-amber-500" />
+                  </span>
+                )}
+                <img
+                  src={item.icon}
+                  alt={item.name}
+                  loading="lazy"
+                  class="skill-icon h-6 w-6 sm:h-7 sm:w-7 object-contain"
+                />
+              </div>
+
+              <div class="w-full">
+                <span class="skill-label block truncate font-mono text-[11px] font-medium leading-tight text-neutral-700 transition-colors dark:text-neutral-300">
+                  {item.name}
+                </span>
+                <span class="block truncate text-[9.5px] leading-tight text-neutral-400 transition-colors dark:text-neutral-500">
+                  {item.badge}
+                </span>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <!-- Indonesian Immigration & Dual-Discipline Operational Callout (Only shown inside Office & Immigration tab) -->
+    <div
+      id="immigration-callout"
+      style={defaultCategory === 'office-ops' ? '' : 'display: none;'}
+      class="mt-5 rounded-md border border-amber-200/90 bg-amber-50/70 p-3 sm:p-4 text-xs dark:border-amber-900/60 dark:bg-amber-950/25"
+    >
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div class="flex items-start gap-3">
+          <div class="relative shrink-0 mt-0.5 sm:mt-0">
+            <img
+              src="/logos/tech/imigrasi.webp"
+              alt="Direktorat Jenderal Imigrasi Indonesia"
+              class="h-9 w-9 rounded-full border border-amber-300/80 bg-white p-0.5 shadow-2xs dark:border-amber-700 dark:bg-neutral-900 object-contain"
+            />
+          </div>
+          <div class="text-amber-950 dark:text-amber-200">
+            <div class="flex flex-wrap items-center gap-1.5 font-sans font-semibold text-xs text-amber-900 dark:text-amber-100">
+              <span>Indonesian Immigration & Legal Compliance Proficiency</span>
+              <span class="rounded bg-amber-200/80 px-1.5 py-0.2 font-mono text-[10px] text-amber-950 dark:bg-amber-900/60 dark:text-amber-200">
+                5+ Years Operations Experience
+              </span>
+            </div>
+            <p class="mt-1 font-serif text-[11.5px] leading-relaxed text-amber-900/90 dark:text-amber-300/80">
+              Not only for IT: Five consecutive years of operational practice in Republic of Indonesia foreign national stay regulations — <strong>E-Visa System</strong>, <strong>ITAS/KITAS</strong> (Limited Stay Permit), <strong>SKTT Dukcapil</strong> (Civil Domicile), <strong>STM</strong> (Police Reporting), and departure clearance (EPO), backed by official university appointments.
+            </p>
+          </div>
+        </div>
+        <div class="shrink-0 self-end sm:self-center">
+          <a
+            href="/international/io-operations"
+            class="inline-flex min-h-9 items-center gap-1 rounded-sm border border-amber-300 bg-white px-2.5 py-1 font-mono text-xs text-amber-900 transition-colors hover:bg-amber-100 hover:text-amber-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 dark:border-amber-800 dark:bg-neutral-900 dark:text-amber-200 dark:hover:bg-amber-950/60 dark:hover:text-amber-100"
+          >
+            <span>Read Immigration Dossier</span>
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* 
+   * Interactive hover effect inspired by https://personal-site-kit-v2.21st.app/
+   * When hovering over the skills list, all icons transition to grayscale and dim.
+   * The actively hovered item remains in 100% full vibrant color and scales smoothly.
+   */
+  .skill-icon {
+    transition: filter 0.25s ease, opacity 0.25s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .skills-group:hover .skill-icon {
+    filter: grayscale(100%);
+    opacity: 0.55;
+  }
+
+  .skills-group .skill-item:hover .skill-icon {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.15);
+  }
+
+  .skills-group .skill-item:hover .skill-label {
+    color: #111827;
+  }
+
+  :global(.dark) .skills-group .skill-item:hover .skill-label {
+    color: #f9fafb;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .skill-icon {
+      transition: none !important;
+      transform: none !important;
+    }
+    .skills-group .skill-item:hover .skill-icon {
+      transform: none !important;
+    }
+  }
+</style>
+
+<script>
+  // Tab-based interactive category filter
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.skill-tab-btn');
+  const items = document.querySelectorAll<HTMLElement>('.skill-item');
+  const immigrationCallout = document.getElementById('immigration-callout');
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+      if (!filter) return;
+
+      // Update button styles
+      buttons.forEach((b) => {
+        b.setAttribute('aria-selected', 'false');
+        b.className =
+          'skill-tab-btn inline-flex min-h-8 items-center gap-1.5 rounded-full px-3 py-1 font-mono text-xs transition-all cursor-pointer border border-neutral-200 bg-white text-neutral-600 hover:border-neutral-400 hover:text-neutral-900 dark:border-neutral-700 dark:bg-neutral-800/80 dark:text-neutral-300 dark:hover:border-neutral-500 dark:hover:text-neutral-100';
+      });
+
+      btn.setAttribute('aria-selected', 'true');
+      btn.className =
+        'skill-tab-btn inline-flex min-h-8 items-center gap-1.5 rounded-full px-3 py-1 font-mono text-xs transition-all cursor-pointer bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 shadow-xs';
+
+      // Filter grid items
+      items.forEach((item) => {
+        const cat = item.dataset.category;
+        if (filter === 'all' || cat === filter) {
+          item.style.display = 'flex';
+          item.style.opacity = '1';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      // Toggle immigration callout: only visible on 'office-ops' (Office & Immigration) tab
+      if (immigrationCallout) {
+        if (filter === 'office-ops') {
+          immigrationCallout.style.display = 'block';
+        } else {
+          immigrationCallout.style.display = 'none';
+        }
+      }
+    });
+  });
+</script>

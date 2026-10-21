@@ -1,0 +1,296 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import ProjectIcon from '../components/ProjectIcon.astro';
+import { entryHref } from '../lib/routes';
+
+const mobility = [...(await getCollection('operations')).filter((e) => 'program_type' in e.data)].sort((a, b) =>
+  b.data.period.start.localeCompare(a.data.period.start),
+);
+const events = [...(await getCollection('operations')).filter((e) => 'event_type' in e.data)].sort((a, b) =>
+  b.data.period.start.localeCompare(a.data.period.start),
+);
+
+const delegationPartnerships = {
+  core_recurring: [
+    {
+      institution: 'Nanyang Polytechnic',
+      location: 'Singapore',
+      batches: 7,
+      institution_logo: '/logos/nyp.png',
+      coverage_url: 'https://io.uny.ac.id/content/nyp-singapore-visits-uny',
+    },
+    {
+      institution: 'Western Sydney University',
+      location: 'Australia',
+      batches: 3,
+      institution_logo: '/logos/wsu.png',
+    },
+  ],
+  bilateral: [
+    { institution: 'Universiti Teknologi MARA (UiTM)', location: 'Malaysia' },
+    { institution: 'Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)', location: 'Malaysia' },
+    { institution: 'Pukyong National University (PKNU)', location: 'South Korea' },
+    { institution: 'Philippine Normal University (PNU)', location: 'Philippines' },
+  ],
+};
+---
+<Layout title="International" description="Global academic mobility programs, diplomatic delegations, flagship event operations, and campus stewardship.">
+  <Breadcrumb crumbs={[{ label: 'Home', href: '/' }, { label: 'International' }]} />
+  <h1 class="mt-4 text-2xl font-semibold tracking-tight">International</h1>
+  <p class="mt-2 font-serif text-neutral-500 dark:text-neutral-400">
+    Global academic mobility programs, diplomatic delegation hosting, flagship festival leadership, and institutional campus operations.
+  </p>
+
+  <!-- Section 1: Global Mobility -->
+  <section class="mt-10" aria-labelledby="sec-mobility">
+    <div class="flex items-center gap-2.5">
+      <ProjectIcon name="mobility" size="sm" />
+      <h2 id="sec-mobility" class="text-balance text-xl font-semibold tracking-tight dark:text-neutral-100">Global Mobility</h2>
+    </div>
+    <p class="mt-1.5 font-serif text-sm text-neutral-500 dark:text-neutral-400">
+      Academic exchange and scholarship programs across four countries (outbound scholar track).
+    </p>
+    <div class="mt-4 grid grid-cols-1 gap-4">
+      {
+        mobility.map((m) => (
+          <a
+            href={entryHref('operations', m.data.slug)}
+            class="group relative flex items-start gap-3 rounded-lg border border-[#eeeeee] bg-[#ffffff] p-4 transition-all duration-200 hover:border-neutral-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-1 dark:border-[#333333] dark:bg-[#2e2e33] dark:hover:border-neutral-600"
+          >
+            {m.data.flag && (
+              <img
+                src={m.data.flag}
+                alt=""
+                width="28"
+                height="20"
+                class="absolute right-3 top-3 h-5 w-7 rounded-[2px] object-cover shadow-sm ring-1 ring-neutral-200 dark:ring-neutral-700"
+                loading="lazy"
+              />
+            )}
+            {m.data.institution_logo && (
+              <img
+                src={m.data.institution_logo}
+                alt=""
+                width="40"
+                height="40"
+                class="h-10 w-10 shrink-0 rounded-sm object-contain"
+                loading="lazy"
+              />
+            )}
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center justify-between gap-2 pr-12">
+                <span class="font-mono text-[10px] uppercase tracking-wide text-neutral-500 dark:text-neutral-400">{m.data.program_type}</span>
+                <span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">{m.data.period.start}</span>
+              </div>
+              <h3 class="mt-1.5 break-words text-sm font-medium group-hover:underline underline-offset-2 dark:text-neutral-100">{m.data.title}</h3>
+              <p class="mt-1 font-mono text-xs text-neutral-500 dark:text-neutral-400">{m.data.location}</p>
+              {m.data.summary && <p class="mt-2 font-serif text-sm text-neutral-600 dark:text-neutral-300">{m.data.summary}</p>}
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Section 2: Flagship International Events -->
+  <section class="mt-12 border-t border-neutral-300 pt-6 dark:border-neutral-700" aria-labelledby="sec-events">
+    <div class="flex items-center gap-2.5">
+      <ProjectIcon name="events" size="sm" />
+      <h2 id="sec-events" class="text-balance text-xl font-semibold tracking-tight dark:text-neutral-100">Flagship International Events</h2>
+    </div>
+    <p class="mt-1.5 font-serif text-sm text-neutral-500 dark:text-neutral-400">
+      Large-scale cultural festivals, diplomatic forums, and international academic conferences coordinated under tiered institutional governance (Faculty Steering &amp; Student Operations Committees).
+    </p>
+
+    <div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+      {
+        events.map((ev) => (
+          <a
+            href={entryHref('operations', ev.data.slug)}
+            class="group relative flex flex-col justify-between rounded-xl border border-neutral-200 bg-white p-5 transition-all duration-200 hover:border-neutral-400 shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-1 dark:border-neutral-800 dark:bg-[#222226] dark:hover:border-neutral-600"
+          >
+            <div>
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2.5">
+                  {ev.data.project_logo && (
+                    <img
+                      src={ev.data.project_logo}
+                      alt={ev.data.title}
+                      class="h-7 w-auto max-w-[100px] object-contain shrink-0"
+                      loading="lazy"
+                    />
+                  )}
+                  <span class="inline-flex items-center rounded-full bg-blue-50 px-2.5 py-0.5 font-mono text-[10px] font-semibold text-blue-700 dark:bg-blue-950/60 dark:text-blue-300">
+                    {ev.data.event_type === 'cultural-festival'
+                      ? 'Cultural Diplomacy'
+                      : ev.data.event_type === 'partnership-forum'
+                        ? 'Diplomatic Partnership Forum'
+                        : ev.data.event_type === 'conference'
+                          ? 'International Conference'
+                          : 'International Summer School'}
+                  </span>
+                </div>
+                <span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">{ev.data.period.start}</span>
+              </div>
+              <h3 class="mt-3 text-base font-semibold group-hover:underline underline-offset-2 dark:text-neutral-100">
+                {ev.data.title}
+              </h3>
+              <p class="mt-1 font-mono text-xs text-neutral-500 dark:text-neutral-400">
+                {'venue' in ev.data && ev.data.venue ? `${ev.data.venue} · ` : ''}{ev.data.location}
+              </p>
+              {ev.data.summary && (
+                <p class="mt-2.5 font-serif text-xs leading-relaxed text-neutral-600 dark:text-neutral-300">
+                  {ev.data.summary}
+                </p>
+              )}
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-neutral-100 dark:border-neutral-800/80 flex items-center justify-between font-mono text-xs text-neutral-500 dark:text-neutral-400">
+              <span class="truncate max-w-[210px] text-[11px] text-blue-600 dark:text-blue-400 font-medium">{ev.data.committee_role || 'Student Committee Coordinator'}</span>
+              <span class="group-hover:translate-x-0.5 transition-transform text-neutral-900 dark:text-neutral-100 font-medium">Dossier →</span>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Section 3: Diplomatic Delegation Hosting -->
+  <section class="mt-12 border-t border-neutral-300 pt-6 dark:border-neutral-700" aria-labelledby="sec-delegations">
+    <div class="flex items-center gap-2.5">
+      <ProjectIcon name="delegations" size="sm" />
+      <h2 id="sec-delegations" class="text-balance text-xl font-semibold tracking-tight dark:text-neutral-100">Diplomatic Delegation Hosting</h2>
+    </div>
+    <p class="mt-1.5 font-serif text-sm text-neutral-500 dark:text-neutral-400">
+      Protocol management, campus immersion itineraries, and bilateral academic visits hosted under office mandate.
+    </p>
+
+    <div class="mt-4 space-y-4">
+      <!-- Core Recurring -->
+      <div>
+        <p class="font-mono text-[11px] font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
+          Core Recurring Partnerships (10 Batches Total)
+        </p>
+        <div class="mt-2.5 grid gap-3 sm:grid-cols-2">
+          {delegationPartnerships.core_recurring.map((p) => (
+            <div class="rounded-xl border border-neutral-200 bg-white p-4 shadow-xs dark:border-neutral-800 dark:bg-[#222226]">
+              <div class="flex items-center justify-between gap-3">
+                {p.institution_logo ? (
+                  <img src={p.institution_logo} alt={p.institution} class="h-8 w-auto max-w-[120px] shrink-0 object-contain" loading="lazy" />
+                ) : <div />}
+                <span class="flex items-baseline gap-1.5 font-mono">
+                  <span class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100">{p.batches}</span>
+                  <span class="text-xs text-neutral-500 dark:text-neutral-400">batches</span>
+                </span>
+              </div>
+              <h3 class="mt-2 text-sm font-semibold dark:text-neutral-100">{p.institution}</h3>
+              <p class="font-mono text-xs text-neutral-500 dark:text-neutral-400">{p.location} · Short-course campus immersion &amp; cultural exchange</p>
+              {p.coverage_url && (
+                <div class="mt-3 pt-2.5 border-t border-neutral-100 dark:border-neutral-800">
+                  <a
+                    href={p.coverage_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 font-mono text-[11px] text-blue-600 hover:underline dark:text-blue-400"
+                  >
+                    <span>NYP Delegation Coverage</span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Bilateral Institutional Visits -->
+      <div class="rounded-xl border border-neutral-200 bg-white p-4 shadow-xs dark:border-neutral-800 dark:bg-[#222226]">
+        <p class="font-mono text-[11px] font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
+          Bilateral &amp; Custom Academic Visits
+        </p>
+        <div class="mt-2 divide-y divide-neutral-100 dark:divide-neutral-800">
+          {delegationPartnerships.bilateral.map((p) => (
+            <div class="flex flex-col gap-1.5 py-2.5 first:pt-1 last:pb-1 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <span class="text-sm font-medium dark:text-neutral-100">{p.institution}</span>
+                <span class="ml-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">({p.location})</span>
+              </div>
+              <span class="font-mono text-[11px] text-neutral-400 dark:text-neutral-500">Official Campus Visit &amp; Bilateral Dialogue</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: International Office Operations -->
+  <section class="mt-12 border-t border-neutral-300 pt-6 dark:border-neutral-700" aria-labelledby="sec-io-ops">
+    <div class="flex items-center gap-2.5">
+      <ProjectIcon name="operations" size="sm" />
+      <h2 id="sec-io-ops" class="text-balance text-xl font-semibold tracking-tight dark:text-neutral-100">International Office Operations</h2>
+    </div>
+    <p class="mt-1.5 font-serif text-sm text-neutral-500 dark:text-neutral-400">
+      Campus operational experience across international student services — legal immigration compliance, foreign student pastoral care, and institutional paperwork.
+    </p>
+
+    <div class="mt-4 rounded-xl border border-neutral-200 bg-white p-5 shadow-xs dark:border-neutral-800 dark:bg-[#222226]">
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+        <div class="flex items-start gap-3.5">
+          <img src="/logos/uny.svg" alt="UNY Logo" class="h-10 w-10 shrink-0 object-contain" />
+          <div>
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="font-mono text-[10px] uppercase tracking-wide text-neutral-500 dark:text-neutral-400">Operational Stewardship</span>
+              <span class="font-mono text-xs text-neutral-400">·</span>
+              <span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">2021–present (5+ years)</span>
+            </div>
+            <h3 class="mt-1 text-base font-semibold text-neutral-900 dark:text-neutral-100">
+              UNY International Office — Visa, Immigration &amp; Campus Operations
+            </h3>
+            <p class="font-mono text-xs text-neutral-500 dark:text-neutral-400">Universitas Negeri Yogyakarta · Yogyakarta, Indonesia</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-3.5 font-serif text-sm leading-relaxed text-neutral-600 dark:text-neutral-300">
+        Five consecutive years of campus operations experience at the International Office. End-to-end processing of legal stay documentation for foreign nationals (E-Visa, ITAS/KITAS, SKTT, STM, EPO), international admissions clearance, and crisis management, verified by official institutional appointments.
+      </p>
+
+      <div class="mt-4 grid grid-cols-2 gap-2.5 sm:grid-cols-4 font-mono text-xs">
+        <div class="rounded-lg border border-neutral-200/80 bg-neutral-50/50 p-2.5 dark:border-neutral-700/60 dark:bg-neutral-800/40">
+          <div class="text-[10px] uppercase text-neutral-500 dark:text-neutral-400">Experience</div>
+          <div class="mt-0.5 font-semibold text-neutral-900 dark:text-neutral-100">5+ Years (2021–Pres.)</div>
+        </div>
+        <div class="rounded-lg border border-neutral-200/80 bg-neutral-50/50 p-2.5 dark:border-neutral-700/60 dark:bg-neutral-800/40">
+          <div class="text-[10px] uppercase text-neutral-500 dark:text-neutral-400">Immigration</div>
+          <div class="mt-0.5 font-semibold text-neutral-900 dark:text-neutral-100">E-Visa · ITAS · STM</div>
+        </div>
+        <div class="rounded-lg border border-neutral-200/80 bg-neutral-50/50 p-2.5 dark:border-neutral-700/60 dark:bg-neutral-800/40">
+          <div class="text-[10px] uppercase text-neutral-500 dark:text-neutral-400">Clearance</div>
+          <div class="mt-0.5 font-semibold text-neutral-900 dark:text-neutral-100">LoA · Guarantee · SKTT</div>
+        </div>
+        <div class="rounded-lg border border-neutral-200/80 bg-neutral-50/50 p-2.5 dark:border-neutral-700/60 dark:bg-neutral-800/40">
+          <div class="text-[10px] uppercase text-neutral-500 dark:text-neutral-400">Digital PR</div>
+          <div class="mt-0.5 font-semibold text-neutral-900 dark:text-neutral-100">8,000+ Followers</div>
+        </div>
+      </div>
+
+      <div class="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-neutral-100 pt-4 dark:border-neutral-800">
+        <div class="flex flex-wrap gap-1.5">
+          <span class="inline-flex items-center rounded-full bg-neutral-100 px-2.5 py-0.5 font-mono text-[11px] text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300">Legal Immigration</span>
+          <span class="inline-flex items-center rounded-full bg-neutral-100 px-2.5 py-0.5 font-mono text-[11px] text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300">Admissions Paperwork</span>
+          <span class="inline-flex items-center rounded-full bg-neutral-100 px-2.5 py-0.5 font-mono text-[11px] text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300">Pastoral Care</span>
+          <span class="inline-flex items-center rounded-full bg-neutral-100 px-2.5 py-0.5 font-mono text-[11px] text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300">Emergency Liaison</span>
+        </div>
+        <a
+          href="/international/io-operations"
+          class="inline-flex min-h-10 items-center gap-1.5 rounded-lg border border-neutral-900 bg-neutral-900 px-3.5 font-mono text-xs text-white transition-colors hover:bg-neutral-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-1 dark:border-neutral-100 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-300"
+        >
+          <span>Open the operations dossier</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

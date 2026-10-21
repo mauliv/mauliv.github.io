@@ -1,0 +1,286 @@
+@import "tailwindcss";
+
+/* Tailwind v4 class-based dark mode (html.dark) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Local Javanese script support (bundled subset — renders ꦗꦮ on every device) */
+@font-face {
+  font-family: "Noto Sans Javanese";
+  src: url("/fonts/NotoSansJavanese-subset.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* Display + UI face: IBM Plex Sans (variable, latin subset, self-hosted — Phase 14) */
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("/fonts/plex-sans-var.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif, "Noto Sans Javanese";
+  --font-serif: ui-serif, Georgia, "Times New Roman", serif, "Noto Sans Javanese";
+  --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, monospace, "Noto Sans Javanese";
+}
+
+/* Browser surfaces belong to the design: caret, scrollbars, form controls (color-scheme
+   drives all three per theme) plus an explicit selection color. */
+:root {
+  color-scheme: light;
+}
+:where(.dark) {
+  color-scheme: dark;
+}
+::selection {
+  background: #171717;
+  color: #fafafa;
+}
+:where(.dark) ::selection {
+  background: #f5f5f5;
+  color: #171717;
+}
+
+/* Motion budget: transitions and the single pulse respect reduced-motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Hand-rolled markdown prose (decision: no typography plugin) */
+.markdown {
+  font-family: var(--font-serif);
+  color: #262626;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+.markdown h2 {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #171717;
+  margin: 2rem 0 0.75rem;
+}
+.markdown h3 {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #171717;
+  margin: 1.5rem 0 0.5rem;
+}
+.markdown p { margin-bottom: 0.9rem; }
+.markdown ul,
+.markdown ol { margin: 0 0 0.9rem 1.1rem; }
+.markdown ul { list-style: disc; }
+.markdown ol { list-style: decimal; }
+.markdown li { margin-bottom: 0.3rem; }
+.markdown a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.markdown strong { font-weight: 600; }
+.markdown hr { border: 0; border-top: 1px solid #e5e5e5; margin: 1.5rem 0; }
+.markdown :not(pre) > code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: #f5f5f5;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+.markdown pre {
+  margin: 1rem 0 1.25rem;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  border: 1px solid #e5e5e5;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.markdown pre code {
+  font-family: var(--font-mono);
+  font-size: inherit;
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  color: inherit;
+}
+.markdown blockquote {
+  border-left: 2px solid #e5e5e5;
+  padding-left: 1rem;
+  color: #737373;
+  margin-bottom: 0.9rem;
+}
+
+/* Responsive Markdown Tables */
+.table-wrapper {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.75rem 0 2.25rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+}
+
+.table-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+.table-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.markdown table {
+  width: 100%;
+  min-width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.markdown thead {
+  background-color: #f8fafc;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.markdown th {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #475569;
+  padding: 0.85rem 1.1rem;
+  vertical-align: middle;
+  border-right: 1px solid #f1f5f9;
+  white-space: nowrap;
+}
+
+.markdown th:last-child {
+  border-right: none;
+}
+
+.markdown td {
+  padding: 0.85rem 1.1rem;
+  border-bottom: 1px solid #f1f5f9;
+  border-right: 1px solid #f8fafc;
+  color: #334155;
+  vertical-align: top;
+}
+
+.markdown td:last-child {
+  border-right: none;
+}
+
+.markdown tr:last-child td {
+  border-bottom: none;
+}
+
+.markdown tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.markdown tbody tr:nth-child(even) {
+  background-color: #fafbfc;
+}
+
+.markdown tbody tr:hover {
+  background-color: #f1f5f9;
+}
+
+.markdown td strong {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.markdown td code {
+  font-family: var(--font-mono);
+  font-size: 0.825em;
+  background: #f1f5f9;
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+}
+
+.markdown th[align="center"],
+.markdown td[align="center"] {
+  text-align: center;
+}
+
+.markdown th[align="right"],
+.markdown td[align="right"] {
+  text-align: right;
+}
+
+.markdown th[align="left"],
+.markdown td[align="left"] {
+  text-align: left;
+}
+
+/* Markdown dark overrides (plain CSS paired with the custom variant above) */
+:where(.dark, .dark *) .markdown { color: #d4d4d4; }
+:where(.dark, .dark *) .markdown h2,
+:where(.dark, .dark *) .markdown h3 { color: #f5f5f5; }
+:where(.dark, .dark *) .markdown a { color: #e5e5e5; }
+:where(.dark, .dark *) .markdown hr { border-top-color: #262626; }
+:where(.dark, .dark *) .markdown :not(pre) > code { background: #262626; color: #d4d4d4; }
+:where(.dark, .dark *) .markdown pre { border-color: #333333; }
+:where(.dark, .dark *) .markdown pre code { background: transparent !important; }
+:where(.dark, .dark *) .markdown blockquote {
+  border-left-color: #404040;
+  color: #a3a3a3;
+}
+:where(.dark, .dark *) .table-wrapper {
+  border-color: #333338;
+  background-color: #222226;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
+}
+:where(.dark, .dark *) .table-wrapper::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+:where(.dark, .dark *) .markdown thead {
+  background-color: #28282d;
+  border-bottom-color: #38383e;
+}
+:where(.dark, .dark *) .markdown th {
+  color: #94a3b8;
+  border-right-color: #333338;
+}
+:where(.dark, .dark *) .markdown td {
+  border-bottom-color: #2a2a30;
+  border-right-color: #26262a;
+  color: #cbd5e1;
+}
+:where(.dark, .dark *) .markdown td:last-child,
+:where(.dark, .dark *) .markdown th:last-child {
+  border-right: none;
+}
+:where(.dark, .dark *) .markdown tbody tr:nth-child(even) {
+  background-color: #25252a;
+}
+:where(.dark, .dark *) .markdown tbody tr:hover {
+  background-color: #2e2e34;
+}
+:where(.dark, .dark *) .markdown td strong {
+  color: #f8fafc;
+}
+:where(.dark, .dark *) .markdown td code {
+  background: #2a2a30;
+  color: #e2e8f0;
+}

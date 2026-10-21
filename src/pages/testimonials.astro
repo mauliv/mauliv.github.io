@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import ProjectIcon from '../components/ProjectIcon.astro';
+import { publishedTestimonials, resolveProject, type Testimonial } from '../lib/testimonials';
+
+const entries = await publishedTestimonials();
+interface Row {
+  t: Testimonial;
+  project: { title: string; href: string } | null;
+}
+const rows: Row[] = await Promise.all(
+  entries.map(async (t) => ({
+    t,
+    project: t.data.related_project_slug ? await resolveProject(t.data.related_project_slug) : null,
+  })),
+);
+---
+<Layout
+  title="Testimonials"
+  description="Endorsements and references — placeholder entries are visibly marked until real quotes are supplied."
+>
+  <Breadcrumb crumbs={[{ label: 'Home', href: '/' }, { label: 'Testimonials' }]} />
+  <div class="mt-4 flex items-center gap-2.5">
+    <ProjectIcon name="testimonials" size="sm" />
+    <h1 class="text-2xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">Testimonials</h1>
+  </div>
+  <p class="mt-2 font-serif text-neutral-500 dark:text-neutral-400">
+    Endorsements from supervisors, collaborators, and the people I have worked alongside.
+  </p>
+
+  {
+    rows.length > 0 ? (
+      <div class="mt-6 space-y-4">
+        {rows.map((r) => (
+          <TestimonialCard
+            name={r.t.data.name}
+            initials={r.t.data.initials}
+            role={r.t.data.role}
+            company={r.t.data.company}
+            quote={r.t.data.quote}
+            date={r.t.data.date}
+            project={r.project}
+          />
+        ))}
+      </div>
+    ) : (
+      <section class="mt-8 border border-dashed border-neutral-300 p-6 text-center dark:border-neutral-700" aria-label="Endorsements pending">
+        <p class="font-mono text-xs text-neutral-500 dark:text-neutral-400">No endorsements published yet.</p>
+        <p class="mt-3 font-serif text-sm leading-relaxed text-neutral-600 dark:text-neutral-300">
+          This page is an open slot. When someone is ready to give me their testimonial, it
+          appears here as a verifiable, attributed quote — never as a placeholder. Until then,
+          references are available on request.
+        </p>
+        <p class="mt-3">
+          <a
+            href="mailto:alif.maulidin@gmail.com?subject=Reference%20request"
+            class="inline-flex min-h-11 items-center border border-neutral-900 bg-neutral-900 px-4 font-mono text-xs text-white transition-colors hover:bg-neutral-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-1 dark:border-neutral-100 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-300"
+          >
+            [Request a reference]
+          </a>
+        </p>
+      </section>
+    )
+  }
+</Layout>

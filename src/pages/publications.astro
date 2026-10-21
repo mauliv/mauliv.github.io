@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import ArticleRow from '../components/ArticleRow.astro';
+import ProjectIcon from '../components/ProjectIcon.astro';
+import { gatherEvidence, relatedHref } from '../lib/evidence-index';
+
+// Publications = academic output only (journal evidence), distinct from News (press).
+const rows = (await gatherEvidence()).filter((r) => r.pill.type === 'journal');
+---
+<Layout title="Publications" description="Peer-reviewed publications, each linked back to the project it documents.">
+  <Breadcrumb crumbs={[{ label: 'Home', href: '/' }, { label: 'Publications' }]} />
+  <div class="mt-4 flex items-center gap-2.5">
+    <ProjectIcon name="publications" size="sm" />
+    <h1 class="text-2xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">Publications</h1>
+  </div>
+  <p class="mt-2 font-serif text-neutral-500 dark:text-neutral-400">
+    Peer-reviewed publications, each linked back to the project it documents.
+  </p>
+
+  <div class="mt-6 space-y-4">
+    {
+      rows.map((r) => {
+        const pubs = 'publications' in r.entry.data ? r.entry.data.publications : [];
+        const pub = pubs[0];
+        return (
+          <div class="rounded-lg border border-[#eeeeee] bg-[#ffffff] p-5 transition-all duration-200 dark:border-[#333333] dark:bg-[#2e2e33]">
+            <ArticleRow
+              title={pub?.focus ?? r.pill.label}
+              publisher={pub ? `${pub.journal} · ${pub.volume}` : r.entry.data.title}
+              date={pub?.date ?? r.entry.data.period.start}
+              url={r.pill.url}
+              pending={r.pill.status !== 'available'}
+              project={{ title: r.entry.data.title, href: relatedHref(r) }}
+            />
+          </div>
+        );
+      })
+    }
+  </div>
+</Layout>
