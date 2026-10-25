@@ -2,3 +2,17 @@ node_modules/
 dist/
 .astro/
 .env
+
+# Internal engineering notes, planning docs, ADRs, and audit artifacts
+/*.md
+!/README.md
+/docs/
+CURRENT_SITUATION.md
+NEXT_MODIFICATIONS.md
+CHANGELOG_AND_NEXT_MODIFICATIONS.md
+CHANGELOG.md
+CONTEXT.md
+PRD.md
+PRODUCT.md
+FIXES.md
+TESTIMONIALS.md
