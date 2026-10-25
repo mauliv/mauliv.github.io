@@ -12,10 +12,16 @@ interface Props {
   date?: string;
   /** Present only on the Testimonials list; omitted on the project's own page (no self-link). */
   project?: Project | null;
+  /** Defense against accidental placeholder rendering (Antislop F-02). */
+  is_placeholder?: boolean;
 }
-const { name, initials, role, company, quote, date, project = null } = Astro.props;
+const { name, initials, role, company, quote, date, project = null, is_placeholder } = Astro.props;
+
+if (is_placeholder) {
+  throw new Error(`TestimonialCard received placeholder quote for "${name}". Placeholders must never render as cards (ADR-0001, Antislop F-02).`);
+}
 ---
-<figure class="rounded-md border border-neutral-200 p-5 dark:border-neutral-800">
+<figure class="rounded-md border border-neutral-200 p-5 dark:border-neutral-700 bg-white dark:bg-[#222226]">
   <div class="flex items-start gap-3">
     <span
       class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-neutral-300 font-mono text-xs text-neutral-600 dark:border-neutral-700 dark:text-neutral-300"

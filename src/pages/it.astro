@@ -11,13 +11,24 @@ const all = await getCollection('systems');
 const byDateDesc = (a: { data: { period: { start: string } } }, b: { data: { period: { start: string } } }) =>
   a.data.period.start < b.data.period.start ? 1 : a.data.period.start > b.data.period.start ? -1 : 0;
 
+// Lead with flagship battle-tested live systems (V-02)
+const webPriority = ['pemilwa-evoting', 'simoby-crm', 'mtqm-competition-portal', 'io-uny-homepage', 'kerupuk-patilo-msme'];
+const sortByWebPriority = (a: { data: { slug: string; period: { start: string } } }, b: { data: { slug: string; period: { start: string } } }) => {
+  const idxA = webPriority.indexOf(a.data.slug);
+  const idxB = webPriority.indexOf(b.data.slug);
+  if (idxA !== -1 && idxB !== -1) return idxA - idxB;
+  if (idxA !== -1) return -1;
+  if (idxB !== -1) return 1;
+  return byDateDesc(a, b);
+};
+
 const sections = [
   {
     id: 'web-platforms',
     title: 'Web platforms',
     iconName: 'web-platforms',
     blurb: 'Production web systems in live institutional use — elections, CRMs, portals, gateways.',
-    entries: all.filter((e) => !EDTECH_SLUGS.includes(e.data.slug)).sort(byDateDesc),
+    entries: all.filter((e) => !EDTECH_SLUGS.includes(e.data.slug)).sort(sortByWebPriority),
     track: 'web platform',
   },
   {
@@ -78,7 +89,7 @@ const sections = [
 
   <section class="mt-12 border-t border-neutral-300 pt-6 dark:border-neutral-700" aria-labelledby="sec-networks">
     <div class="flex items-center gap-2.5">
-      <ProjectIcon name="terminal" size="sm" />
+      <ProjectIcon name="networks" size="sm" />
       <h2 id="sec-networks" class="text-balance text-xl font-semibold tracking-tight dark:text-neutral-100">IT Support &amp; Networks</h2>
     </div>
     <p class="mt-1.5 font-serif text-sm text-neutral-500 dark:text-neutral-400">Network infrastructure, server administration, and campus technical support.</p>

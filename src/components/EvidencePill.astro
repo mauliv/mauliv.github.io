@@ -50,13 +50,16 @@ const available = status === 'available';
     </a>
   ) : (
     <span
-      class={`${base} border-dashed border-neutral-500 text-neutral-600 cursor-not-allowed dark:border-neutral-600 dark:text-neutral-400`}
+      tabindex="0"
+      class={`${base} border-dashed border-neutral-400 text-neutral-600 cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-1 dark:border-neutral-600 dark:text-neutral-400`}
       aria-disabled="true"
       title={label || "Pending verification"}
     >
       <svg aria-hidden="true" class="h-3 w-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" set:html={icons[type]} />
       {type === 'live' && <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-300 dark:bg-neutral-700" aria-hidden="true" />}
+      <span class="sr-only">Pending verification: </span>
       <span class="truncate">{label}</span>
+      <span class="ml-1 text-[9px] uppercase tracking-wide text-neutral-400 dark:text-neutral-500 font-mono">(pending)</span>
     </span>
   )
 }

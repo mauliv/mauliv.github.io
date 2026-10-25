@@ -60,6 +60,11 @@ evidence:
     is_internal: true
     status: "available"
   - type: "external-press"
+    label: "SMK Negeri 3 Yogyakarta Official Post: Lolos Pertukaran Pelajar ke Jepang"
+    url: "https://web.facebook.com/smkn3jogja/posts/pfbid02pxM1zP868JUDUp9FFMawBMxhSsB8X85cXNuXzXqXuF63W3Qujp56ePLUFgN3eJgUl"
+    is_internal: false
+    status: "available"
+  - type: "external-press"
     label: "JST Official Activity Report: Closing Ceremony at JST Headquarters (Report t_vol003)"
     url: "https://ssp.jst.go.jp/report/2018/t_vol003.html"
     is_internal: false
@@ -119,6 +124,11 @@ Out of secondary institutions across Indonesia, **24 students** were chosen:
 * **14 Academic High School (SMA) Delegates:** Representing natural science and mathematics tracks from leading public and private schools across Java, Sumatra, and Banten.
 
 I was selected representing **SMK Negeri 3 Yogyakarta (Skagata)** from the **Computer and Network Engineering (Teknik Komputer dan Jaringan / TKJ)** department, under official endorsement from Principal **Drs. Bujang Sabri** and homeroom advisor **Febriyana, S.ST**.
+
+<figure class="my-6 space-y-2">
+  <img src="/images/sakura-science/fb-smkn3-announcement.jpg" alt="Official Announcement by SMK Negeri 3 Yogyakarta: Alifah Mauliddin Nur Ikhsan Lolos Pertukaran Pelajar ke Jepang" class="rounded-lg border border-neutral-200 dark:border-neutral-700 w-full max-h-[420px] object-contain bg-neutral-50 dark:bg-neutral-900 p-2" />
+  <figcaption class="text-xs text-center text-neutral-500 font-mono">Official Institutional Announcement (<a href="https://web.facebook.com/smkn3jogja/posts/pfbid02pxM1zP868JUDUp9FFMawBMxhSsB8X85cXNuXzXqXuF63W3Qujp56ePLUFgN3eJgUl" target="_blank" rel="noopener noreferrer" class="underline">SMK Negeri 3 Yogyakarta Official Page</a>): <em>"✅ Alifah Mauliddin Nur Ikhsan dari kelas XI TKJ lolos pertukaran pelajar ke Jepang"</em></figcaption>
+</figure>
 
 The delegation was supervised on-site by a combined team of Indonesian ministry officials and Japanese coordinators:
 * **Kemendikbud Supervisors:** Ibu I Gusti Ayu Astiti Garbini, Ibu Cicilia Devita Andini, and Ibu Tiara Gusman.

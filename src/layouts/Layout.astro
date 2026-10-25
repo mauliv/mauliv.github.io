@@ -60,30 +60,34 @@ const linkClass =
   <body class={`min-h-screen text-[#1e1e1e] font-sans antialiased dark:text-[#dadadb] ${Astro.url.pathname.split('/').filter(Boolean).length >= 2 ? 'bg-[#ffffff] dark:bg-[#1d1e20]' : 'bg-[#f5f5f5] dark:bg-[#1d1e20]'}`}>
     <header class="mx-auto w-full max-w-3xl px-6 pt-10 md:pt-16">
       <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
-        <!-- Primary links + labeled Index disclosure (zero-JS), same at every width -->
-        <nav class="flex min-w-0 flex-wrap items-center gap-y-0.5 font-mono text-xs" aria-label="Primary">
+        <!-- Primary links + labeled Index disclosure (zero-JS), single-row responsive at every width -->
+        <nav class="flex min-w-0 items-center gap-y-0.5 font-mono text-xs" aria-label="Primary">
           <a href={homeItem.href} class={linkClass} aria-current={Astro.url.pathname === '/' ? 'page' : undefined}>
             <svg aria-hidden="true" class="h-3.5 w-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" set:html={icons[homeItem.icon]} />
             <span>{homeItem.label}</span>
           </a>
           {
             primaryItems.map((item) => (
-              <a href={item.href} class={linkClass}>
+              <a href={item.href} class={`${linkClass} hidden md:inline-flex`}>
                 <svg aria-hidden="true" class="h-3.5 w-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" set:html={icons[item.icon]} />
                 <span>{item.label}</span>
               </a>
             ))
           }
-          <a href="/contact" class={linkClass}>
+          <a href="/contact" class={`${linkClass} hidden md:inline-flex`}>
             <svg aria-hidden="true" class="h-3.5 w-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" set:html={icons.contact} />
             <span>Contact</span>
           </a>
-          <details class="group relative">
+          <details id="nav-dropdown" class="group relative">
             <summary class={`inline-flex min-h-11 cursor-pointer list-none items-center gap-1 rounded-sm px-2.5 text-neutral-700 transition-colors hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-1 dark:text-neutral-200 dark:hover:text-neutral-100 [&::-webkit-details-marker]:hidden`}>
               <span>Index</span>
               <svg aria-hidden="true" class="h-3 w-3 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
-            <div class="absolute right-0 top-full z-20 mt-1 w-64 border border-[#eeeeee] bg-[#ffffff] py-1 shadow-md dark:border-[#333333] dark:bg-[#2e2e33]">
+            <div
+              role="region"
+              aria-label="Secondary navigation"
+              class="absolute right-0 top-full z-20 mt-1 w-64 border border-[#eeeeee] bg-[#ffffff] py-1 shadow-md dark:border-[#333333] dark:bg-[#2e2e33]"
+            >
               {
                 secondaryItems.map((item) => (
                   <a href={item.href} class={`${linkClass} w-full justify-start`}>
@@ -122,6 +126,17 @@ const linkClass =
         const isDark = document.documentElement.classList.toggle('dark');
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
       });
+
+      // Escape-to-close handler for the Index details dropdown (Antislop F-08)
+      const navDropdown = document.getElementById('nav-dropdown') as HTMLDetailsElement | null;
+      if (navDropdown) {
+        navDropdown.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && navDropdown.open) {
+            navDropdown.open = false;
+            navDropdown.querySelector('summary')?.focus();
+          }
+        });
+      }
     </script>
   </body>
 </html>

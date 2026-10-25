@@ -188,6 +188,8 @@ Facilitates official overseas duty travel for university lecturers, researchers,
 [Pengajuan Baru] ➔ [Pilih Kegiatan] ➔ [Form Profil (SSO)] ➔ [Form Pembiayaan] ➔ [Form Dokumen] ➔ [Finalisasi & Review] ➔ [Upstream SIMPEL Setneg Clearance] ➔ [Laporan Pasca-Kegiatan]
 ```
 
+![SIMOBY End-to-End Mobility Verification & Approval Workflow](/images/simoby/simoby-flowchart.png)
+
 * **Multi-Source Budgeting:** Handles heterogeneous funding allocations — internal university funds (DIPA/BOPTN), external government scholarships (LPDP), foreign sponsor grants, or self-funded balances.
 * **Standardized Bureaucratic Documents:** Automated collection and verification of state-required attachments:
   * *Surat Permohonan Perjalanan Dinas Luar Negeri (PDLN)*

@@ -115,6 +115,8 @@ The application was built in **Unity 2021.3 (LTS)** using the **Vuforia Engine**
 
 ![In-App Assessment Question on Continental Herbs](/images/ar-kitchen/ar-menu-soal1.png)
 
+![Formative Evaluation Score & Feedback Screen](/images/ar-kitchen/ar-menu-eval1.png)
+
 ---
 
 ## 5. Educational Impact

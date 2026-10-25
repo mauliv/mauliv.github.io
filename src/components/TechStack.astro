@@ -1,10 +1,9 @@
 ---
 /**
  * TechStack.astro
- * Interactive Skills & Tech Stack showcase inspired by https://personal-site-kit-v2.21st.app/
- * Compact footprint with group-hover grayscale effect, category filtering,
- * and comprehensive coverage across Web, AR, Cloud, Creative (CorelDRAW 2025/Canva),
- * Video (CapCut/OBS), and Office & Indonesian Immigration.
+ * Categorized skills matrix spanning Web & AR, Cloud Infrastructure, Creative & Video,
+ * and Higher-Ed Administration. Group-hover interactive states with category tab filtering.
+ * Visual layout inspired by personal-site-kit-v2.
  */
 
 interface TechItem {
@@ -428,7 +427,9 @@ const defaultCategory = 'web-ar';
       categories.map((c, i) => (
         <button
           type="button"
+          id={`tab-${c.id}`}
           data-filter={c.id}
+          aria-controls="skills-grid"
           class={`skill-tab-btn inline-flex min-h-8 items-center gap-1.5 rounded-full px-3 py-1 font-mono text-xs transition-all cursor-pointer ${
             i === 0
               ? 'bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 shadow-xs'
@@ -445,7 +446,12 @@ const defaultCategory = 'web-ar';
   </div>
 
   <!-- Tech Grid Container -->
-  <div class="mt-4 rounded-lg border border-[#eeeeee] bg-[#ffffff] p-4 sm:p-5 dark:border-[#333333] dark:bg-[#2e2e33]">
+  <div
+    id="skills-grid-panel"
+    role="tabpanel"
+    aria-labelledby="tab-web-ar"
+    class="mt-4 rounded-lg border border-[#eeeeee] bg-[#ffffff] p-4 sm:p-5 dark:border-[#333333] dark:bg-[#2e2e33]"
+  >
     <!-- 
       21st.dev personal-site-kit-v2 hover effect:
       The parent UL has `skills-group`. When hovering anywhere over the group,
@@ -472,7 +478,6 @@ const defaultCategory = 'web-ar';
               <div class="relative flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center">
                 {item.highlight && (
                   <span class="absolute -top-1 -right-1 flex h-2 w-2" title="Featured specialization">
-                    <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75" />
                     <span class="relative inline-flex h-2 w-2 rounded-full bg-amber-500" />
                   </span>
                 )}
@@ -616,6 +621,12 @@ const defaultCategory = 'web-ar';
       btn.setAttribute('aria-selected', 'true');
       btn.className =
         'skill-tab-btn inline-flex min-h-8 items-center gap-1.5 rounded-full px-3 py-1 font-mono text-xs transition-all cursor-pointer bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 shadow-xs';
+
+      // Update tabpanel accessible label
+      const gridPanel = document.getElementById('skills-grid-panel');
+      if (gridPanel) {
+        gridPanel.setAttribute('aria-labelledby', `tab-${filter}`);
+      }
 
       // Filter grid items
       items.forEach((item) => {

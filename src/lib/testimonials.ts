@@ -4,7 +4,11 @@ import { resolveProject, type ProjectRef } from './relations';
 export type Testimonial = CollectionEntry<'testimonials'>;
 export type { ProjectRef };
 
-/** The single definition of "published". Placeholders never render anywhere. */
+/**
+ * Invariant defense (Antislop F-02, ADR-0001):
+ * Placeholders NEVER render anywhere on the site as cards or quotes.
+ * `isPublished` strictly requires `is_placeholder !== true`.
+ */
 export function isPublished(t: Testimonial): boolean {
   return t.data.is_placeholder !== true;
 }

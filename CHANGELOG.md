@@ -5,6 +5,54 @@ and GitHub Pages deployment. Career content research is tracked in `research/ope
 
 ## Entries
 
+### 2026-10-26 (Phase 29 — Antislop Audit & Visual Polish Implementation)
+
+- **Antislop F-01 (`TechStack.astro`):** removed `animate-ping` from skill highlight dots; enforced MOTION dial 1 (calm static amber dot).
+- **Antislop F-02 (`testimonials.ts` & `TestimonialCard.astro`):** formalized `isPublished` check (`is_placeholder !== true`) with build-time guard in `TestimonialCard.astro`.
+- **Visual V-01 (`Layout.astro`):** single-row mobile navigation on <=390px viewports with `hidden md:inline-flex` on text links and accessible Index dropdown.
+- **Antislop F-03 (`index.astro`):** explicit `animation: none !important; opacity: 1 !important; transform: scale(1) !important;` on `.pemilwa-dot-1` under `prefers-reduced-motion`.
+- **Antislop F-04 (`TechStack.astro`):** added `aria-controls="skills-grid"`, unique tab IDs, and `role="tabpanel"` on skills grid container with dynamic `aria-labelledby` updating on tab change.
+- **Antislop F-05 & Visual V-07 (`EvidencePill.astro`):** disabled pills made keyboard-focusable (`tabindex="0"`), added `<span class="sr-only">Pending verification: </span>`, and appended visual `(pending)` badge.
+- **Visual V-02 (`it.astro`):** prioritized live Pemilwa e-voting platform first, followed by Simoby CRM, in Web Platforms.
+- **Visual V-03 (`ProjectCard.astro`, `index.astro`, `contact.astro`, `social-media.astro`):** elevated dark mode card border contrast (`dark:border-neutral-700`).
+- **Visual V-04 (`credentials.astro`):** moved Languages block from subtitle to bottom beneath Certifications with proper section heading.
+- **Visual V-05 (`simoby.md`, `ar-kitchen.md`):** embedded workflow flowchart in Simoby and evaluation feedback screen in AR Kitchen.
+- **Antislop F-06 (`global.css`):** added `max-width: 65ch` to `.markdown` prose for comfortable reading measure.
+- **Antislop F-07 (`TechStack.astro`):** rewritten JSDoc header to lead with architectural purpose instead of template URL.
+- **Antislop F-08 (`Layout.astro`):** added `aria-label="Secondary navigation"` to `<details>` dropdown and `Escape` key listener to close menu.
+- **Visual V-06 (`testimonials.astro`):** updated empty state text into a warm, open invitation for references.
+- **Icon alignment (`it.astro`):** updated IT Support & Networks section icon from `terminal` to `networks` to match the network topology icon on `/networks` and in site navigation.
+- **Hygiene H-02 (`src/content/testimonials/.gitkeep`):** added `.gitkeep` preserving empty collection directory per ADR-0001.
+- **Verified:** clean `npm run build` exit 0 (59 static pages).
+
+### 2026-10-26 (Phase 28 — SMKN 3 Press Integration & SSHP 2018 Evidence)
+
+- **New press entry (`src/content/press/smkn3-pertukaran-pelajar-jepang-2018.md`):** integrated verified institutional announcement from SMK Negeri 3 Yogyakarta (`@smkn3jogja`) celebrating Alifah's selection for the Sakura Science High School Program in Japan. Bi-directionally linked to `sakura-science-2018` and `smk-negeri-3-yogyakarta-tkj`.
+- **Media asset (`public/images/sakura-science/fb-smkn3-announcement.jpg`):** archived official school banner.
+- **SSHP Dossier (`src/content/operations/sakura-science-2018.md`):** added external-press pill for the official post + inline `<figure>` image markup.
+- **Verified:** `npm run build` exit 0 (59 static pages).
+
+### 2026-10-22 (Phase 27 — PKNU & SSHP dossiers, credentials sanitize, dark mode logos)
+
+- **Commit `aec9b57`:**
+  - `pknu-iss-2024.md`: expanded narrative dossier (+242 lines), coursework breakdown, and schedule image asset.
+  - `sakura-science-2018.md`: re-encoded PDF evidence, added Shibaura lecture photo with Nobel Laureate Prof. Takaaki Kajita.
+  - Added Japanese press coverage: `jst-sshp-2018-closing-ceremony.md` and `jst-sshp-2018-shibaura-kajita-lecture.md`.
+  - Dark mode logo inversion: refined `ProjectIcon.astro` and `TechStack.astro` for monochrome brand logos (Mikrotik, Unity, CorelDraw, Infinite, IO).
+  - Sanitized credentials layout in `CredentialRow.astro`.
+- **Verified:** build exit 0 (59 pages).
+
+### 2026-10-19 to 2026-10-21 (Milestone: Evolution from October 19 Backup — 210 files added)
+
+- **Domain Migration:** updated `astro.config.mjs` and GitHub Actions workflow from `maulidinalif.github.io` to `mauliv.github.io`. Added `public/robots.txt` and `public/_headers`.
+- **System Migration:** retired `srgate.md` (unverified Laravel gateway stub); added `patilo-web.md` (`kerupuk-patilo-msme`) documenting the Kemendikbudristek PHP2D national grant platform with 25-page technical R&D report, domain invoices, and UI captures.
+- **Flagship International Event Operations:** introduced `Flagship International Events` schema in `config.ts` and authored 5 event dossiers (`gcf-2024.md`, `gloship-2025.md`, `incotepd-2024.md`, `etss-2024.md`, `aasvet-2023.md`).
+- **Press Multi-Slug Linking:** updated `press` schema with `related_project_slugs: z.array(z.string())`; expanded from 5 seed articles to 13 verified institutional and national press features.
+- **Primary Proof & Media:** uploaded 15+ primary PDFs (6 UNY Rector appointment decrees 2021–2026, student employment regulation decree, PHP2D grant reports, SIMOBY user manuals) and 70+ photographic evidence captures.
+- **Component Architecture:** authored `ProjectIcon.astro` (centralized SVG/logo resolver) and `TechStack.astro` (technology badges); enhanced `ProjectCard.astro` with distinct icon badges, bold metric callouts, and clean tech stack pills.
+- **Responsive Tables:** implemented `rehypeTableWrap` AST plugin in `astro.config.mjs` and responsive table CSS in `global.css`.
+- **Routing:** added `/it` and `/social-media`; added 301 static redirects on `/work` and `/work/[slug]`. Expanded total static pages from 44 to 59.
+
 ### 2026-09-27 (Phase 26 — News layout + Credentials grouped cards)
 
 - **ArticleRow.astro:** added optional `logo` prop; restructured layout to publisher logo (or text) → title link → metadata line (`language · date`) → summary → pill/project row. Removed `py-2` wrapper padding; pill margin reduced to `mt-2`.
