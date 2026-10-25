@@ -81,9 +81,11 @@ const arShape = z
     intellectual_property: z
       .array(
         z.object({
+          title: z.string().optional(),
           type: z.string(),
           number: z.string(),
           issuing_body: z.string(),
+          url: z.string().url().optional(),
         }),
       )
       .default([]),

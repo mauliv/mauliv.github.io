@@ -46,12 +46,16 @@ empirical_evaluation:
   trial_site: "SMP Negeri 1 Muntilan"
   statistical_outcome: "Statistically significant improvement in plant anatomy retention"
 intellectual_property:
-  - type: "Hak Cipta (HKI) - Program Komputer"
+  - title: "Plant Escape: Science Card Application"
+    type: "Hak Cipta (HKI) - Program Komputer"
     number: "000377191"
-    issuing_body: "Kemenkumham RI"
-  - type: "Hak Cipta (HKI) - Alat Peraga"
+    issuing_body: "DJKI Kemenkumham RI"
+    url: "https://pdki-indonesia.dgip.go.id/"
+  - title: "Plant Escape: Science Card Games"
+    type: "Hak Cipta (HKI) - Alat Peraga"
     number: "000377182"
-    issuing_body: "Kemenkumham RI"
+    issuing_body: "DJKI Kemenkumham RI"
+    url: "https://pdki-indonesia.dgip.go.id/"
 publications:
   - journal: "Jurnal Informatika dan Rekayasa Perangkat Lunak (JATIKA)"
     volume: "Vol. 3 No. 4"
@@ -63,18 +67,18 @@ grants_and_honors:
 provenance_source: "Plant Escape Unity project; career-archive.md:33, 74-78, 220-224"
 privacy_level: "public"
 epistemic_status: "verified-fact"
-verification_notes: "Engineered and compiled with Unity 2021.3.0f1 LTS and Vuforia Engine. Evaluated in on-site school trials at SMP N 1 Muntilan."
+verification_notes: "Engineered and compiled with Unity 2021.3.0f1 LTS and Vuforia Engine. Evaluated in on-site school trials at SMP N 1 Muntilan. HKI registrations publicly searchable on PDKI DGIP portal."
 evidence:
   - type: "hki"
-    label: "HKI Copyright (App — No. 000377191)"
-    url: "/docs/edtech/hki-000377191-plant-escape-app.pdf"
-    is_internal: true
-    status: "needs-confirmation"
+    label: "PDKI DJKI (App — Reg. 000377191)"
+    url: "https://pdki-indonesia.dgip.go.id/"
+    is_internal: false
+    status: "available"
   - type: "hki"
-    label: "HKI Copyright (Science Cards — No. 000377182)"
-    url: "/docs/edtech/hki-000377182-plant-escape-cards.pdf"
-    is_internal: true
-    status: "needs-confirmation"
+    label: "PDKI DJKI (Games — Reg. 000377182)"
+    url: "https://pdki-indonesia.dgip.go.id/"
+    is_internal: false
+    status: "available"
   - type: "journal"
     label: "JATIKA Paper (ResearchGate)"
     url: "https://www.researchgate.net/publication/375803418_Science_Card_Games_Berbasis_Augmented_Reality_sebagai_Solusi_Mengatasi_Learning_Loss_Pasca_Pandemi_COVID-19"
@@ -154,7 +158,7 @@ To measure real pedagogical effectiveness, Plant Escape was field-tested in an e
 ## 5. Intellectual Property & Academic Recognition
 
 1. **Official Intellectual Property (HKI Copyrights):**
-   * *Computer Software:* Hak Cipta No. **000377191** (*Aplikasi Plant Escape Berbasis Augmented Reality*) granted by Kemenkumham RI.
-   * *Physical Teaching Device:* Hak Cipta No. **000377182** (*Kartu Pembelajaran Plant Escape*) granted by Kemenkumham RI.
+   * *Computer Software:* Hak Cipta No. **000377191** (*Plant Escape: Science Card Application*) granted by DJKI Kemenkumham RI. Searchable on the official [PDKI Indonesia Registry](https://pdki-indonesia.dgip.go.id/) using registration number `000377191`.
+   * *Physical Teaching Device:* Hak Cipta No. **000377182** (*Plant Escape: Science Card Games*) granted by DJKI Kemenkumham RI. Searchable on the official [PDKI Indonesia Registry](https://pdki-indonesia.dgip.go.id/) using registration number `000377182`.
 2. **Peer-Reviewed Journal Publication:** Published in *[Jurnal Informatika dan Rekayasa Perangkat Lunak (JATIKA)](https://www.researchgate.net/publication/375803418_Science_Card_Games_Berbasis_Augmented_Reality_sebagai_Solusi_Mengatasi_Learning_Loss_Pasca_Pandemi_COVID-19)*, Vol. 3 No. 4 (December 2022): *"Science Card Games Berbasis Augmented Reality sebagai Solusi Mengatasi Learning Loss Pasca Pandemi COVID-19"* ([View Paper on ResearchGate](https://www.researchgate.net/publication/375803418_Science_Card_Games_Berbasis_Augmented_Reality_sebagai_Solusi_Mengatasi_Learning_Loss_Pasca_Pandemi_COVID-19)).
 3. **National Research Grant & Finalist:** Awarded competitive **PKM-RSH research funding (~IDR 6,000,000)** by Belmawa Kemendikbudristek and selected as a **PIMNAS 35 National Finalist (2022)**.

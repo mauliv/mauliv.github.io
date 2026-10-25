@@ -212,9 +212,23 @@ const crumbs = [
         {d.intellectual_property.length > 0 && (
           <div class="rounded-lg border border-neutral-200 bg-neutral-50/70 p-4 dark:border-neutral-800 dark:bg-[#2e2e33]">
             <p class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">Intellectual Property</p>
-            <ul class="mt-2 space-y-1 font-mono text-xs text-neutral-600 dark:text-neutral-300">
+            <ul class="mt-2 space-y-1.5 font-mono text-xs text-neutral-600 dark:text-neutral-300">
               {d.intellectual_property.map((ip) => (
-                <li><span class="text-neutral-500">▸</span> {ip.type} No. {ip.number} — {ip.issuing_body}</li>
+                <li class="flex flex-wrap items-center gap-1.5">
+                  <span class="text-neutral-500">▸</span>
+                  {ip.title ? <span class="font-sans font-medium text-neutral-900 dark:text-neutral-100">{ip.title} —</span> : null}
+                  <span>{ip.type} No. {ip.number} — {ip.issuing_body}</span>
+                  {ip.url && (
+                    <a
+                      href={ip.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-teal-600 underline underline-offset-2 hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-300"
+                    >
+                      [Search PDKI ↗]
+                    </a>
+                  )}
+                </li>
               ))}
             </ul>
           </div>
