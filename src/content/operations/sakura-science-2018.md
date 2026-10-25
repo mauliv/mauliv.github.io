@@ -47,7 +47,7 @@ selection_context: "National competitive selection of Indonesian vocational (SMK
 provenance_source: "Laporan Kegiatan SSHP 2018; JST Certificate of Achievement No. 18200073; cv.md:87; career-archive.md:11"
 privacy_level: "public"
 epistemic_status: "verified-fact"
-verification_notes: "Backed by official 30-page Laporan Kegiatan SSHP 2018 submitted to Kemendikbud and school authorities, and authentic JST Certificate of Achievement (No. 18200073) signed by JST President Hamaguchi Michinari."
+verification_notes: "Backed by authentic JST Certificate of Achievement (No. 18200073) signed by the JST President and official delegation records."
 evidence:
   - type: "internal-pdf"
     label: "JST Certificate of Achievement (No. 18200073)"
@@ -56,9 +56,9 @@ evidence:
     status: "available"
   - type: "internal-pdf"
     label: "Indonesian Delegation Activity Report (Laporan Kegiatan SSHP 2018)"
-    url: "/docs/mobility/laporan-sshp-2018-alif.pdf"
+    url: "#"
     is_internal: true
-    status: "available"
+    status: "restricted"
   - type: "external-press"
     label: "SMK Negeri 3 Yogyakarta Official Post: Lolos Pertukaran Pelajar ke Jepang"
     url: "https://web.facebook.com/smkn3jogja/posts/pfbid02pxM1zP868JUDUp9FFMawBMxhSsB8X85cXNuXzXqXuF63W3Qujp56ePLUFgN3eJgUl"
@@ -123,17 +123,9 @@ Out of secondary institutions across Indonesia, **24 students** were chosen:
 * **10 Vocational High School (SMK) Delegates:** Representing specialized engineering, telecommunications, and industrial design tracks (including SMKN 3 Yogyakarta, SMKN 3 Jombang, SMK Bina Informatika, SMKS Telkom Sandhy Putra, SMKN 55 Jakarta, SMKN 7 Bandung, SMKN 2 Singosari, SMKN 17 Samarinda, SMK Maitreyawira, and SMKN 2 Banjarmasin).
 * **14 Academic High School (SMA) Delegates:** Representing natural science and mathematics tracks from leading public and private schools across Java, Sumatra, and Banten.
 
-I was selected representing **SMK Negeri 3 Yogyakarta (Skagata)** from the **Computer and Network Engineering (Teknik Komputer dan Jaringan / TKJ)** department, under official endorsement from Principal **Drs. Bujang Sabri** and homeroom advisor **Febriyana, S.ST**.
+I was selected representing **SMK Negeri 3 Yogyakarta (Skagata)** from the **Computer and Network Engineering (Teknik Komputer dan Jaringan / TKJ)** department, under official endorsement from the school leadership and faculty advisors.
 
-<figure class="my-6 space-y-2">
-  <img src="/images/sakura-science/fb-smkn3-announcement.jpg" alt="Official Announcement by SMK Negeri 3 Yogyakarta: Alifah Mauliddin Nur Ikhsan Lolos Pertukaran Pelajar ke Jepang" class="rounded-lg border border-neutral-200 dark:border-neutral-700 w-full max-h-[420px] object-contain bg-neutral-50 dark:bg-neutral-900 p-2" />
-  <figcaption class="text-xs text-center text-neutral-500 font-mono">Official Institutional Announcement (<a href="https://web.facebook.com/smkn3jogja/posts/pfbid02pxM1zP868JUDUp9FFMawBMxhSsB8X85cXNuXzXqXuF63W3Qujp56ePLUFgN3eJgUl" target="_blank" rel="noopener noreferrer" class="underline">SMK Negeri 3 Yogyakarta Official Page</a>): <em>"✅ Alifah Mauliddin Nur Ikhsan dari kelas XI TKJ lolos pertukaran pelajar ke Jepang"</em></figcaption>
-</figure>
-
-The delegation was supervised on-site by a combined team of Indonesian ministry officials and Japanese coordinators:
-* **Kemendikbud Supervisors:** Ibu I Gusti Ayu Astiti Garbini, Ibu Cicilia Devita Andini, and Ibu Tiara Gusman.
-* **Vocational Education Supervisor:** Bapak Triyudi Yudawan (SMKN 4 Malang).
-* **JST Committee Officers:** Sudo-sensei, Hiroko Udagawa, and Nobuyuki Fukasawa.
+The delegation was supervised on-site by ministry officials from Kemendikbud RI (Directorate of Vocational High School Development and Directorate of Senior High School Development) in coordination with JST program officers.
 
 ---
 
@@ -349,7 +341,7 @@ On the evening of April 13, 2018, the official **Closing Ceremony & Farewell Rec
 
 1. **Diplomatic Welcome:** Attended by the Education & Cultural Attaché from the **Embassy of the Republic of Indonesia (KBRI Tokyo)**, Japanese governmental dignitaries, and executive representatives of JST.
 2. **Indonesian Cultural Performance:** During the cultural exchange showcase, our delegation performed a synchronized traditional Sundanese dance to the folk song ***Manuk Dadali***, concluding with a national choral rendition of ***Indonesia Pusaka***, which received widespread praise from Japanese hosts and international guests.
-3. **Formal Certificate Conferral:** Each delegate was formally presented with the official **Certificate of Achievement** (**Certificate No. 18200073**), signed by JST President **Hamaguchi Michinari, M.D., Ph.D.**, confirming successful completion of the Sakura Exchange Program in Science and lifelong induction into the **Sakura Science Club**.
+3. **Formal Certificate Conferral:** Each delegate was formally presented with the official **Certificate of Achievement** (**Certificate No. 18200073**), signed by the **JST President**, confirming successful completion of the Sakura Exchange Program in Science and lifelong induction into the **Sakura Science Club**.
 
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
   <figure class="space-y-2">
@@ -364,7 +356,7 @@ On the evening of April 13, 2018, the official **Closing Ceremony & Farewell Rec
 
 <figure class="my-6 space-y-2">
   <img src="/images/sakura-science/jst-closing-ceremony-delegates.jpg" alt="Official JST Activity Report Media Coverage: Indonesian Delegates Awaiting Commencement of Closing Ceremony at JST Headquarters" class="rounded-lg border border-neutral-200 dark:border-neutral-700 w-full max-h-[420px] object-contain bg-neutral-50 dark:bg-neutral-900 p-2" />
-  <figcaption class="text-xs text-center text-neutral-500 font-mono">Official JST Media Coverage (<a href="https://ssp.jst.go.jp/report/2018/t_vol003.html" target="_blank" rel="noopener noreferrer" class="underline">Report t_vol003</a>): Indonesian student delegates in the assembly hall of JST Headquarters B1 Grand Conference Hall awaiting commencement of the formal closing ceremony (Alifah Mauliddin pictured in delegation seating)</figcaption>
+  <figcaption class="text-xs text-center text-neutral-500 font-mono">Official JST Media Coverage (<a href="https://ssp.jst.go.jp/report/2018/t_vol003.html" target="_blank" rel="noopener noreferrer" class="underline">Report t_vol003</a>): Indonesian student delegates in the assembly hall of JST Headquarters B1 Grand Conference Hall awaiting commencement of the formal closing ceremony</figcaption>
 </figure>
 
 <figure class="my-6 space-y-2">
@@ -385,7 +377,7 @@ On the evening of April 13, 2018, the official **Closing Ceremony & Farewell Rec
 | **Day 4**<br><span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">11 Apr 2018</span> | **Chiba University**<br><span class="text-xs text-neutral-500 dark:text-neutral-400">Nishi-Chiba Campus</span> | • Full-day tertiary immersion across university engineering faculties<br>• Dedicated laboratory session at **Prof. Ken-ya Hashimoto's Electro-Communications Laboratory** (SAW/BAW radio-frequency devices)<br>• Tour of *Academic Link* active learning matrix and *English House* |
 | **Day 5**<br><span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">12 Apr 2018</span> | **Koto → Odaiba → Asakusa**<br><span class="text-xs text-neutral-500 dark:text-neutral-400">Disaster Prevention & Tech</span> | • Hands-on 72-hour seismic survival simulation at **Tokyo Rinkai Disaster Prevention Park ("Sona Area Tokyo")**<br>• Robotics and planetarium exhibition at **Miraikan** (ASIMO humanoid robot demo & Geo-Cosmos globe)<br>• Historical cultural walk through **Asakusa Sensō-ji** and Nakamise |
 | **Day 6**<br><span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">13 Apr 2018</span> | **Hachioji → Chiyoda**<br><span class="text-xs text-neutral-500 dark:text-neutral-400">TMU & JST Headquarters</span> | • Academic visit to **Tokyo Metropolitan University (TMU)**: developmental biology seminar & inspection of **Prof. Masatake Haruta's Gold Catalyst Research Center**<br>• Friday congregational prayer in central Tokyo<br>• Formal **Closing Ceremony & Farewell Reception at JST Headquarters** with KBRI Tokyo, cultural dance performance, and certificate conferral |
-| **Day 7**<br><span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">14 Apr 2018</span> | **Shibuya → Harajuku → Akihabara**<br><span class="text-xs text-neutral-500 dark:text-neutral-400">Urban Transit & Technology</span> | • Field investigation of metropolitan transit systems and urban electronics ecosystems (Shibuya Scramble crossing, Hachiko, Harajuku, Akihabara Electric Town)<br>• Farewell send-off at Haneda International Airport by JST supervisor Sudo-sensei<br>• Inbound return flight via **ANA NH 835** (23:30 JST) |
+| **Day 7**<br><span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">14 Apr 2018</span> | **Shibuya → Harajuku → Akihabara**<br><span class="text-xs text-neutral-500 dark:text-neutral-400">Urban Transit & Technology</span> | • Field investigation of metropolitan transit systems and urban electronics ecosystems (Shibuya Scramble crossing, Hachiko, Harajuku, Akihabara Electric Town)<br>• Farewell send-off at Haneda International Airport by JST program supervisors<br>• Inbound return flight via **ANA NH 835** (23:30 JST) |
 | **Day 8**<br><span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">15 Apr 2018</span> | **Jakarta**<br><span class="text-xs text-neutral-500 dark:text-neutral-400">Soekarno-Hatta Terminal 3</span> | • Arrival at Soekarno-Hatta Airport (05:05 WIB)<br>• Formal debriefing and national homecoming reception with Kemendikbud ministry officials |
 
 ---
