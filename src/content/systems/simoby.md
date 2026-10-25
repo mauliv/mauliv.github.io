@@ -120,7 +120,7 @@ In Indonesian state administration, every civil servant (PNS/ASN), lecturer, and
 <div class="my-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
   <div class="flex flex-col justify-center rounded-lg border border-neutral-200 bg-white p-4 dark:border-neutral-700 dark:bg-[#222226]">
     <h4 class="font-mono text-xs uppercase tracking-wide text-neutral-500 dark:text-neutral-400">Dual Inbound &amp; Outbound Control Hub</h4>
-    <p class="mt-2 font-serif text-sm leading-relaxed text-neutral-600 dark:text-neutral-300">
+    <p class="mt-2 text-sm sm:text-[15px] leading-relaxed text-neutral-600 dark:text-neutral-300">
       SIMOBY provides unified border and compliance oversight: monitoring incoming international scholars and pre-clearing outgoing university delegates before upstream submission to Kemensetneg.
     </p>
   </div>

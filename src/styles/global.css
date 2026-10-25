@@ -22,7 +22,7 @@
 }
 
 @theme {
-  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif, "Noto Sans Javanese";
+  --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", ui-sans-serif, system-ui, sans-serif, "Noto Sans Javanese";
   --font-serif: ui-serif, Georgia, "Times New Roman", serif, "Noto Sans Javanese";
   --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, monospace, "Noto Sans Javanese";
 }
@@ -56,56 +56,96 @@
   }
 }
 
-/* Hand-rolled markdown prose (decision: no typography plugin) */
+/* Hand-rolled markdown prose (PaperMod clean reading typography) */
 .markdown {
-  font-family: var(--font-serif);
-  color: #262626;
-  font-size: 0.9375rem;
-  line-height: 1.7;
-  max-width: 65ch;
+  font-family: var(--font-sans);
+  color: #212121;
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  max-width: 68ch;
+}
+@media (max-width: 640px) {
+  .markdown {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+}
+.markdown h1 {
+  font-family: var(--font-sans);
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #111827;
+  margin: 2.75rem 0 1rem;
+  letter-spacing: -0.02em;
 }
 .markdown h2 {
   font-family: var(--font-sans);
-  font-size: 1.05rem;
+  font-size: 1.45rem;
   font-weight: 600;
-  color: #171717;
-  margin: 2rem 0 0.75rem;
+  line-height: 1.35;
+  color: #111827;
+  margin: 2.5rem 0 0.85rem;
+  letter-spacing: -0.015em;
 }
 .markdown h3 {
   font-family: var(--font-sans);
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  color: #171717;
-  margin: 1.5rem 0 0.5rem;
+  line-height: 1.4;
+  color: #1f2937;
+  margin: 2rem 0 0.65rem;
+  letter-spacing: -0.01em;
 }
-.markdown p { margin-bottom: 0.9rem; }
+.markdown h4 {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #374151;
+  margin: 1.75rem 0 0.5rem;
+}
+.markdown p {
+  margin-bottom: 1.25rem;
+}
 .markdown ul,
-.markdown ol { margin: 0 0 0.9rem 1.1rem; }
+.markdown ol {
+  margin: 0 0 1.25rem 1.4rem;
+}
 .markdown ul { list-style: disc; }
 .markdown ol { list-style: decimal; }
-.markdown li { margin-bottom: 0.3rem; }
+.markdown li {
+  margin-bottom: 0.45rem;
+  line-height: 1.75;
+}
 .markdown a {
   color: inherit;
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-underline-offset: 3px;
+  font-weight: 500;
 }
-.markdown strong { font-weight: 600; }
-.markdown hr { border: 0; border-top: 1px solid #e5e5e5; margin: 1.5rem 0; }
+.markdown strong {
+  font-weight: 600;
+  color: #111827;
+}
+.markdown hr { border: 0; border-top: 1px solid #e5e5e5; margin: 2rem 0; }
 .markdown :not(pre) > code {
   font-family: var(--font-mono);
-  font-size: 0.85em;
-  background: #f5f5f5;
-  padding: 0.1em 0.3em;
-  border-radius: 3px;
+  font-size: 0.875em;
+  background: #f1f5f9;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  color: #0f172a;
 }
 .markdown pre {
-  margin: 1rem 0 1.25rem;
-  padding: 1rem;
-  border-radius: 6px;
+  margin: 1.25rem 0 1.5rem;
+  padding: 1.15rem;
+  border-radius: 8px;
   overflow-x: auto;
-  border: 1px solid #e5e5e5;
-  font-size: 0.85rem;
-  line-height: 1.5;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
 .markdown pre code {
   font-family: var(--font-mono);
@@ -116,10 +156,12 @@
   color: inherit;
 }
 .markdown blockquote {
-  border-left: 2px solid #e5e5e5;
-  padding-left: 1rem;
-  color: #737373;
-  margin-bottom: 0.9rem;
+  border-left: 3px solid #cbd5e1;
+  padding-left: 1.25rem;
+  font-style: italic;
+  color: #4b5563;
+  margin: 1.5rem 0;
+  line-height: 1.75;
 }
 
 /* Responsive Markdown Tables */
@@ -235,17 +277,20 @@
 }
 
 /* Markdown dark overrides (plain CSS paired with the custom variant above) */
-:where(.dark, .dark *) .markdown { color: #d4d4d4; }
-:where(.dark, .dark *) .markdown h2,
-:where(.dark, .dark *) .markdown h3 { color: #f5f5f5; }
-:where(.dark, .dark *) .markdown a { color: #e5e5e5; }
-:where(.dark, .dark *) .markdown hr { border-top-color: #262626; }
-:where(.dark, .dark *) .markdown :not(pre) > code { background: #262626; color: #d4d4d4; }
-:where(.dark, .dark *) .markdown pre { border-color: #333333; }
+:where(.dark, .dark *) .markdown { color: #d1d5db; }
+:where(.dark, .dark *) .markdown h1,
+:where(.dark, .dark *) .markdown h2 { color: #f3f4f6; }
+:where(.dark, .dark *) .markdown h3,
+:where(.dark, .dark *) .markdown h4 { color: #e5e7eb; }
+:where(.dark, .dark *) .markdown a { color: #f9fafb; }
+:where(.dark, .dark *) .markdown strong { color: #fafafa; }
+:where(.dark, .dark *) .markdown hr { border-top-color: #3f3f46; }
+:where(.dark, .dark *) .markdown :not(pre) > code { background: #28282d; color: #f4f4f5; }
+:where(.dark, .dark *) .markdown pre { border-color: #38383e; background: #18181b; }
 :where(.dark, .dark *) .markdown pre code { background: transparent !important; }
 :where(.dark, .dark *) .markdown blockquote {
-  border-left-color: #404040;
-  color: #a3a3a3;
+  border-left-color: #52525b;
+  color: #9ca3af;
 }
 :where(.dark, .dark *) .table-wrapper {
   border-color: #333338;

@@ -55,7 +55,7 @@ const crumbs = [
 <Layout title={d.title} description={d.summary}>
   <Breadcrumb crumbs={crumbs} clampCurrent />
 
-  <p class="mt-4 font-mono text-[10px] uppercase tracking-wide text-neutral-500 dark:text-neutral-400">{collectionId}</p>
+  <p class="mt-4 font-mono text-xs uppercase tracking-wider text-neutral-500 dark:text-neutral-400">{collectionId}</p>
   <div class="mt-1.5 flex flex-wrap items-center gap-3">
     {
       ('project_logo' in d && d.project_logo && 'institution_logo' in d && d.institution_logo) ? (
@@ -105,17 +105,17 @@ const crumbs = [
         />
       )
     }
-    <h1 class="text-2xl font-semibold tracking-tight break-words dark:text-neutral-100">{d.title}</h1>
+    <h1 class="text-2xl sm:text-3xl font-bold tracking-tight break-words text-neutral-900 dark:text-neutral-100">{d.title}</h1>
   </div>
-  <p class="mt-2 font-mono text-xs break-words text-neutral-500 dark:text-neutral-400">{d.role} · {d.period.start} – {d.period.end}</p>
+  <p class="mt-2 text-sm break-words text-neutral-500 dark:text-neutral-400">{d.role} · {d.period.start} – {d.period.end}</p>
   {
     'organization' in d && 'leadership_scope' in d && (
-      <p class="mt-1 font-mono text-xs break-words text-neutral-500 dark:text-neutral-400">{d.organization}</p>
+      <p class="mt-1 text-sm break-words text-neutral-500 dark:text-neutral-400">{d.organization}</p>
     )
   }
   {
     'credential_type' in d && (
-      <p class="mt-1 font-mono text-[10px] uppercase tracking-wide text-neutral-400 dark:text-neutral-500">
+      <p class="mt-1 font-mono text-xs uppercase tracking-wide text-neutral-400 dark:text-neutral-500">
         {d.credential_type}
         {'issuing_body' in d && d.issuing_body ? ` · ${d.issuing_body}` : ''}
         {'institution' in d && d.institution ? ` · ${d.institution}` : ''}
@@ -124,7 +124,7 @@ const crumbs = [
   }
   {
     'mandate_type' in d && (
-      <p class="mt-1 font-mono text-[10px] uppercase tracking-wide text-neutral-400 dark:text-neutral-500">
+      <p class="mt-1 font-mono text-xs uppercase tracking-wide text-neutral-400 dark:text-neutral-500">
         {d.mandate_type} · {d.decree_records.status}
       </p>
     )
@@ -151,7 +151,7 @@ const crumbs = [
           <div class="flex gap-2"><dt class="w-32 shrink-0 text-neutral-500 dark:text-neutral-400">venue</dt><dd class="break-words">{d.venue}, {d.location}</dd></div>
         )}
         {'theme' in d && d.theme && (
-          <div class="flex gap-2"><dt class="w-32 shrink-0 text-neutral-500 dark:text-neutral-400">theme</dt><dd class="break-words italic font-serif text-neutral-800 dark:text-neutral-200">"{d.theme}"</dd></div>
+          <div class="flex gap-2"><dt class="w-32 shrink-0 text-neutral-500 dark:text-neutral-400">theme</dt><dd class="break-words italic text-neutral-800 dark:text-neutral-200">"{d.theme}"</dd></div>
         )}
       </dl>
     )
@@ -159,14 +159,14 @@ const crumbs = [
   {
     'tiered_committee' in d && d.tiered_committee && (
       <div class="mt-4 rounded-lg border border-neutral-200 bg-neutral-50/70 p-4 dark:border-neutral-700/80 dark:bg-neutral-800/40">
-        <p class="font-mono text-[10px] font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Institutional Governance &amp; Committee Structure</p>
+        <p class="font-mono text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Institutional Governance &amp; Committee Structure</p>
         <div class="mt-2.5 grid gap-2.5 sm:grid-cols-2 text-xs">
           <div class="rounded-md border border-neutral-200/80 bg-white p-3 dark:border-neutral-700 dark:bg-neutral-900/60">
-            <span class="font-mono text-[10px] uppercase text-neutral-500 dark:text-neutral-400">Steering Layer</span>
+            <span class="font-mono text-xs uppercase text-neutral-500 dark:text-neutral-400">Steering Layer</span>
             <p class="mt-1 font-medium leading-snug text-neutral-900 dark:text-neutral-100">{d.tiered_committee.steering}</p>
           </div>
           <div class="rounded-md border border-blue-200 bg-blue-50/40 p-3 dark:border-blue-900/60 dark:bg-blue-950/20">
-            <span class="font-mono text-[10px] uppercase font-semibold text-blue-600 dark:text-blue-400">Operational Layer (Student Leadership)</span>
+            <span class="font-mono text-xs uppercase font-semibold text-blue-600 dark:text-blue-400">Operational Layer (Student Leadership)</span>
             <p class="mt-1 font-medium leading-snug text-neutral-900 dark:text-neutral-100">{d.tiered_committee.operational}</p>
           </div>
         </div>
@@ -174,7 +174,7 @@ const crumbs = [
     )
   }
 
-  {d.summary && <p class="mt-4 font-serif text-[0.95rem] leading-relaxed text-neutral-700 dark:text-neutral-300">{d.summary}</p>}
+  {d.summary && <p class="mt-5 text-[16px] sm:text-[17px] leading-relaxed text-neutral-700 dark:text-neutral-300">{d.summary}</p>}
   {
     'excerpt' in d && d.excerpt && (
       <pre class="mt-4 whitespace-pre-wrap break-words rounded-lg border border-[#eeeeee] bg-[#f5f5f5] p-4 font-mono text-xs leading-relaxed text-neutral-600 dark:border-[#333333] dark:bg-[#2e2e33] dark:text-neutral-400">{d.excerpt}</pre>
@@ -222,7 +222,7 @@ const crumbs = [
         {d.publications.length > 0 && (
           <div class="rounded-lg border border-[#eeeeee] bg-[#f5f5f5] p-4 dark:border-[#333333] dark:bg-[#2e2e33]">
             <p class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">Publications</p>
-            <ul class="mt-2 space-y-1 font-serif text-sm text-neutral-700 dark:text-neutral-300">
+            <ul class="mt-2 space-y-1 text-sm md:text-[15px] text-neutral-700 dark:text-neutral-300">
               {d.publications.map((p) => (
                 <li>{p.journal}, {p.volume} ({p.date}) — {p.focus}</li>
               ))}
@@ -291,7 +291,7 @@ const crumbs = [
         {'delegation_partnerships' in d && d.delegation_partnerships && (
           <div class="rounded-lg border border-[#eeeeee] bg-[#ffffff] p-5 dark:border-[#333333] dark:bg-[#2e2e33]">
             <p class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">Delegation Hosting &amp; Bilateral Partnerships</p>
-            <p class="mt-1 font-serif text-xs text-neutral-500 dark:text-neutral-400">Core recurring programs and bilateral academic visits hosted under office mandate.</p>
+            <p class="mt-1 text-xs text-neutral-500 dark:text-neutral-400">Core recurring programs and bilateral academic visits hosted under office mandate.</p>
 
             <div class="mt-4">
               <p class="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Core Recurring Partnerships</p>

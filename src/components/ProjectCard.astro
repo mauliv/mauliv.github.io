@@ -52,7 +52,7 @@ const cardImage = (project_logo === '/logos/io-uny.png' || slug === 'io-uny-home
 
     <div class="min-w-0 flex-1">
       <div class="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-        <Heading class="text-base font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
+        <Heading class="text-base sm:text-lg font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
           {
             href ? (
               <a
@@ -75,7 +75,7 @@ const cardImage = (project_logo === '/logos/io-uny.png' || slug === 'io-uny-home
       <div class="mt-1 flex flex-wrap items-center gap-2">
         <span class="font-mono text-xs text-neutral-600 dark:text-neutral-300">{role}</span>
         <span class="inline-block h-1 w-1 rounded-full bg-neutral-300 dark:bg-neutral-600" aria-hidden="true"></span>
-        <span class="font-mono text-[10px] uppercase tracking-wider rounded px-1.5 py-0.5 bg-neutral-100 text-neutral-600 border border-neutral-200/80 dark:bg-neutral-800 dark:text-neutral-400 dark:border-neutral-700/60">
+        <span class="font-mono text-xs uppercase tracking-wider rounded px-1.5 py-0.5 bg-neutral-100 text-neutral-600 border border-neutral-200/80 dark:bg-neutral-800 dark:text-neutral-400 dark:border-neutral-700/60">
           {track}
         </span>
       </div>
@@ -83,7 +83,7 @@ const cardImage = (project_logo === '/logos/io-uny.png' || slug === 'io-uny-home
       <!-- Concise Project Summary -->
       {
         summary && (
-          <p class="mt-2.5 font-serif text-sm leading-relaxed text-neutral-600 dark:text-neutral-300">
+          <p class="mt-2.5 text-[15px] sm:text-base leading-relaxed text-neutral-600 dark:text-neutral-300">
             {summary}
           </p>
         )

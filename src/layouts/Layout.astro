@@ -61,7 +61,7 @@ const linkClass =
     <header class="mx-auto w-full max-w-3xl px-6 pt-10 md:pt-16">
       <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
         <!-- Primary links + labeled Index disclosure (zero-JS), single-row responsive at every width -->
-        <nav class="flex min-w-0 items-center gap-y-0.5 font-mono text-xs" aria-label="Primary">
+        <nav class="flex min-w-0 items-center gap-y-0.5 text-sm font-medium" aria-label="Primary">
           <a href={homeItem.href} class={linkClass} aria-current={Astro.url.pathname === '/' ? 'page' : undefined}>
             <svg aria-hidden="true" class="h-3.5 w-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" set:html={icons[homeItem.icon]} />
             <span>{homeItem.label}</span>
@@ -113,7 +113,7 @@ const linkClass =
     <main class="mx-auto w-full max-w-3xl px-6 py-10">
       <slot />
     </main>
-    <footer class="mx-auto mt-20 w-full max-w-3xl border-t border-neutral-200 py-8 text-center font-mono text-xs text-neutral-500 dark:border-neutral-700 dark:text-neutral-400">
+    <footer class="mx-auto mt-20 w-full max-w-3xl border-t border-neutral-200 py-8 text-center text-sm text-neutral-500 dark:border-neutral-700 dark:text-neutral-400">
       <p>
         &copy; {new Date().getFullYear()} Alifah Mauliddin Nur Ikhsan. All rights reserved.
       </p>
