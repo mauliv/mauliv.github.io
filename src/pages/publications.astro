@@ -25,7 +25,7 @@ const rows = (await gatherEvidence()).filter((r) => r.pill.type === 'journal');
         const pubs = 'publications' in r.entry.data ? r.entry.data.publications : [];
         const pub = pubs[0];
         return (
-          <div class="rounded-lg border border-[#eeeeee] bg-[#ffffff] p-5 transition-all duration-200 dark:border-[#333333] dark:bg-[#2e2e33]">
+          <div class="rounded-lg border border-neutral-200 bg-white p-5 transition-all duration-200 dark:border-neutral-800 dark:bg-[#2e2e33]">
             <ArticleRow
               title={pub?.focus ?? r.pill.label}
               publisher={pub ? `${pub.journal} · ${pub.volume}` : r.entry.data.title}

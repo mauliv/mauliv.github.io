@@ -131,7 +131,7 @@ const crumbs = [
   }
   {
     'host_institution' in d && 'program_type' in d && (
-      <dl class="mt-4 rounded-lg border border-[#eeeeee] bg-[#f5f5f5] p-4 font-mono text-xs text-neutral-600 space-y-1.5 dark:border-[#333333] dark:bg-[#2e2e33] dark:text-neutral-300">
+      <dl class="mt-4 rounded-lg border border-neutral-200 bg-neutral-50/70 p-4 font-mono text-xs text-neutral-600 space-y-1.5 dark:border-neutral-800 dark:bg-[#2e2e33] dark:text-neutral-300">
         <div class="flex gap-2"><dt class="w-32 shrink-0 text-neutral-500 dark:text-neutral-500">host</dt><dd class="break-words">{d.host_institution}</dd></div>
         <div class="flex gap-2"><dt class="w-32 shrink-0 text-neutral-500 dark:text-neutral-500">location</dt><dd class="break-words">{d.location}</dd></div>
         <div class="flex gap-2"><dt class="w-32 shrink-0 text-neutral-500 dark:text-neutral-500">program type</dt><dd class="break-words">{d.program_type}</dd></div>
@@ -143,7 +143,7 @@ const crumbs = [
   }
   {
     'event_type' in d && (
-      <dl class="mt-4 rounded-lg border border-[#eeeeee] bg-[#f5f5f5] p-4 font-mono text-xs text-neutral-600 space-y-1.5 dark:border-[#333333] dark:bg-[#2e2e33] dark:text-neutral-300">
+      <dl class="mt-4 rounded-lg border border-neutral-200 bg-neutral-50/70 p-4 font-mono text-xs text-neutral-600 space-y-1.5 dark:border-neutral-800 dark:bg-[#2e2e33] dark:text-neutral-300">
         <div class="flex gap-2"><dt class="w-32 shrink-0 text-neutral-500 dark:text-neutral-400">event type</dt><dd class="break-words capitalize">{d.event_type.replace('-', ' ')}</dd></div>
         <div class="flex gap-2"><dt class="w-32 shrink-0 text-neutral-500 dark:text-neutral-400">role</dt><dd class="break-words font-semibold text-neutral-900 dark:text-neutral-100">{d.committee_role}</dd></div>
         <div class="flex gap-2"><dt class="w-32 shrink-0 text-neutral-500 dark:text-neutral-400">host</dt><dd class="break-words">{d.host_institution}</dd></div>
@@ -174,10 +174,10 @@ const crumbs = [
     )
   }
 
-  {d.summary && <p class="mt-5 text-[16px] sm:text-[17px] leading-relaxed text-neutral-700 dark:text-neutral-300">{d.summary}</p>}
+  {d.summary && <p class="mt-5 text-base sm:text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">{d.summary}</p>}
   {
     'excerpt' in d && d.excerpt && (
-      <pre class="mt-4 whitespace-pre-wrap break-words rounded-lg border border-[#eeeeee] bg-[#f5f5f5] p-4 font-mono text-xs leading-relaxed text-neutral-600 dark:border-[#333333] dark:bg-[#2e2e33] dark:text-neutral-400">{d.excerpt}</pre>
+      <pre class="mt-4 whitespace-pre-wrap break-words rounded-lg border border-neutral-200 bg-neutral-50/70 p-4 font-mono text-xs leading-relaxed text-neutral-600 dark:border-neutral-800 dark:bg-[#2e2e33] dark:text-neutral-400">{d.excerpt}</pre>
     )
   }
 
@@ -196,7 +196,7 @@ const crumbs = [
   <!-- Entry-specific detail, selected by field presence (collection-agnostic). -->
   {
     'database' in d && 'security_profile' in d && (
-      <dl class="mt-5 rounded-lg border border-[#eeeeee] bg-[#f5f5f5] p-4 font-mono text-xs text-neutral-600 space-y-1.5 dark:border-[#333333] dark:bg-[#2e2e33] dark:text-neutral-300">
+      <dl class="mt-5 rounded-lg border border-neutral-200 bg-neutral-50/70 p-4 font-mono text-xs text-neutral-600 space-y-1.5 dark:border-neutral-800 dark:bg-[#2e2e33] dark:text-neutral-300">
         <div class="flex gap-2"><dt class="w-28 shrink-0 text-neutral-500">architecture</dt><dd class="break-words">{d.architecture_type}</dd></div>
         <div class="flex gap-2"><dt class="w-28 shrink-0 text-neutral-500">db.dev</dt><dd class="break-words">{d.database.local_development}</dd></div>
         <div class="flex gap-2"><dt class="w-28 shrink-0 text-neutral-500">db.production</dt><dd class="break-words">{d.database.production_cluster}</dd></div>
@@ -210,7 +210,7 @@ const crumbs = [
     'intellectual_property' in d && (
       <div class="mt-5 space-y-3">
         {d.intellectual_property.length > 0 && (
-          <div class="rounded-lg border border-[#eeeeee] bg-[#f5f5f5] p-4 dark:border-[#333333] dark:bg-[#2e2e33]">
+          <div class="rounded-lg border border-neutral-200 bg-neutral-50/70 p-4 dark:border-neutral-800 dark:bg-[#2e2e33]">
             <p class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">Intellectual Property</p>
             <ul class="mt-2 space-y-1 font-mono text-xs text-neutral-600 dark:text-neutral-300">
               {d.intellectual_property.map((ip) => (
@@ -220,9 +220,9 @@ const crumbs = [
           </div>
         )}
         {d.publications.length > 0 && (
-          <div class="rounded-lg border border-[#eeeeee] bg-[#f5f5f5] p-4 dark:border-[#333333] dark:bg-[#2e2e33]">
+          <div class="rounded-lg border border-neutral-200 bg-neutral-50/70 p-4 dark:border-neutral-800 dark:bg-[#2e2e33]">
             <p class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">Publications</p>
-            <ul class="mt-2 space-y-1 text-sm md:text-[15px] text-neutral-700 dark:text-neutral-300">
+            <ul class="mt-2 space-y-1 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
               {d.publications.map((p) => (
                 <li>{p.journal}, {p.volume} ({p.date}) — {p.focus}</li>
               ))}
@@ -230,7 +230,7 @@ const crumbs = [
           </div>
         )}
         {d.grants_and_honors.length > 0 && (
-          <div class="rounded-lg border border-[#eeeeee] bg-[#f5f5f5] p-4 dark:border-[#333333] dark:bg-[#2e2e33]">
+          <div class="rounded-lg border border-neutral-200 bg-neutral-50/70 p-4 dark:border-neutral-800 dark:bg-[#2e2e33]">
             <p class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">Grants &amp; Honors</p>
             <ul class="mt-2 space-y-1 font-mono text-xs text-neutral-600 dark:text-neutral-300">
               {d.grants_and_honors.map((g) => (
@@ -246,7 +246,7 @@ const crumbs = [
     'functional_domains' in d && (
       <div class="mt-5 space-y-4">
         <div class="grid gap-3 sm:grid-cols-2">
-          <div class="rounded-lg border border-[#eeeeee] bg-[#f5f5f5] p-4 dark:border-[#333333] dark:bg-[#2e2e33]">
+          <div class="rounded-lg border border-neutral-200 bg-neutral-50/70 p-4 dark:border-neutral-800 dark:bg-[#2e2e33]">
             <p class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">Functional Domains</p>
             <ul class="mt-2 space-y-1 font-mono text-xs text-neutral-600 dark:text-neutral-300">
               {d.functional_domains.map((f: string) => (
@@ -255,7 +255,7 @@ const crumbs = [
             </ul>
           </div>
           {'regulatory_frameworks' in d && d.regulatory_frameworks && d.regulatory_frameworks.length > 0 ? (
-            <div class="rounded-lg border border-[#eeeeee] bg-[#f5f5f5] p-4 dark:border-[#333333] dark:bg-[#2e2e33]">
+            <div class="rounded-lg border border-neutral-200 bg-neutral-50/70 p-4 dark:border-neutral-800 dark:bg-[#2e2e33]">
               <p class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">Regulatory Frameworks &amp; Compliance</p>
               <ul class="mt-2 space-y-1 font-mono text-xs text-neutral-600 dark:text-neutral-300">
                 {d.regulatory_frameworks.map((r: string) => (
@@ -264,7 +264,7 @@ const crumbs = [
               </ul>
             </div>
           ) : 'delegations_hosted' in d && (
-            <div class="rounded-lg border border-[#eeeeee] bg-[#f5f5f5] p-4 dark:border-[#333333] dark:bg-[#2e2e33]">
+            <div class="rounded-lg border border-neutral-200 bg-neutral-50/70 p-4 dark:border-neutral-800 dark:bg-[#2e2e33]">
               <p class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">Delegations Hosted</p>
               <ul class="mt-2 space-y-1 font-mono text-xs text-neutral-600 dark:text-neutral-300">
                 {d.delegations_hosted.map((x: string) => (
@@ -276,7 +276,7 @@ const crumbs = [
         </div>
 
         {'scholarship_programs_supported' in d && d.scholarship_programs_supported && d.scholarship_programs_supported.length > 0 && (
-          <div class="rounded-lg border border-[#eeeeee] bg-[#f5f5f5] p-4 dark:border-[#333333] dark:bg-[#2e2e33]">
+          <div class="rounded-lg border border-neutral-200 bg-neutral-50/70 p-4 dark:border-neutral-800 dark:bg-[#2e2e33]">
             <p class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">Scholarship Programs Supported</p>
             <div class="mt-2 flex flex-wrap gap-2">
               {d.scholarship_programs_supported.map((s: string) => (
@@ -289,7 +289,7 @@ const crumbs = [
         )}
 
         {'delegation_partnerships' in d && d.delegation_partnerships && (
-          <div class="rounded-lg border border-[#eeeeee] bg-[#ffffff] p-5 dark:border-[#333333] dark:bg-[#2e2e33]">
+          <div class="rounded-lg border border-neutral-200 bg-white p-5 dark:border-neutral-800 dark:bg-[#2e2e33]">
             <p class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">Delegation Hosting &amp; Bilateral Partnerships</p>
             <p class="mt-1 text-xs text-neutral-500 dark:text-neutral-400">Core recurring programs and bilateral academic visits hosted under office mandate.</p>
 
@@ -297,7 +297,7 @@ const crumbs = [
               <p class="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Core Recurring Partnerships</p>
               <div class="mt-2.5 grid gap-3 sm:grid-cols-2">
                 {d.delegation_partnerships.core_recurring.map((p) => (
-                  <div class="rounded-md border border-[#eeeeee] bg-neutral-50/50 p-4 dark:border-[#333333] dark:bg-neutral-800/40">
+                  <div class="rounded-md border border-neutral-200 bg-neutral-50/50 p-4 dark:border-neutral-800 dark:bg-neutral-800/40">
                     <div class="flex items-center justify-between gap-3">
                       {p.institution_logo ? (
                         <img src={p.institution_logo} alt="" class="h-8 w-auto max-w-[110px] shrink-0 object-contain" loading="lazy" />
@@ -386,7 +386,7 @@ const crumbs = [
         </div>
         <div class="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
           {attachedPress.map((p) => (
-            <div class="rounded-lg border border-neutral-200 bg-white p-4 shadow-xs dark:border-neutral-800 dark:bg-[#222226]">
+            <div class="rounded-lg border border-neutral-200 bg-white p-4 shadow-xs transition-all duration-200 dark:border-neutral-800 dark:bg-[#2e2e33]">
               <ArticleRow
                 title={p.data.title}
                 publisher={p.data.publisher}

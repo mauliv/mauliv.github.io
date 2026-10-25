@@ -49,7 +49,7 @@ const delegationPartnerships = {
       <ProjectIcon name="mobility" size="sm" />
       <h2 id="sec-mobility" class="text-balance text-xl font-semibold tracking-tight dark:text-neutral-100">Global Mobility</h2>
     </div>
-    <p class="mt-1.5 text-sm text-neutral-500 dark:text-neutral-400">
+    <p class="mt-1.5 text-sm text-neutral-600 dark:text-neutral-400">
       Academic exchange and scholarship programs across four countries (outbound scholar track).
     </p>
     <div class="mt-4 grid grid-cols-1 gap-4">
@@ -57,7 +57,7 @@ const delegationPartnerships = {
         mobility.map((m) => (
           <a
             href={entryHref('operations', m.data.slug)}
-            class="group relative flex items-start gap-3 rounded-lg border border-[#eeeeee] bg-[#ffffff] p-4 transition-all duration-200 hover:border-neutral-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-1 dark:border-[#333333] dark:bg-[#2e2e33] dark:hover:border-neutral-600"
+            class="group relative flex items-start gap-3 rounded-xl border border-neutral-200 bg-white p-5 shadow-xs transition-all duration-200 hover:border-neutral-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-1 dark:border-neutral-800 dark:bg-[#222226] dark:hover:border-neutral-700"
           >
             {m.data.flag && (
               <img
@@ -88,7 +88,7 @@ const delegationPartnerships = {
               </div>
               <h3 class="mt-1.5 break-words text-base font-semibold group-hover:underline underline-offset-2 dark:text-neutral-100">{m.data.title}</h3>
               <p class="mt-1 font-mono text-xs text-neutral-500 dark:text-neutral-400">{m.data.location}</p>
-              {m.data.summary && <p class="mt-2 text-[15px] text-neutral-600 dark:text-neutral-300">{m.data.summary}</p>}
+              {m.data.summary && <p class="mt-2 text-sm sm:text-base leading-relaxed text-neutral-600 dark:text-neutral-300">{m.data.summary}</p>}
             </div>
           </a>
         ))
@@ -97,12 +97,12 @@ const delegationPartnerships = {
   </section>
 
   <!-- Section 2: Flagship International Events -->
-  <section class="mt-12 border-t border-neutral-300 pt-6 dark:border-neutral-700" aria-labelledby="sec-events">
+  <section class="mt-12 border-t border-neutral-200 pt-6 dark:border-neutral-800" aria-labelledby="sec-events">
     <div class="flex items-center gap-2.5">
       <ProjectIcon name="events" size="sm" />
       <h2 id="sec-events" class="text-balance text-xl font-semibold tracking-tight dark:text-neutral-100">Flagship International Events</h2>
     </div>
-    <p class="mt-1.5 text-sm text-neutral-500 dark:text-neutral-400">
+    <p class="mt-1.5 text-sm text-neutral-600 dark:text-neutral-400">
       Large-scale cultural festivals, diplomatic forums, and international academic conferences coordinated under tiered institutional governance (Faculty Steering &amp; Student Operations Committees).
     </p>
 
@@ -111,7 +111,7 @@ const delegationPartnerships = {
         events.map((ev) => (
           <a
             href={entryHref('operations', ev.data.slug)}
-            class="group relative flex flex-col justify-between rounded-xl border border-neutral-200 bg-white p-5 transition-all duration-200 hover:border-neutral-400 shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-1 dark:border-neutral-800 dark:bg-[#222226] dark:hover:border-neutral-600"
+            class="group relative flex flex-col justify-between rounded-xl border border-neutral-200 bg-white p-5 transition-all duration-200 hover:border-neutral-300 shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-1 dark:border-neutral-800 dark:bg-[#222226] dark:hover:border-neutral-700"
           >
             <div>
               <div class="flex items-center justify-between gap-2">
@@ -160,12 +160,12 @@ const delegationPartnerships = {
   </section>
 
   <!-- Section 3: Diplomatic Delegation Hosting -->
-  <section class="mt-12 border-t border-neutral-300 pt-6 dark:border-neutral-700" aria-labelledby="sec-delegations">
+  <section class="mt-12 border-t border-neutral-200 pt-6 dark:border-neutral-800" aria-labelledby="sec-delegations">
     <div class="flex items-center gap-2.5">
       <ProjectIcon name="delegations" size="sm" />
       <h2 id="sec-delegations" class="text-balance text-xl font-semibold tracking-tight dark:text-neutral-100">Diplomatic Delegation Hosting</h2>
     </div>
-    <p class="mt-1.5 text-sm text-neutral-500 dark:text-neutral-400">
+    <p class="mt-1.5 text-sm text-neutral-600 dark:text-neutral-400">
       Protocol management, campus immersion itineraries, and bilateral academic visits hosted under office mandate.
     </p>
 
@@ -219,7 +219,7 @@ const delegationPartnerships = {
                 <span class="text-sm font-medium dark:text-neutral-100">{p.institution}</span>
                 <span class="ml-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">({p.location})</span>
               </div>
-              <span class="font-mono text-[11px] text-neutral-400 dark:text-neutral-500">Official Campus Visit &amp; Bilateral Dialogue</span>
+              <span class="font-mono text-[11px] text-neutral-500 dark:text-neutral-400">Official Campus Visit &amp; Bilateral Dialogue</span>
             </div>
           ))}
         </div>
@@ -228,12 +228,12 @@ const delegationPartnerships = {
   </section>
 
   <!-- Section 4: International Office Operations -->
-  <section class="mt-12 border-t border-neutral-300 pt-6 dark:border-neutral-700" aria-labelledby="sec-io-ops">
+  <section class="mt-12 border-t border-neutral-200 pt-6 dark:border-neutral-800" aria-labelledby="sec-io-ops">
     <div class="flex items-center gap-2.5">
       <ProjectIcon name="operations" size="sm" />
       <h2 id="sec-io-ops" class="text-balance text-xl font-semibold tracking-tight dark:text-neutral-100">International Office Operations</h2>
     </div>
-    <p class="mt-1.5 text-sm text-neutral-500 dark:text-neutral-400">
+    <p class="mt-1.5 text-sm text-neutral-600 dark:text-neutral-400">
       Campus operational experience across international student services — legal immigration compliance, foreign student pastoral care, and institutional paperwork.
     </p>
 
@@ -257,7 +257,7 @@ const delegationPartnerships = {
         </div>
       </div>
 
-      <p class="mt-3.5 text-[15px] sm:text-base leading-relaxed text-neutral-600 dark:text-neutral-300">
+      <p class="mt-3.5 text-sm sm:text-base leading-relaxed text-neutral-600 dark:text-neutral-300">
         Five consecutive years of campus operations experience at the International Office. End-to-end processing of legal stay documentation for foreign nationals (E-Visa, ITAS/KITAS, SKTT, STM, EPO), international admissions clearance, and crisis management, verified by official institutional appointments.
       </p>
 
@@ -289,8 +289,14 @@ const delegationPartnerships = {
         </div>
         <a
           href="/international/io-operations"
-          class="inline-flex min-h-10 items-center gap-1.5 rounded-lg border border-neutral-900 bg-neutral-900 px-3.5 font-mono text-xs text-white transition-colors hover:bg-neutral-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-1 dark:border-neutral-100 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-300"
+          class="inline-flex min-h-11 items-center gap-1.5 rounded-md border border-neutral-900 bg-neutral-900 px-3.5 font-mono text-xs text-white transition-colors hover:bg-neutral-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-1 dark:border-neutral-100 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-300"
         >
+          <span>Open the operations dossier</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
           <span>Open the operations dossier</span>
           <span aria-hidden="true">→</span>
         </a>

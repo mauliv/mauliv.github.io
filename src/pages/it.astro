@@ -56,14 +56,14 @@ const sections = [
 
   {
     sections.map((s) => (
-      <section class="mt-12 border-t border-neutral-300 pt-6 dark:border-neutral-700" aria-labelledby={`sec-${s.id}`}>
+      <section class="mt-12 border-t border-neutral-200 pt-6 dark:border-neutral-800" aria-labelledby={`sec-${s.id}`}>
         <div class="flex items-center gap-2.5">
           <ProjectIcon name={s.iconName} size="sm" />
           <h2 id={`sec-${s.id}`} class="text-balance text-xl font-semibold tracking-tight dark:text-neutral-100">
             {s.title}
           </h2>
         </div>
-        <p class="mt-1.5 text-sm text-neutral-500 dark:text-neutral-400">{s.blurb}</p>
+        <p class="mt-1.5 text-sm text-neutral-600 dark:text-neutral-400">{s.blurb}</p>
         <div class="mt-4 space-y-4">
           {s.entries.map((entry) => (
             <ProjectCard
@@ -87,18 +87,18 @@ const sections = [
     ))
   }
 
-  <section class="mt-12 border-t border-neutral-300 pt-6 dark:border-neutral-700" aria-labelledby="sec-networks">
+  <section class="mt-12 border-t border-neutral-200 pt-6 dark:border-neutral-800" aria-labelledby="sec-networks">
     <div class="flex items-center gap-2.5">
       <ProjectIcon name="networks" size="sm" />
       <h2 id="sec-networks" class="text-balance text-xl font-semibold tracking-tight dark:text-neutral-100">IT Support &amp; Networks</h2>
     </div>
-    <p class="mt-1.5 text-sm text-neutral-500 dark:text-neutral-400">Network infrastructure, server administration, and campus technical support.</p>
+    <p class="mt-1.5 text-sm text-neutral-600 dark:text-neutral-400">Network infrastructure, server administration, and campus technical support.</p>
     <div class="mt-5">
       <a
         href="/networks"
-        class="inline-flex min-h-11 items-center border border-neutral-900 bg-neutral-900 px-4 font-mono text-xs text-white transition-colors hover:bg-neutral-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-1 dark:border-neutral-100 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-300"
+        class="inline-flex min-h-11 items-center rounded-md border border-neutral-900 bg-neutral-900 px-4 font-mono text-xs text-white transition-colors hover:bg-neutral-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-1 dark:border-neutral-100 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-300"
       >
-        [View IT &amp; Network Projects]
+        View IT &amp; Network Projects &rarr;
       </a>
     </div>
   </section>

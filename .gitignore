@@ -7,6 +7,7 @@ dist/
 /*.md
 !/README.md
 /docs/
+/.impeccable/
 CURRENT_SITUATION.md
 NEXT_MODIFICATIONS.md
 CHANGELOG_AND_NEXT_MODIFICATIONS.md

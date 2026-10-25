@@ -430,7 +430,7 @@ const defaultCategory = 'web-ar';
           id={`tab-${c.id}`}
           data-filter={c.id}
           aria-controls="skills-grid"
-          class={`skill-tab-btn inline-flex min-h-8 items-center gap-1.5 rounded-full px-3 py-1 font-mono text-xs transition-all cursor-pointer ${
+          class={`skill-tab-btn inline-flex min-h-9 sm:min-h-8 items-center gap-1.5 rounded-full px-3 py-1 font-mono text-xs transition-all cursor-pointer ${
             i === 0
               ? 'bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 shadow-xs'
               : 'border border-neutral-200 bg-white text-neutral-600 hover:border-neutral-400 hover:text-neutral-900 dark:border-neutral-700 dark:bg-neutral-800/80 dark:text-neutral-300 dark:hover:border-neutral-500 dark:hover:text-neutral-100'
@@ -439,7 +439,7 @@ const defaultCategory = 'web-ar';
           aria-selected={i === 0 ? 'true' : 'false'}
         >
           <span>{c.label}</span>
-          <span class="text-[10px] opacity-70">({c.count})</span>
+          <span class="opacity-70">({c.count})</span>
         </button>
       ))
     }
@@ -450,7 +450,7 @@ const defaultCategory = 'web-ar';
     id="skills-grid-panel"
     role="tabpanel"
     aria-labelledby="tab-web-ar"
-    class="mt-4 rounded-lg border border-[#eeeeee] bg-[#ffffff] p-4 sm:p-5 dark:border-[#333333] dark:bg-[#2e2e33]"
+    class="mt-4 rounded-xl border border-neutral-200 bg-white p-5 sm:p-6 shadow-sm dark:border-neutral-800 dark:bg-[#222226]"
   >
     <!-- 
       21st.dev personal-site-kit-v2 hover effect:
@@ -494,7 +494,7 @@ const defaultCategory = 'web-ar';
                 <span class="skill-label block truncate font-mono text-[11px] font-medium leading-tight text-neutral-700 transition-colors dark:text-neutral-300">
                   {item.name}
                 </span>
-                <span class="block truncate text-[9.5px] leading-tight text-neutral-400 transition-colors dark:text-neutral-500">
+                <span class="block truncate text-[11px] leading-tight text-neutral-500 transition-colors dark:text-neutral-400">
                   {item.badge}
                 </span>
               </div>
@@ -526,7 +526,7 @@ const defaultCategory = 'web-ar';
                 5+ Years Operations Experience
               </span>
             </div>
-            <p class="mt-1 text-xs sm:text-[13px] leading-relaxed text-amber-900/90 dark:text-amber-300/80">
+            <p class="mt-1 text-xs leading-relaxed text-amber-900/90 dark:text-amber-300/80">
               Not only for IT: Five consecutive years of operational practice in Republic of Indonesia foreign national stay regulations — <strong>E-Visa System</strong>, <strong>ITAS/KITAS</strong> (Limited Stay Permit), <strong>SKTT Dukcapil</strong> (Civil Domicile), <strong>STM</strong> (Police Reporting), and departure clearance (EPO), backed by official university appointments.
             </p>
           </div>
@@ -552,7 +552,7 @@ const defaultCategory = 'web-ar';
    * The actively hovered item remains in 100% full vibrant color and scales smoothly.
    */
   .skill-icon {
-    transition: filter 0.25s ease, opacity 0.25s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: filter 0.25s ease, opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .skills-group:hover .skill-icon {
@@ -582,11 +582,11 @@ const defaultCategory = 'web-ar';
   }
 
   .skills-group .skill-item:hover .skill-label {
-    color: #111827;
+    color: #212121;
   }
 
   :global(.dark) .skills-group .skill-item:hover .skill-label {
-    color: #f9fafb;
+    color: #dadadb;
   }
 
   @media (prefers-reduced-motion: reduce) {
