@@ -2,8 +2,8 @@
 id: "xr-ar-kitchen"
 title: "AR Kitchen / AR Menu: Vocational Continental Cuisine Plating"
 slug: "ar-kitchen"
-summary: "Mobile AR teaching module rendering 360-degree continental plating simulations and recipe theory for vocational culinary arts students (SMK Tata Boga)."
-excerpt: "Designed to eliminate perishable ingredient waste in vocational training, AR Menu renders 11 inspectable 3D continental dishes anchored to textbook markers, paired with curriculum-aligned formative evaluations for Grade 10 culinary cohorts."
+summary: "Mobile AR vocational training simulator rendering 360-degree continental plating simulations and recipe theory to eliminate perishable ingredient waste in vocational culinary arts schools (SMK Culinary Arts)."
+excerpt: "To eliminate expensive perishable ingredient waste in vocational culinary education, I engineered a mobile AR training simulator in Unity and Vuforia. Rendering 11 inspectable 3D continental dishes anchored to physical workbook markers, the app allows Grade 10 students to master plating aesthetics and curriculum competencies before stepping into the physical kitchen."
 role: "Lead Unity & AR Developer"
 period:
   start: "2022-09"
@@ -16,20 +16,26 @@ tech_stack:
   - "Vuforia Engine (dbFood Targets)"
   - "Android (Mobile AR)"
   - "Photogrammetry & 3D Plating Assets"
-  - "Kurikulum Merdeka SMK (Fase E)"
+  - "Vocational Culinary Curriculum (Phase E)"
 metrics:
+  - label: "Expert Validation"
+    value: "97.00% (Media & Software) · 96.00% (Culinary Matter)"
+    provenance: "FT UNY Undergraduate Thesis (Skripsi), Widad Zita Nuriana (2023)"
+  - label: "Classroom Field Trial"
+    value: "87.63% suitability verified across 35 students at SMK Negeri 3 Klaten"
+    provenance: "Skripsi Field Trial Data, SMK Negeri 3 Klaten"
+  - label: "Artifact Package"
+    value: "178 MB Unity Android APK + 34-Page Full-Color Manual Book"
+    provenance: "Skripsi Research Output (FT UNY)"
   - label: "3D Plating Repertoire"
     value: "11 inspectable continental culinary dishes (Appetizers, Mains, Desserts)"
     provenance: "AR-Menu Unity project assets"
-  - label: "Target Student Audience"
-    value: "Grade 10 Vocational Culinary Students (SMK Tata Boga, Fase E)"
-    provenance: "CP & ATP Dasar Masakan Kontinental (Kurikulum Merdeka)"
   - label: "Resource Efficiency"
     value: "Zero perishable food waste during plating and aesthetic layout drills"
     provenance: "06-ar-kitchen-vocational-dossier.pdf:4"
   - label: "Curriculum Standard"
-    value: "Kurikulum Merdeka SMK (Fase E - Dasar Masakan Kontinental)"
-    provenance: "Kurikulum Merdeka SMK Kemendikbudristek"
+    value: "National Vocational High School Curriculum (Phase E - Continental Cuisine)"
+    provenance: "National Vocational Curriculum, Ministry of Education (Kemendikbudristek)"
 live_url: null
 archive_status: "archived"
 engine: "Unity 3D (v2021.3.0f1 LTS)"
@@ -55,7 +61,7 @@ evidence:
 
 ## 1. The Challenge: The Cost of Practicing Continental Cuisine
 
-In culinary vocational high schools (**SMK Tata Boga / Kuliner**), Grade 10 students learn Continental Cuisine (*Dasar Masakan Kontinental*). Mastering this subject requires a keen eye for visual presentation — balancing color contrast, portion height, focal placement, and sauce drizzling.
+In culinary vocational high schools (**SMK Culinary Arts / Tata Boga**), Grade 10 students learn Continental Cuisine (*Dasar Masakan Kontinental*). Mastering this subject requires a keen eye for visual presentation — balancing color contrast, portion height, focal placement, and sauce drizzling.
 
 However, hands-on plating practice in schools faces several major obstacles:
 1. **Expensive Ingredients:** Continental dishes require costly ingredients — such as specialty beef cuts, heavy creams, cheeses, fresh berries, and imported herbs — that strain school lab budgets.
@@ -66,9 +72,9 @@ However, hands-on plating practice in schools faces several major obstacles:
 
 ---
 
-## 2. Curriculum Alignment: Kurikulum Merdeka SMK (Fase E)
+## 2. Curriculum Alignment: National Vocational Curriculum (Phase E)
 
-The application was designed specifically around the national vocational curriculum (**Capaian Pembelajaran dan Alur Tujuan Pembelajaran — Fase E**):
+I designed the application specifically around the national vocational curriculum (**Kurikulum Merdeka SMK — Phase E Learning Objectives**):
 
 ![Curriculum Alignment - CP & ATP Dasar Masakan Kontinental](/images/ar-kitchen/ar-menu-kd.png)
 
@@ -97,7 +103,7 @@ Students scan image markers printed in their student workbook (`dbFood.xml`) to 
 
 ## 4. Technical Implementation & Interactive Features
 
-The application was built in **Unity 2021.3 (LTS)** using the **Vuforia Engine** SDK for marker tracking:
+I engineered the application in **Unity 2021.3 (LTS)** with C# using the **Vuforia Engine** SDK for marker tracking, optimized for low-end Android hardware:
 
 ```
 [ Main Menu ] ──► [ Curriculum Competencies ] ──► [ AR Plating Scanner ]
@@ -108,19 +114,36 @@ The application was built in **Unity 2021.3 (LTS)** using the **Vuforia Engine**
                                                    • Instant scoring and explanations
 ```
 
-### Key Engineering Implementation:
-* **Tabletop Marker Tracking:** Vuforia target markers (`dbFood.xml`) calibrated for rock-solid stability on flat kitchen countertops under overhead fluorescent lighting.
-* **360° Touch Navigation:** Intuitive single-finger drag rotation and two-finger pinch-to-zoom let students inspect sauce textures, garnish layers, and plate edges from any perspective.
-* **Formative Quiz Engine (`QuizManager.cs`):** Interactive quizzes testing student recall of key continental spices and herbs (e.g., identifying recipes that call for fresh rosemary, thyme, basil, or oregano).
+### Key Modules I Implemented:
+* **Tabletop Marker Tracking:** I calibrated Vuforia target markers (`dbFood.xml`) for rock-solid tracking stability on flat classroom desks under overhead fluorescent lighting.
+* **360° Touch Navigation:** I built touch-gesture controllers for single-finger drag rotation and two-finger pinch-to-zoom, letting students inspect sauce textures, garnish layers, and plate edges from any perspective.
+* **Formative Quiz Engine (`QuizManager.cs`):** I authored an interactive quiz module testing student recall of key continental spices and herbs (e.g., identifying recipes that call for fresh rosemary, thyme, basil, or oregano).
 
-![In-App Assessment Question on Continental Herbs](/images/ar-kitchen/ar-menu-soal1.png)
+![AR Menu Mobile Application Main Interface](/images/ar-kitchen/ar-menu-home-screen.jpg)
 
-![Formative Evaluation Score & Feedback Screen](/images/ar-kitchen/ar-menu-eval1.png)
+![AR Camera Viewport with 3D Dish Inspection and Component Breakdown](/images/ar-kitchen/ar-menu-3d-salad-inspection.jpg)
 
 ---
 
-## 5. Educational Impact
+## 5. Empirical Evaluation & Educational Impact
 
-* **Zero-Waste Repetition:** Students can practice evaluating plating aesthetics as many times as needed without wasting a single gram of food.
-* **Confident Kitchen Labs:** Students arrive at the physical cooking practicum already familiar with how the finished dish should look, where garnishes belong, and proper portion proportions.
-* **Classroom-Ready:** Delivered as a lightweight mobile app accompanied by a physical printed student workbook (*Modul Ajar Boga*).
+The application and companion manual book were developed following the **ADDIE** (Analysis, Design, Development, Implementation, Evaluation) framework and empirically evaluated through an undergraduate engineering thesis (*Tugas Akhir Skripsi*, Widad Zita Nuriana, FT UNY, 2023), where I served as the technical developer and software partner.
+
+![Vocational Culinary Students Testing AR Menu at SMK Negeri 3 Klaten](/images/ar-kitchen/ar-menu-classroom-trial-large.jpg)
+
+### A. Rigorous Expert & Classroom Validation
+The system underwent both formal academic validation by university faculty and on-site empirical field testing at **SMK Negeri 3 Klaten** with 35 Grade 10 Culinary Arts students (*Kelas X Jurusan Kuliner*):
+
+| Evaluation Stage | Evaluator / Audience | Sample Size | Score / Feasibility | Assessment Category |
+| :--- | :--- | :---: | :---: | :--- |
+| **Media & Software Expert** | FT UNY Educational Media Lecturer | 1 Expert | **97.00%** | *Sangat Layak* (Highly Suitable) |
+| **Subject Matter Expert** | FT UNY Culinary Education Lecturer | 1 Expert | **96.00%** | *Sangat Layak* (Highly Suitable) |
+| **Small-Scale Usability Trial** | Grade 10 Culinary Students (SMK N 3 Klaten) | 5 Students | **88.80%** | *Sangat Layak* (Highly Suitable) |
+| **Large-Scale Classroom Trial** | Grade 10 Culinary Students (SMK N 3 Klaten) | 30 Students | **87.63%** | *Sangat Layak* (Highly Suitable) |
+
+![Student Scanning 34-Page Manual Book with AR App during Field Trial](/images/ar-kitchen/ar-menu-classroom-trial-scan.jpg)
+
+### B. Tangible Classroom Benefits
+* **Zero-Waste Repetition:** Students can rotate, inspect, and evaluate plating aesthetics (height, focal placement, color contrast, sauce pooling) as many times as needed without consuming expensive, perishable lab ingredients (specialty beef cuts, heavy creams, cheeses).
+* **Confident Kitchen Labs:** Students arrive at the physical cooking practicum with established spatial memory of the target dish presentation, drastically reducing plating errors during timed kitchen drills.
+* **Dual-Artifact Deployment:** Delivered as an optimized **178 MB Unity Android application** paired with a **34-page full-color printed student workbook (*Manual Book AR MENU*)** containing the calibrated marker targets and recipe theory.

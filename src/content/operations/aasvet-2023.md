@@ -39,7 +39,7 @@ theme: "Sustainable Innovative Strategies in Dealing with TVET Transformation fo
 tiered_committee:
   steering: "Faculty Steering Committee — Chaired by AASVET President (Dr. Seung-Il Na, Seoul National University) & UNY International Office / Faculty Executive Committee"
   operational: "Student Operations Committee — Coordinated by candidate under International Office student employment, directing student liaisons, session moderators, and hybrid streaming desks"
-provenance_source: "https://aasvet.uny.ac.id; SK Rektor Operations Dossier; Conference Secretariat Archives"
+provenance_source: "https://aasvet.uny.ac.id; University Executive Mandates (SK Rektor Dossier); Conference Secretariat Archives"
 privacy_level: "public"
 epistemic_status: "verified-fact"
 verification_notes: "Hosted by UNY in collaboration with AASVET across 8-10 November 2023. Operational coordination executed under formal International Office student employment mandate."
@@ -50,7 +50,7 @@ evidence:
     is_internal: false
     status: "available"
   - type: "internal-pdf"
-    label: "SK Rektor Operations Mandate Excerpt (2023)"
+    label: "University Executive Mandate Excerpt (SK Rektor 2023)"
     url: "/docs/operations/sk-appointment-2023.pdf"
     is_internal: true
     status: "available"

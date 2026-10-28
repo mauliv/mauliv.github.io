@@ -1,11 +1,11 @@
 ---
 id: "sys-mtqm"
-title: "UNY National MTQ Invitational Competition Portal"
+title: "UNY National Arts & Recitation Competition Portal (MTQM)"
 slug: "mtqm-competition-portal"
 institution_logo: "/logos/uny.svg"
 project_logo: "/logos/mtq.png"
-summary: "Laravel-based registration and scoring portal supporting 12 competition divisions and nationwide university contingents across three annual cycles."
-excerpt: "Built to support UNY's national student competition from 2021 to 2023, the platform handled multi-category registrations, document and video submissions, and jury scoring with automated university-affiliation checks to prevent judging bias."
+summary: "National inter-university competition portal built in Laravel to eliminate manual email submissions and scoring bias across 12 divisions and nationwide delegations."
+excerpt: "Managing a national competition across 12 distinct academic and artistic divisions previously meant spreadsheet chaos, lost video files, and jury conflict-of-interest risks. As Lead Systems Architect & Developer, I engineered a unified Laravel portal with automated university-filtering queries to guarantee impartial judging, handling nationwide contingents across three annual cycles."
 role: "Lead Systems Architect & Developer"
 period:
   start: "2021"
@@ -40,7 +40,7 @@ database:
 security_profile:
   auth_provider: "Role-based access control (Admin, Jury, Contingent Liaison, Participant)"
   network_perimeter: "Campus hosting behind university firewall with schedule-based registration cutoffs"
-  audit_logging: "Score audit trail and contingent finalization locks (is_final_team)"
+  audit_logging: "Score audit trail and contingent finalization submission locks"
 provenance_source: "MTQM portal code repository; uny-press:berita/mtqmn-3-uny-2023; youtube:dAm94_zq6Zo,iCrBvZeVT5I"
 privacy_level: "public"
 epistemic_status: "verified-fact"
@@ -80,11 +80,11 @@ evidence:
 
 ## 1. Context & Operational Mandate
 
-The **MTQ UNY Competition Portal** (`lomba.uny.ac.id/mtqm` / `mtqm.uny.ac.id`) was the online registration, submission, and scoring platform for Universitas Negeri Yogyakarta's open national Quranic student competition (*Musabaqah Tilawatil Quran Mahasiswa Nasional*).
+Before this platform, managing UNY's national student competition meant juggling hundreds of participant registration emails, manual file validation in spreadsheets, and risking judging conflicts of interest if a jury scored students from their own home campus.
 
-From **2021 through 2023**, UNY organized an open national invitational that mirrored the full category structure of the official government MTQMN rounds organized by Belmawa / Puspresnas. The event started with 9 branches in 2021 and grew to 12 distinct categories by 2023, attracting university contingents from across Indonesia. 
+As Lead Systems Architect & Developer, I designed and built the **MTQ UNY Competition Portal** (`lomba.uny.ac.id/mtqm` / `mtqm.uny.ac.id`) in Laravel 9 and PostgreSQL to streamline end-to-end registrations, multi-format submissions, and bias-free scoring across nationwide delegations from **2021 through 2023**.
 
-The portal served as the central hub where teams registered, uploaded required materials, and where judges evaluated submissions and calculated final standings.
+The national invitational mirrored the full category structure of the official government MTQMN rounds organized by Belmawa / Puspresnas, growing from 9 branches in 2021 to 12 distinct categories by 2023 and attracting university contingents from across Indonesia.
 
 ![MTQ UNY Public Portal](/images/mtqm/01_landing_page.png)
 
@@ -110,7 +110,7 @@ Because an MTQ competition includes recitation, memorization, calligraphy, acade
 | **DA** | **Desain Aplikasi Komputer** | Software demo link, repository, and design proposal PDF |
 
 ### Adaptive Submission Forms
-Instead of forcing a single rigid form across all disciplines, the portal dynamically adapted the submission fields based on the selected division:
+Instead of forcing a single rigid form across all disciplines, I architected adaptive submission forms that dynamically adjust fields based on the selected division:
 - **Solo Recitation (e.g., Tilawah, Tartil):** Validated single-student entries and external streaming video links.
 - **Team Divisions (e.g., Fahmil, Syarhil):** Handled 3-person team rosters, collecting student ID cards (*KTM*) and registration numbers for all members.
 - **Academic & Software Divisions (KTIQ, DAKQ):** Handled PDF document uploads, file size limits, and external demo links.
@@ -138,7 +138,7 @@ Participating universities registered participants in two primary ways:
 
 In inter-university competitions, maintaining impartiality is critical. If a judge scores participants from their own university, it creates an immediate conflict of interest.
 
-The portal handled this directly in the assignment query (`PenjurianController.php`), ensuring judges could only see and grade submissions from institutions other than their own:
+To prevent judging bias, I engineered an algorithmic query filter directly into `PenjurianController.php` that automatically excludes any submission originating from a judge's home university:
 
 ```php
 // Exclude teams from the judge's own university

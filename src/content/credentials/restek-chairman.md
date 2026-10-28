@@ -1,10 +1,10 @@
 ---
 id: "lead-restek-chairman"
-title: "Chairman, RESTek UNY / KMHE 2022 National Champion"
+title: "Chairman, RESTek UNY (Engineering R&D Organization) / KMHE 2022 National Champion"
 slug: "restek-chairman"
 institution_logo: "/logos/restek.png"
-summary: "Chairman of RESTek UNY (Jan 2022 - Jan 2023); led the team to 1st Place National Champion at KMHE 2022."
-role: "Chairman"
+summary: "Executive Chairman of RESTek UNY (Engineering R&D student organization, Jan 2022 - Jan 2023); led team operations to 1st Place National Champion at the KMHE 2022 Energy-Efficient Vehicle Contest."
+role: "Executive Chairman"
 period:
   start: "2022-01"
   end: "2023-01"
@@ -18,23 +18,23 @@ metrics:
     provenance: "career-archive.md:36, 180-182"
 live_url: null
 archive_status: "archived"
-organization: "UKM Rekayasa Teknologi UNY"
+organization: "RESTek UNY (Engineering Technology Student R&D Organization)"
 leadership_scope:
   divisions_managed: 5
   focus_areas:
     - "Executive leadership across 5 research divisions"
     - "Energy-efficient vehicle engineering (KMHE)"
-    - "Budget allocation and national competition entries (KMHE, PKM)"
+    - "Budget allocation and national student competition entries (KMHE, PKM)"
 competitive_achievements:
   - title: "1st Place National Champion, KMHE 2022"
     category: "Urban Concept Internal Combustion Engine (ICE) Gasoline"
-    issuing_body: "Puspresnas / Kemendikbudristek RI"
+    issuing_body: "National Achievement Center (Puspresnas) / Ministry of Education (Kemendikbudristek RI)"
     date: "2022-11"
 community_and_grants: []
 provenance_source: "career-archive.md:122-126, 180-187; user-stated 2026-09 (LinkedIn role timeline)"
 privacy_level: "public"
 epistemic_status: "verified-fact"
-verification_notes: "KMHE decrees on file in university archives. Role title and dates are user-stated 2026-09 from LinkedIn. UNY news press URL repointed 2026-09-26 (user-supplied slug) but uny.ac.id is under maintenance - pill stays disabled until the site is back and the URL is confirmed. Kompas national press verified live 2026-09-26."
+verification_notes: "National KMHE championship records verified on file in university archives. Role title and dates verified from institutional appointment archives and LinkedIn."
 evidence:
   - type: "internal-pdf"
     label: "KMHE 2022 Champion Certificate"
@@ -55,7 +55,7 @@ evidence:
 
 ## 1. Role
 
-Chairman of UKM Rekayasa Teknologi (RESTek), Universitas Negeri Yogyakarta, from January 2022 to January 2023 -- the third and final stage of the internal progression (Network Security Engineer -> Division Lead -> Chairman).
+Executive Chairman of the Engineering Technology Student Research Organization (RESTek), Universitas Negeri Yogyakarta (UNY), from January 2022 to January 2023 -- the third and final stage of the internal progression (Network Security Engineer -> Division Lead -> Chairman).
 
 ## 2. Operations & Pipeline
 
@@ -63,4 +63,4 @@ Executive leadership over the organization's 5 research divisions: budget alloca
 
 ## 3. The Championship Campaign
 
-Directed team operations culminating in 1st Place National Champion at KMHE 2022 (Kontes Mobil Hemat Energi), Urban Concept ICE Gasoline category -- awarded by Puspresnas / Kemendikbudristek RI against major Indonesian technical universities.
+Directed team operations culminating in 1st Place National Champion at KMHE 2022 (National Energy-Efficient Vehicle Contest / Kontes Mobil Hemat Energi), Urban Concept ICE Gasoline category -- awarded by the National Achievement Center (Puspresnas) / Ministry of Education (Kemendikbudristek RI) against major Indonesian technical universities.

@@ -32,7 +32,7 @@ archive_status: "live"
 mandate_type: "Formal Campus Appointment (Student Employee)"
 decree_records:
   status: "Sequential annual appointments (2021-2026)"
-  verification: "SK Rektor on file (individual excerpts & archive dossier)"
+  verification: "University Executive Appointment Decrees (SK Rektor) on file (individual excerpts & archive dossier)"
 functional_domains:
   - "Legal Immigration Compliance (Republic of Indonesia)"
   - "Foreign National Stay Permits & Police Reporting"
@@ -42,8 +42,8 @@ functional_domains:
 regulatory_frameworks:
   - "Indonesian Directorate General of Immigration E-Visa System"
   - "Limited Stay Permits (ITAS / KITAS — Izin Tinggal Terbatas)"
-  - "Temporary Domicile Certificates (SKTT — Surat Keterangan Tempat Tinggal / Dukcapil)"
-  - "Police Clarification Reports (STM — Surat Tanda Melapor / Kepolisian RI)"
+  - "Temporary Domicile Certificates (SKTT — Civil Registry Office)"
+  - "Police Notification Reports (STM — National Police Department)"
   - "Exit Permit Only (EPO) & Departure Clearance Protocols"
 scholarship_programs_supported:
   - "Darmasiswa RI (Ministry of Education & Culture)"
@@ -53,10 +53,10 @@ scholarship_programs_supported:
 provenance_source: "career-archive.md:30, 97-109; output/Divider_1_OfficialEmploymentMandates.pdf"
 privacy_level: "public"
 epistemic_status: "verified-fact"
-verification_notes: "Scanned official employment mandates (Surat Keputusan, rector-signed, 2021 onward) and institutional regulation (Peraturan Rektor No. 3/2023). Zero student PII may appear in any published excerpt."
+verification_notes: "Scanned official employment mandates (Executive Decrees / Surat Keputusan signed by University Rector, 2021 onward) and institutional governance regulation (University Presidential Regulation / Peraturan Rektor No. 3/2023). Zero student PII may appear in any published excerpt."
 evidence:
   - type: "internal-pdf"
-    label: "Legal Framework: Student Employment Regulation (Peraturan Rektor No. 3/2023)"
+    label: "Legal Framework: Student Employment Regulation (University Regulation No. 3/2023)"
     url: "/docs/operations/sk-mahasiswa-kerja-regulation-2023.pdf"
     is_internal: true
     status: "available"
@@ -84,13 +84,13 @@ evidence:
 
 ## 1. Five-Plus Years of Higher Education & Campus Operations Experience
 
-Five consecutive years (2021–present) serving as a Student Employee in the International Office at Universitas Negeri Yogyakarta. In Indonesian state universities (PTN-BH), student employment (*Program Mahasiswa Kerja*) is a structured campus staff role where students carry operational responsibility for departmental workflows alongside full-time university officers.
+Five consecutive years (2021–present) serving as a Student Employee in the International Office at Universitas Negeri Yogyakarta (UNY). In Indonesian state universities (PTN-BH), student employment (*Program Mahasiswa Kerja*) is a structured campus staff role where students carry operational responsibility for departmental workflows alongside full-time university officers.
 
 Rather than casual volunteering or short extracurricular projects, this role entailed continuous daily operational duties: managing statutory immigration compliance with the Indonesian government, issuing formal university letters of acceptance and financial guarantee, hosting international VIP delegations, and providing 24/7 emergency pastoral care for foreign students residing in Yogyakarta.
 
 ### Institutional Framework & Verifiable Annual Decrees
 
-While operational outcomes, technical systems, and student welfare remain the focus of this portfolio, the university formalizes all student employment appointments through official annual decrees signed by university leadership (*Surat Keputusan Rektor UNY*), established under **Peraturan Rektor No. 3 Tahun 2023 tentang Program Mahasiswa Kerja**.
+While operational outcomes, technical systems, and student welfare remain the focus of this portfolio, the university formalizes all student employment appointments through official annual decrees signed by university leadership (*Rector's Executive Decrees / Surat Keputusan Rektor UNY*), established under **University Presidential Regulation No. 3/2023 on the Student Employment Program (*Program Mahasiswa Kerja*)**.
 
 To provide complete verifiable transparency without burdening visitors with a single heavy 23-page compilation, each year's appointment excerpt and the governing institutional regulation can be accessed individually below:
 
@@ -98,31 +98,31 @@ To provide complete verifiable transparency without burdening visitors with a si
 
 | Document | Legal Instrument | Scope & Regulatory Provisions | Download |
 | :--- | :--- | :--- | :--- |
-| **Peraturan Rektor UNY No. 3 Tahun 2023** | Institutional University Regulation | Formally establishes the *Program Mahasiswa Kerja* framework: eligibility, competitive selection, official duties, maximum 20 hours/week allocation, rights, and institutional remuneration. | [Download PDF (4 pages, 920 KB)](/docs/operations/sk-mahasiswa-kerja-regulation-2023.pdf) |
+| **University Regulation No. 3/2023 (Peraturan Rektor)** | Institutional University Governance Regulation | Formally establishes the Student Employment Program (*Program Mahasiswa Kerja*) framework: eligibility criteria, competitive merit-based selection, official duties, maximum 20 hours/week allocation, rights, and institutional remuneration. | [Download PDF (4 pages, 920 KB)](/docs/operations/sk-mahasiswa-kerja-regulation-2023.pdf) |
 
 <div class="my-4 overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-900/60 max-w-sm">
   <img 
     src="/images/operations/student-employment-regulation-cover.png" 
-    alt="Peraturan Rektor UNY Nomor 3 Tahun 2023 tentang Program Mahasiswa Kerja" 
+    alt="University Presidential Regulation No. 3/2023 on Student Employment" 
     class="w-full object-cover shadow-xs"
     loading="lazy"
   />
   <div class="p-3 text-[11px] font-mono text-neutral-600 dark:text-neutral-400">
-    Peraturan Rektor UNY No. 3 Tahun 2023 — Legal basis governing student employment status, rights, and duties across UNY.
+    University Presidential Regulation No. 3/2023 — Legal basis governing student employment status, rights, and duties across UNY.
   </div>
 </div>
 
-#### Year-by-Year Appointment Decrees (Surat Keputusan Rektor)
+#### Year-by-Year Appointment Decrees (Rector's Executive Decrees / SK Rektor)
 
 | Year | Appointment Decree Number | Unit / Directorate | Excerpt Link |
 | :---: | :--- | :--- | :--- |
-| **2026** | SK Rektor No. 43.2/UN34/I/2026 | Student Employment — Kantor Internasional UNY | [Download 2-Page PDF (420 KB)](/docs/operations/sk-appointment-2026.pdf) |
-| **2025** | SK Rektor No. 8.2/UN34/I/2025 | Student Employment — Direktorat Kerjasama, Sistem Informasi, Inovasi & Usaha | [Download 3-Page PDF (553 KB)](/docs/operations/sk-appointment-2025.pdf) |
-| **2024** | SK Rektor No. 35.2/UN34/I/2024 | Student Employment — Bidang Riset, Kerjasama, Sistem Informasi & Usaha | [Download 2-Page PDF (508 KB)](/docs/operations/sk-appointment-2024.pdf) |
-| **2023** | SK Rektor No. 3.20/VI/2023 & No. 46.2/I/2023 | Student Employment — Kantor Internasional UNY (Semester I & II) | [Download 4-Page PDF (873 KB)](/docs/operations/sk-appointment-2023.pdf) |
-| **2022** | SK Rektor No. 69.3/UN34/I/2022 | Student Employment — Kantor Urusan Internasional UNY | [Download 4-Page PDF (935 KB)](/docs/operations/sk-appointment-2022.pdf) |
-| **2021** | SK Rektor No. 1.2/UN34/VIII/2021 | Student Employment — Kantor Urusan Internasional UNY | [Download 3-Page PDF (473 KB)](/docs/operations/sk-appointment-2021.pdf) |
-| **Archive** | Complete 2021–2026 Historical Dossier | Full compilation including all sequential appointment excerpts | [Download Full Dossier (23 pages, 4.7 MB)](/docs/operations/sk-rektor-appointment-excerpt.pdf) |
+| **2026** | Rector's Decree (SK Rektor) No. 43.2/UN34/I/2026 | Student Employment — International Office (UNY) | [Download 2-Page PDF (420 KB)](/docs/operations/sk-appointment-2026.pdf) |
+| **2025** | Rector's Decree (SK Rektor) No. 8.2/UN34/I/2025 | Student Employment — Directorate of Partnerships, Information Systems, Innovation & Enterprise | [Download 3-Page PDF (553 KB)](/docs/operations/sk-appointment-2025.pdf) |
+| **2024** | Rector's Decree (SK Rektor) No. 35.2/UN34/I/2024 | Student Employment — Research, Partnerships, Information Systems & Enterprise Division | [Download 2-Page PDF (508 KB)](/docs/operations/sk-appointment-2024.pdf) |
+| **2023** | Rector's Decree (SK Rektor) No. 3.20/VI/2023 & No. 46.2/I/2023 | Student Employment — International Office (UNY) (Semester I & II) | [Download 4-Page PDF (873 KB)](/docs/operations/sk-appointment-2023.pdf) |
+| **2022** | Rector's Decree (SK Rektor) No. 69.3/UN34/I/2022 | Student Employment — International Affairs Office UNY | [Download 4-Page PDF (935 KB)](/docs/operations/sk-appointment-2022.pdf) |
+| **2021** | Rector's Decree (SK Rektor) No. 1.2/UN34/VIII/2021 | Student Employment — International Affairs Office UNY | [Download 3-Page PDF (473 KB)](/docs/operations/sk-appointment-2021.pdf) |
+| **Archive** | Complete 2021–2026 Historical Dossier | Full compilation including all sequential appointment decrees (SK Rektor) | [Download Full Dossier (23 pages, 4.7 MB)](/docs/operations/sk-rektor-appointment-excerpt.pdf) |
 
 ***
 
@@ -158,10 +158,10 @@ Serving as the primary operational anchor and first-response contact for foreign
 
 Orchestrating arrival onboarding, official university welcoming ceremonies, and academic orientation for incoming foreign degree scholars (Darmasiswa RI, KNB Scholarship, UNY International Degree Scholarships) and foreign exchange students:
 
-![Welcoming Ceremony & Academic Orientation for International Students AY 2024/2025 at Ruang Sidang Utama Rektorat UNY](/images/operations/welcoming-ceremony-2024.png)
-*Welcoming Ceremony and Academic Orientation for Incoming International Students (Academic Year 2024/2025) held at Ruang Sidang Utama Rektorat UNY (25 September 2024). Candidate pictured front-and-center coordinating the student operations team and Liaison Officers (LOs).*
+![Welcoming Ceremony & Academic Orientation for International Students AY 2024/2025 at UNY Rectorate Main Senate Hall](/images/operations/welcoming-ceremony-2024.png)
+*Welcoming Ceremony and Academic Orientation for Incoming International Students (Academic Year 2024/2025) held at UNY Rectorate Main Senate Hall (25 September 2024). Candidate pictured front-and-center coordinating the student operations team and Liaison Officers (LOs).*
 
-- **Orientation & Academic Briefing**: Organizing the formal university welcome ceremony at Ruang Sidang Utama Rektorat, briefing incoming international cohorts on academic regulations, immigration statutory deadlines (ITAS/SKTT/STM), and campus services.
+- **Orientation & Academic Briefing**: Organizing the formal university welcome ceremony at the UNY Rectorate Main Senate Hall, briefing incoming international cohorts on academic regulations, immigration statutory deadlines (e-ITAS stay permits, civil residency SKTT, police notification STM), and campus services.
 - **Student Liaison Officer (LO) Coordination**: Directing student liaison officers in airport arrivals, campus navigation, and immediate logistical onboarding.
 - **Cultural Transition & Housing Assistance**: Guiding incoming students through local residential contracts (*kos-kosan* / dormitories), Indonesian SIM card registrations, local bank account openings, and cross-cultural acclimatization.
 

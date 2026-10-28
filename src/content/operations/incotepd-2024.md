@@ -40,7 +40,7 @@ theme: "Teachers' Professional Development in the Age of AI"
 tiered_committee:
   steering: "Faculty Steering Committee — Convened by UNY leadership, the Directorate of Learning & Student Affairs (Kemendikbudristek), and SEAMEO QITEP leadership for academic governance and keynote curation"
   operational: "Student Operations Committee — Coordinated by candidate under International Office student employment, directing plenary auditorium logistics, student liaisons, and parallel presentation desks"
-provenance_source: "https://incotepd.uny.ac.id; SK Rektor Operations Dossier; Conference Secretariat Archives"
+provenance_source: "https://incotepd.uny.ac.id; University Executive Mandates (SK Rektor Dossier); Conference Secretariat Archives"
 privacy_level: "public"
 epistemic_status: "verified-fact"
 verification_notes: "Convened across 25–26 June 2024 at UNY Auditorium in partnership with SEAMEO and JETA. Operational coordination executed under formal International Office student employment mandate."
@@ -51,7 +51,7 @@ evidence:
     is_internal: false
     status: "available"
   - type: "internal-pdf"
-    label: "SK Rektor Operations Mandate Excerpt (2024)"
+    label: "University Executive Mandate Excerpt (SK Rektor 2024)"
     url: "/docs/operations/sk-appointment-2024.pdf"
     is_internal: true
     status: "available"

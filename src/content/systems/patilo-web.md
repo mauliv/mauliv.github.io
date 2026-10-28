@@ -3,7 +3,7 @@ id: "sys-patilo-web"
 title: "Kerupuk Patilo MSME Direct-to-Consumer Web Platform"
 slug: "kerupuk-patilo-msme"
 summary: "Direct-to-consumer web platform and WhatsApp order routing hub built to eliminate middleman price-gouging for rural cassava cracker producers in Gunungkidul."
-excerpt: "Developed under the Kemendikbudristek PHP2D national grant using an SDLC Waterfall methodology, the platform provided village producer workshops with dedicated online storefront profiles and direct WhatsApp dispatch routing, enabling rural food producers to sell directly to regional consumers without predatory middleman markups."
+excerpt: "Developed under the Ministry of Education's PHP2D national grant using an SDLC Waterfall methodology, the platform provided village producer workshops with dedicated online storefront profiles and direct WhatsApp dispatch routing, enabling rural food producers to sell directly to regional consumers without predatory middleman markups."
 role: "Lead Systems Architect & Web Developer"
 period:
   start: "2021-07"
@@ -43,7 +43,7 @@ security_profile:
 provenance_source: "Laporan PPM PHP2D; Laporan Akhir PHP2D UKM KRISTAL UNY (2021)"
 privacy_level: "public"
 epistemic_status: "verified-fact"
-verification_notes: "Built and deployed under Kemendikbudristek PHP2D 2021 grant; verified with full 25-page R&D report, domain invoices, and UI captures."
+verification_notes: "Built and deployed under Ministry of Education (Kemendikbudristek) PHP2D 2021 grant; verified with full 25-page R&D report, domain invoices, and UI captures."
 evidence:
   - type: "internal-pdf"
     label: "R&D Systems & Web Report (Laporan PPM Alif)"
@@ -51,12 +51,12 @@ evidence:
     is_internal: true
     status: "available"
   - type: "internal-pdf"
-    label: "Kemendikbudristek PHP2D Award Certificate"
+    label: "Ministry of Education (Kemendikbudristek) Grant Certificate"
     url: "/docs/leadership/sertifikat-php2d-kemdikbud.pdf"
     is_internal: true
     status: "available"
   - type: "internal-pdf"
-    label: "PHP2D Project Final Report (UKM KRISTAL)"
+    label: "Comprehensive Grant Final Report (UKM KRISTAL)"
     url: "/docs/leadership/laporan-akhir-php2d-kristal-uny.pdf"
     is_internal: true
     status: "available"
@@ -78,8 +78,8 @@ In **Padukuhan Pakel (Kalurahan Tepus)**, patilo production has been the primary
 3. **Severe Connectivity Constraints:** Padukuhan Pakel is nestled between arid karst limestone hills with severe cellular dead zones. Direct complex e-commerce platforms (which require constant server-side management or high-bandwidth apps) were completely impractical for the village's elderly producers.
 
 > 🏅 **Institutional Grant Mandate:**  
-> This digital systems and direct-to-consumer web project was funded and deployed under the IDR 44.6M national competitive grant (Program Holistik Pembinaan dan Pemberdayaan Desa / PHP2D) from Kemendikbudristek Ditjen Diktiristek:  
-> 👉 **[PHP2D National Grant — Rural MSME Digitalization (Gunungkidul)](/credentials/php2d-msme)**
+> This digital systems and direct-to-consumer web project was funded and deployed under the IDR 44.6M national competitive grant (Holistic Village Development and Empowerment Program / PHP2D) from the Ministry of Education (Kemendikbudristek Ditjen Diktiristek):  
+> 👉 **[National Rural MSME Digitalization Grant (PHP2D — Ministry of Education)](/credentials/php2d-msme)**
 
 ---
 
@@ -162,5 +162,5 @@ A digital storefront works best when paired with appealing, standardized retail 
 
 ## 6. Related Credentials & Grants
 
-* 👉 **National Grant Mandate:** [PHP2D National Grant — Rural MSME Digitalization (Gunungkidul)](/credentials/php2d-msme) — Full grant dossier detailing the IDR 44,643,000 Kemendikbudristek funding, ministerial decree (No. 28/E2/KM/2021), industrial machinery procurement, and rural cooperative development outcomes.
+* 👉 **National Grant Mandate:** [National Rural MSME Digitalization Grant (PHP2D — Ministry of Education)](/credentials/php2d-msme) — Full grant dossier detailing the IDR 44,643,000 Ministry of Education funding, ministerial decree (No. 28/E2/KM/2021), industrial machinery procurement, and rural cooperative development outcomes.
 * 👉 **Primary Technical Evidence:** [R&D Systems & Web Report (Laporan PPM Alif)](/docs/leadership/laporan-ppm-php2d-alif-patilo.pdf)

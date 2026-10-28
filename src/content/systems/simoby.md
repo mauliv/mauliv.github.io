@@ -3,8 +3,8 @@ id: "sys-simoby"
 title: "SIMOBY International Mobility CRM"
 slug: "simoby-crm"
 institution_logo: "/logos/uny.svg"
-summary: "Enterprise mobility CRM engineered by UPT TIK UNY, mirroring the state-level Kemensetneg SIMPEL PDLN system as an institutional control engine for outbound UNY civitas and inbound international delegates."
-excerpt: "Engineered and maintained by UPT TIK UNY (Central University IT). SIMOBY acts as the university's institutional control system, intentionally mirroring the Ministry of State Secretariat's national PDLN clearinghouse (SIMPEL Kemensetneg). As a Student Employee at the International Office, I served as the primary cross-functional Project Manager, Lead Operational User, and Evaluation Lead — translating complex state clearance protocols into technical requirements, authoring official staff/student manuals, and evaluating the platform empirically for my Bachelor of Engineering thesis (WebQual 4.0 & IPA)."
+summary: "Enterprise mobility CRM engineered by UNY Central IT (UPT TIK), aligned with the Ministry of State Secretariat's (Kemensetneg) overseas travel clearance system (SIMPEL PDLN) to manage international tracking for university faculty, researchers, and incoming foreign scholars."
+excerpt: "Engineered and maintained by UNY Central IT (UPT TIK). SIMOBY acts as the university's institutional control system, intentionally mirroring the Ministry of State Secretariat's national overseas clearance clearinghouse (SIMPEL Kemensetneg). As a Student Employee at the International Office, I served as the primary cross-functional Project Manager, Lead Operational User, and Evaluation Lead — translating complex state clearance protocols into technical requirements, authoring official staff/student manuals, and evaluating the platform empirically for my Bachelor of Engineering thesis (WebQual 4.0 & IPA)."
 role: "Project Manager & Lead Operational User (Evaluated for S.T. Thesis)"
 period:
   start: "2021"
@@ -20,16 +20,16 @@ tech_stack:
   - "WebQual 4.0 & IPA"
 metrics:
   - label: "Institutional Control Scope"
-    value: "Outbound Civitas (PDLN) + Inbound Foreign Nationals"
+    value: "Outbound Faculty & Students (PDLN Overseas Clearances) + Inbound International Scholars"
     provenance: "career-archive.md:71"
   - label: "Upstream System Mirrored"
-    value: "Kemensetneg RI SIMPEL (simpel.setneg.go.id)"
+    value: "Ministry of State Secretariat SIMPEL Clearance System (simpel.setneg.go.id)"
     provenance: "user-stated 2026-10"
   - label: "Core Engineering & Development"
     value: "UPT TIK UNY (Central University IT)"
     provenance: "career-archive.md:361"
-  - label: "Candidate Leadership Role"
-    value: "Project Manager, Lead User & Evaluation Lead"
+  - label: "My Leadership Role"
+    value: "Project Manager, Lead Operational User & Evaluation Lead"
     provenance: "career-archive.md:361"
   - label: "Academic Evaluation"
     value: "Undergraduate S.T. Thesis (WebQual 4.0 & IPA, 3.77 GPA)"
@@ -50,7 +50,7 @@ security_profile:
 provenance_source: "career-archive.md:68-71, 144, 205-209, 358-361; SIMOBY user documentation; user-stated 2026-10"
 privacy_level: "public"
 epistemic_status: "verified-fact"
-verification_notes: "Engineered and maintained by UPT TIK UNY. The candidate's role was Project Manager, Lead Operational User, and Functional Liaison from the International Office, not sole backend author. Evaluated academically in the candidate's S.T. thesis."
+verification_notes: "Engineered and maintained by UPT TIK UNY. My role was Project Manager, Lead Operational User, and Functional Liaison representing the International Office. Evaluated academically for my S.T. engineering thesis."
 evidence:
   - type: "live"
     label: "Official Portal (simoby.uny.ac.id)"
@@ -89,10 +89,10 @@ evidence:
 **SIMOBY** (*Sistem Informasi Mobilitas Internasional*, hosted at [simoby.uny.ac.id](https://simoby.uny.ac.id)) is the enterprise web application facilitating all international mobility operations at Universitas Negeri Yogyakarta (UNY).
 
 * **Engineering & Development:** Built, deployed, and maintained by **UPT TIK UNY** (Pusat Teknologi Informasi dan Komunikasi / Central IT Center).
-* **Candidate's Role:** Project Manager, Lead Operational User, and Functional Liaison representing the **UNY International Office** (Kantor Urusan Internasional).
-* **Academic Nexus:** Evaluated in the candidate's undergraduate engineering thesis for the **Bachelor of Engineering (S.T.)** degree in Information Technology (graduated with a 3.77 GPA).
+* **My Role:** Project Manager, Lead Operational User, and Functional Liaison representing the **UNY International Office** (Kantor Urusan Internasional).
+* **Academic Nexus:** Evaluated in my undergraduate engineering thesis for the **Bachelor of Engineering (S.T.)** degree in Information Technology (graduated with a 3.77 GPA).
 
-The candidate did not write the backend from scratch as a sole developer. Rather, the candidate served as the vital institutional bridge: translating ministerial foreign travel mandates (*Kemensetneg RI*) and university immigration procedures into functional specifications for UPT TIK programmers, driving campus-wide adoption, and conducting empirical research on its service quality.
+I did not write the backend code from scratch as a sole developer — the core programming was executed by central university IT (UPT TIK). Instead, I served as the vital institutional bridge: translating complex ministerial foreign travel mandates (*Kemensetneg RI*) and university immigration procedures into functional technical specifications for developers, authoring official user manuals, driving campus-wide adoption, and conducting empirical research on its service quality.
 
 ---
 
@@ -213,28 +213,28 @@ Facilitates official overseas duty travel for university lecturers, researchers,
 
 ---
 
-## 6. Candidate's Key Contributions
+## 6. My Key Contributions
 
-Serving as a Student Employee within the International Office, the candidate led three pivotal project operational streams:
+Serving as a Student Employee within the International Office, I led three pivotal project operational streams:
 
 ### 1. Functional Specification & Requirement Engineering
-Acted as the business-domain liaison to UPT TIK UNY programmers. Mapped complex civil-service travel regulations from the Ministry of State Secretariat (*Kemensetneg RI / SIMPEL*) and Ministry of Education (*Kemendikbudristek*) into logical database constraints, validation checks (such as mandatory 2-month prior application cutoffs), and document upload requirements.
+I acted as the business-domain liaison to UPT TIK UNY programmers. I mapped complex civil-service travel regulations from the Ministry of State Secretariat (*Kemensetneg RI / SIMPEL*) and Ministry of Education (*Kemendikbudristek*) into logical database constraints, validation checks (such as mandatory 2-month prior application cutoffs), and document upload requirements.
 
 ### 2. Authoring Official University User Manuals
-To bridge the user adoption gap across academic faculties, authored the official university user guides:
+To bridge the user adoption gap across academic faculties, I authored the official university user guides:
 * **Panduan SIMOBY untuk Staff Akademik** (Rev 5, 20 pages) — Step-by-step handbook covering SSO login, 11 PDLN activity types, multi-source financial tracking, and clearance submission.
 * **Panduan SIMOBY untuk Mahasiswa** (14 pages) — Practical handbook guiding undergraduate and graduate students through exchange applications and credit-transfer submissions.
 
 Both official handbooks are published directly on the portal's download repository and are available as verified PDF evidence below.
 
 ### 3. User Acceptance Testing (UAT) & Release Management
-Conducted systematic black-box testing and regression validation on new module deployments, identifying edge-case bugs in funding calculators, document upload validations, and status-change notifications.
+I conducted systematic black-box testing and regression validation on new module deployments, identifying edge-case bugs in funding calculators, document upload validations, and status-change notifications.
 
 ---
 
 ## 7. Empirical Research: Undergraduate S.T. Thesis
 
-Beyond operational stewardship, the candidate selected SIMOBY as the core empirical research subject for their **Bachelor of Engineering (*Sarjana Teknik*) thesis**:
+Beyond operational stewardship, I selected SIMOBY as the core empirical research subject for my **Bachelor of Engineering (*Sarjana Teknik*) thesis**:
 
 * **Thesis Title:** *Penerapan Metode WebQual 4.0 dan Importance-Performance Analysis untuk Mengukur Kualitas Sistem Informasi Mobilitas Internasional Universitas Negeri Yogyakarta (SIMOBY UNY)*
 * **Graduation & Defense:** Defended on July 31, 2026; conferred with a **3.77 GPA**.

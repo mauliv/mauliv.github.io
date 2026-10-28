@@ -2,8 +2,8 @@
 id: "xr-plant-escape"
 title: "Plant Escape: Mobile AR & Physical Science Card Games"
 slug: "plant-escape-ar"
-summary: "Unity/Vuforia AR science-card game combatting biology learning loss, field-tested at SMP N 1 Muntilan, with two HKI copyrights and secured PKM-RSH research grant funding (~IDR 6,000,000)."
-excerpt: "Vuforia image targets were calibrated across 58 physical biology cards, achieving a 100% successful render rate in blackbox trials across scan distances from 5 cm to 100 cm — running smoothly on lower-end Android devices in public middle schools."
+summary: "Unity/Vuforia mobile AR science learning game addressing post-pandemic biology learning loss, field-tested at SMP N 1 Muntilan (Middle School), protected by two national IP copyrights (HKI — Directorate General of Intellectual Property) and funded by the Ministry of Education Belmawa (~IDR 6,000,000)."
+excerpt: "To combat biology learning loss in secondary schools, I engineered an interactive mobile AR learning game in Unity and Vuforia paired with 58 physical science cards. Achieving a 100% recognition rate from 5 cm to 100 cm on budget Android phones, the system produced statistically significant comprehension gains in classroom trials and earned 2 national IP copyrights."
 role: "Lead Unity & AR Developer / Co-Researcher"
 period:
   start: "2022-06"
@@ -18,21 +18,30 @@ tech_stack:
   - "Blender 3D Modeling"
   - "Physical Card Design (58 Cards)"
 metrics:
+  - label: "Controlled Trial Sample"
+    value: "75 Grade 8 students across 3 experimental and control cohorts"
+    provenance: "SMP N 1 Muntilan Field Trial (PKM-RSH 2022)"
+  - label: "Knowledge Retention Gain"
+    value: "+14.81 mean score gain (vs +3.91 in conventional PPT control)"
+    provenance: "Pre/Post-test SPSS Normalized Gain Analysis (JATIKA 2022)"
+  - label: "Statistical Significance"
+    value: "ANOVA p = 0.005 (statistically significant retention gain, p < 0.05)"
+    provenance: "One-Way ANOVA SPSS Test, PKM-RSH Final Report"
+  - label: "Comprehension Rate"
+    value: "96.30% student comprehension agreement (vs 50.00% control)"
+    provenance: "Post-trial evaluation survey"
   - label: "Scan Recognition Distance"
     value: "5 cm – 100 cm verified across 58 card markers"
     provenance: "career-archive.md:77"
   - label: "Physical Marker Deck"
     value: "58 custom Ivory 260gsm playing cards (7.5 x 10 cm)"
     provenance: "PKM-RSH physical card deck specs"
-  - label: "Target Learners"
-    value: "Grade 8 Middle School Biology (SMP Negeri 1 Muntilan)"
-    provenance: "Field trial documentation (SMP N 1 Muntilan)"
   - label: "IP Protection"
-    value: "2 Official HKI Copyrights Granted (Kemenkumham RI)"
+    value: "2 Official HKI Copyrights Granted (Ministry of Law and Human Rights)"
     provenance: "career-archive.md:177-179"
   - label: "Secured Research Grant"
-    value: "PKM-RSH funding ~IDR 6,000,000 (Belmawa Kemendikbudristek)"
-    provenance: "Belmawa Kemendikbudristek PKM-RSH Grant"
+    value: "National Student Research Grant (PKM-RSH) funding ~IDR 6,000,000 (Ministry of Education Belmawa)"
+    provenance: "Belmawa Ministry of Education PKM-RSH Grant"
 live_url: null
 archive_status: "demo-only"
 engine: "Unity 3D (v2021.3.0f1 LTS)"
@@ -62,8 +71,8 @@ publications:
     date: "2022-12"
     focus: "Science Card Games Berbasis Augmented Reality sebagai Solusi Mengatasi Learning Loss Pasca Pandemi COVID-19"
 grants_and_honors:
-  - "Secured PKM-RSH Research Grant funding (~IDR 6,000,000)"
-  - "PIMNAS 35 National Finalist (2022)"
+  - "Secured National Student Research Grant (PKM-RSH) funding (~IDR 6,000,000)"
+  - "PIMNAS 35 National Finalist (Premier National Student Science & Innovation Competition, 2022)"
 provenance_source: "Plant Escape Unity project; career-archive.md:33, 74-78, 220-224"
 privacy_level: "public"
 epistemic_status: "verified-fact"
@@ -98,9 +107,9 @@ evidence:
 
 ## 1. The Challenge: Bringing Flat Biology Diagrams to Life
 
-Middle school students often struggle with abstract plant biology concepts. Internal botanical anatomy — such as the differences between monocot and dicot stems, or how xylem and phloem transport water and nutrients — is difficult to grasp from flat diagrams in a paper textbook.
+Middle school students at SMP Negeri 1 Muntilan frequently struggled with abstract plant biology concepts. Internal botanical anatomy — such as the differences between monocot and dicot stems, or how xylem and phloem transport nutrients — was difficult to grasp from static 2D textbook drawings.
 
-**Plant Escape** was created as an interactive educational game. By pairing physical collectible cards with mobile Augmented Reality (AR), students hold a card in their hand, point their smartphone camera at it, and immediately see an interactive 3D cross-section of the plant appear directly on their desk.
+To solve this learning bottleneck, I co-designed and engineered **Plant Escape** as an interactive educational game. By pairing physical collectible cards with mobile Augmented Reality (AR), students hold a card in their hand, point their smartphone camera at it, and immediately inspect interactive 3D cross-sections of botanical structures rendered directly on their desks.
 
 ![Plant Escape Physical Science Cards Sample](/images/plant-escape/plant-escape-cards-sample.png)
 
@@ -119,7 +128,7 @@ The experience is centered around a custom **58-card physical card deck** printe
 
 ## 3. Technical Architecture & System Flow
 
-The app was developed in **Unity 2021.3 (LTS)** using the **Vuforia Engine** SDK for image tracking, optimized to run smoothly on budget Android smartphones:
+I developed the application in **Unity 2021.3 (LTS)** with C# using the **Vuforia Engine** SDK for image tracking, specifically optimizing assets to run smoothly on lower-tier Android smartphones common in Indonesian public schools:
 
 ```
 [ Main Menu ] ──► [ Learning Objectives ] ──► [ Theory Material (Swipe) ]
@@ -132,26 +141,42 @@ The app was developed in **Unity 2021.3 (LTS)** using the **Vuforia Engine** SDK
 • Touch controls: 360° rotate & pinch zoom                            • Instant scoring & feedback
 ```
 
-### Key Engineering Modules:
-* **Interactive 3D Biological Models:** Low-polygon 3D models created in Blender with baked normal maps for optimal rendering speed:
+### Key Engineering Modules I Built:
+* **Interactive 3D Biological Models:** Low-polygon 3D models modeled in Blender with baked normal maps for high rendering efficiency:
   * `batang-dikotil` (Dicotyledonous stem anatomy with circular vascular arrangement)
   * `batang-monokotil` (Monocotyledonous stem anatomy with scattered vascular bundles)
   * `xylem-floem-di-batang8` (Detailed vascular transport layers)
 * **Formative Quiz Engine (`QuizManager.cs`):** Dynamic question randomization and scoring across 10 evaluation scenes (`Evaluasi1` through `Evaluasi10`).
 * **Drag-and-Drop Matching (`DragDropManager.cs`):** Gamified mini-games where students drag plant parts into the correct biological category.
-* **Touch-Enabled Inspection:** Smooth gestures allowing students to rotate models in 360 degrees and pinch-to-zoom into internal tissue layers.
+* **Touch-Enabled Inspection:** Smooth gesture controllers allowing students to rotate models in 360 degrees and pinch-to-zoom into internal tissue layers.
+
+![Unity 3D Development Environment & Asset Calibration](/images/plant-escape/plant-escape-unity-development.jpg)
 
 ---
 
-## 4. Classroom Trials & Educational Impact
+## 4. Controlled Classroom Trials & Statistical Proof
 
-To measure real pedagogical effectiveness, Plant Escape was field-tested in an experimental pre-test/post-test trial with Grade 8 students at **SMP Negeri 1 Muntilan**:
+To measure whether physical-digital AR games genuinely remediate post-pandemic learning loss, Plant Escape was evaluated through a rigorous **3-arm experimental pre-test/post-test trial** conducted at **SMP Negeri 1 Muntilan** (Magelang, Central Java) across **75 Grade 8 students**:
 
 ![Classroom Field Trial at SMP Negeri 1 Muntilan](/images/plant-escape/plant-escape-classroom-trial.jpg)
 
-* **Collaborative Learning:** Students worked in small groups, scanning cards together and discussing anatomical differences as 3D projections appeared on their tables.
-* **Measurable Learning Gains:** Normalized Gain (N-Gain) statistical analysis showed a significant improvement in student comprehension and recall compared to traditional textbook study.
-* **Broad Device Compatibility:** Blackbox testing confirmed reliable tracking across budget Android devices, ensuring schools don't need expensive flagship phones for students to participate.
+### A. The 3-Arm Comparative Study
+
+| Cohort | Intervention Method | Sample Size | Pre-to-Post Gain | Comprehension Agreement |
+| :--- | :--- | :---: | :---: | :---: |
+| **Experimental Cohort 1** | **Plant Escape (58 Physical Cards + Mobile AR App)** | **27 Students** | **+14.81 points** | **96.30%** |
+| **Experimental Cohort 2** | Science Card Games only (Physical cards, no AR) | 26 Students | +9.73 points | 90.77% |
+| **Control Group** | Conventional Lecture (Static PowerPoint slides) | 22 Students | +3.91 points | 50.00% |
+
+![Students Scanning Plant Escape Cards with Mobile AR in Classroom Trial](/images/plant-escape/plant-escape-ar-classroom-trial.jpg)
+
+![Collaborative Card Game Learning Cohort at SMP N 1 Muntilan](/images/plant-escape/plant-escape-card-classroom-trial.jpg)
+
+### B. Key Statistical & Pedagogical Findings
+* **Statistically Significant Superiority (ANOVA $p = 0.005$):** Inferential analysis using One-Way ANOVA in SPSS yielded a significance value of **$p = 0.005$** ($p < 0.05$). This confirmed that the knowledge retention gain in the Plant Escape AR cohort was statistically significant and not an artifact of random variation.
+* **Remediating Post-Pandemic Learning Loss:** While traditional lecture methods produced only modest knowledge retention (+3.91 points), combining hands-on physical tactile cards with real-time 3D AR inspection produced an almost **4× knowledge gain (+14.81 points)**.
+* **Collaborative Tabletop Dynamics:** Students worked in small clusters of 4–5, passing physical cards around desks and scanning them collectively. The instant 3D projection of vascular cross-sections prompted spontaneous peer-to-peer discussions rather than passive screen consumption.
+* **Low-End Hardware Stability:** Blackbox stress testing confirmed rock-solid marker tracking between **5 cm and 100 cm** across entry-level Android smartphones with 2GB–3GB RAM under standard fluorescent school lighting.
 
 ---
 
@@ -161,4 +186,4 @@ To measure real pedagogical effectiveness, Plant Escape was field-tested in an e
    * *Computer Software:* Hak Cipta No. **000377191** (*Plant Escape: Science Card Application*) granted by DJKI Kemenkumham RI. Searchable on the official [PDKI Indonesia Registry](https://pdki-indonesia.dgip.go.id/) using registration number `000377191`.
    * *Physical Teaching Device:* Hak Cipta No. **000377182** (*Plant Escape: Science Card Games*) granted by DJKI Kemenkumham RI. Searchable on the official [PDKI Indonesia Registry](https://pdki-indonesia.dgip.go.id/) using registration number `000377182`.
 2. **Peer-Reviewed Journal Publication:** Published in *[Jurnal Informatika dan Rekayasa Perangkat Lunak (JATIKA)](https://www.researchgate.net/publication/375803418_Science_Card_Games_Berbasis_Augmented_Reality_sebagai_Solusi_Mengatasi_Learning_Loss_Pasca_Pandemi_COVID-19)*, Vol. 3 No. 4 (December 2022): *"Science Card Games Berbasis Augmented Reality sebagai Solusi Mengatasi Learning Loss Pasca Pandemi COVID-19"* ([View Paper on ResearchGate](https://www.researchgate.net/publication/375803418_Science_Card_Games_Berbasis_Augmented_Reality_sebagai_Solusi_Mengatasi_Learning_Loss_Pasca_Pandemi_COVID-19)).
-3. **National Research Grant & Finalist:** Awarded competitive **PKM-RSH research funding (~IDR 6,000,000)** by Belmawa Kemendikbudristek and selected as a **PIMNAS 35 National Finalist (2022)**.
+3. **National Research Grant & Finalist:** Awarded competitive **national student research funding (PKM-RSH, ~IDR 6,000,000)** by the Ministry of Education (Belmawa Kemendikbudristek) and selected as a **PIMNAS 35 National Finalist (2022)** — Indonesia's premier national collegiate innovation finals.

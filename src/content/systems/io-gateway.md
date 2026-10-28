@@ -1,11 +1,11 @@
 ---
 id: "sys-io-gateway"
-title: "IO UNY International Gateway"
+title: "UNY International Office Gateway & Portal"
 slug: "io-uny-homepage"
 institution_logo: "/logos/uny.svg"
 project_logo: "/logos/io-uny.png"
 summary: "Drupal 7 public gateway routing four international-audience pathways, 11 global mobility programs, and institutional partnerships for UNY."
-excerpt: "Designed and implemented a pathway-first information architecture on Drupal 7 and Nginx, replacing an undifferentiated web presence with four dedicated routing funnels for prospective foreign applicants, current international students, outbound civitas, and global university partners."
+excerpt: "Designed and implemented a pathway-first information architecture on Drupal 7 and Nginx, replacing an undifferentiated web presence with four dedicated routing funnels for prospective foreign applicants, current international students, outbound domestic scholars and students, and global university partners."
 role: "Web Developer & Information Architect"
 period:
   start: "2021"
@@ -85,7 +85,7 @@ Mixing these user journeys produced high bounce rates, confused foreign applican
 
 ## 2. The "Pathway-First" UX Architecture
 
-To eliminate navigation confusion, the portal was redesigned around a **pathway-first architecture**. Prominently featured at the top of the homepage, visitors immediately self-select their target pathway:
+To eliminate navigation confusion, I redesigned the portal around a **pathway-first architecture**. Prominently featured at the top of the homepage, visitors immediately self-select their target pathway:
 
 ```
 [ io.uny.ac.id Gateway ]
@@ -136,7 +136,7 @@ The portal organizes UNY's complete international offerings into 11 distinct, se
 
 ## 4. Technical Architecture & CMS Engineering
 
-The gateway is built on **Drupal 7** and configured to operate within UNY's central server infrastructure:
+I engineered and maintain the gateway on **Drupal 7**, configured to operate reliably within UNY's central server infrastructure:
 
 ```
 [ Client Browser ]

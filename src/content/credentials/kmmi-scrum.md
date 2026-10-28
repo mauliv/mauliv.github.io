@@ -1,10 +1,10 @@
 ---
 id: "cred-kmmi-scrum"
-title: "KMMI Scrum Project Management"
+title: "Scrum Project Management Professional Micro-Credential (KMMI — Ministry of Education)"
 slug: "kmmi-scrum-project-management"
 institution_logo: "/logos/kemdikbud.svg"
-summary: "National micro-credential in Scrum project management covering Agile workflows and sprint planning."
-role: "Trainee"
+summary: "National micro-credential in Scrum project management covering Agile workflows, backlog refinement, and sprint planning."
+role: "Certified Scrum Trainee"
 period:
   start: "2021-08"
   end: "2021-10"
@@ -16,15 +16,15 @@ metrics: []
 live_url: null
 archive_status: "archived"
 credential_type: "certification"
-issuing_body: "Kemdikbudristek RI / UNY (Kredensial Mikro Mahasiswa Indonesia)"
+issuing_body: "Ministry of Education, Culture, Research, and Technology (Kemdikbudristek RI) / UNY"
 validity: "2021-08 to 2021-10"
 provenance_source: "career-archive.md:29, 167"
 privacy_level: "public"
 epistemic_status: "verified-fact"
-verification_notes: "KMMI micro-credential in Scrum project management under the national Kredensial Mikro Mahasiswa Indonesia program."
+verification_notes: "National micro-credential in Scrum project management under the Indonesian Student Micro-Credential (KMMI) program administered by the Ministry of Education (Kemdikbudristek) and UNY."
 evidence:
   - type: "internal-pdf"
-    label: "KMMI Completion Certificate"
+    label: "Scrum Project Management Certificate (KMMI)"
     url: "/docs/credentials/sertifikat-kmmi-scrum.pdf"
     is_internal: true
     status: "needs-confirmation"
@@ -32,7 +32,7 @@ evidence:
 
 ## Micro-Credential
 
-KMMI (Kredensial Mikro Mahasiswa Indonesia): Scrum Project Management training delivered by Kemdikbudristek RI / UNY (Aug – Oct 2021).
+**Indonesian Student Micro-Credential (KMMI):** Scrum Project Management certification course delivered by the Ministry of Education (Kemdikbudristek RI) and UNY (Aug – Oct 2021).
 
 ## Curriculum
 

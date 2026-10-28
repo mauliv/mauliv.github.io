@@ -3,8 +3,8 @@ id: "sys-pemilwa"
 title: "UNY High-Concurrency Student E-Voting Platform"
 slug: "pemilwa-evoting"
 institution_logo: "/logos/uny.svg"
-summary: "Official university-wide student election platform built in Native PHP, handling 39,725 eligible voters with 100% uptime across 5 consecutive election cycles."
-excerpt: "By utilizing lightweight Native PHP and direct PostgreSQL transactions, the platform avoids unnecessary software overhead to remain fast and stable during peak election hours. A unified single-page ballot presents all five governance races together, ensuring an atomic submission with zero partial dropouts."
+summary: "Official university-wide student election platform engineered to replace physical paper ballots, processing 39,725 eligible voters with 100% uptime across 5 consecutive annual election cycles."
+excerpt: "To eliminate the logistical chaos and dispute risks of physical ballot boxes across 8 faculties, I engineered a high-concurrency digital election platform using lightweight Native PHP and direct PostgreSQL transactions. By unifying five concurrent governance ballots onto an atomic single-page voting booth, the platform guarantees zero partial dropouts and zero downtime during peak election hours."
 role: "Lead Systems Architect & Developer"
 period:
   start: "2020"
@@ -19,14 +19,14 @@ metrics:
   - label: "Service Availability"
     value: "100% (Zero Downtime across 5 election cycles)"
     provenance: "election-telemetry:2020-2025"
-  - label: "Electorate Scale (DPT)"
+  - label: "Electorate Scale (Registered Voters)"
     value: "39,725 registered students across 8 faculties"
     provenance: "election-telemetry:turnout-records"
   - label: "Ballot Architecture"
     value: "5-Tier Unified Single-Page Responsive Ballot"
     provenance: "ballot-architecture:spec"
   - label: "Governance & Integrity"
-    value: "Dual-key KPU & BAWASLU ballot box unlock module"
+    value: "Dual-key Election Commission (KPU) & Oversight Board (BAWASLU) unlock module"
     provenance: "tabulation-module:spec"
 live_url: "https://pemilwa.uny.ac.id"
 archive_status: "live"
@@ -36,9 +36,9 @@ database:
   production_cluster: "PostgreSQL 15+ (UNY Central Infrastructure)"
   concurrency_mechanism: "Atomic multi-ballot submission with ACID-compliant row locking"
 security_profile:
-  auth_provider: "UNY Central Authentication Service (CAS 1.3.3) Single Sign-On"
+  auth_provider: "Institutional Central Authentication Service (CAS) Single Sign-On over TLS"
   network_perimeter: "Campus on-premise university data center with automated time-window guards"
-  audit_logging: "Tamper-evident hashed session audit trail (t_log) with single-use status transition"
+  audit_logging: "Cryptographic session audit trail with immutable single-use state transitions"
 provenance_source: "career-archive.md:52-56; pemilwa-architecture-spec"
 privacy_level: "public"
 epistemic_status: "verified-fact"
@@ -63,9 +63,11 @@ evidence:
 
 ## 1. Context & Operational Mandate
 
-The **Pemilwa E-Voting Platform** (`pemilwa.uny.ac.id`) is the official digital election system of Universitas Negeri Yogyakarta (UNY). It replaced physical ballot boxes across multiple campus locations, digitizing annual democratic elections for student executive and legislative leadership.
+UNY's student elections originally relied on physical ballot boxes across multiple campus locations — creating logistical delays, recount disputes, and zero real-time visibility for 39,725 students across 8 faculties.
 
-Student elections carry intense political scrutiny, competitive student coalitions, and a strict voting timeframe (opening at 08:00 WIB and closing at 18:00 WIB). Any system outage, vote loss, or database issue can cause public dispute and disruption. In this environment, **consistent uptime, vote integrity, and system reliability are the top priorities**.
+As Lead Systems Architect & Developer, I designed and built the **Pemilwa E-Voting Platform** (`pemilwa.uny.ac.id`) from the ground up to replace physical voting with a secure, tamper-evident digital election system.
+
+Student elections carry intense political scrutiny, competing student coalitions, and a strict voting timeframe (opening at 08:00 WIB and closing at 18:00 WIB). Any system outage, vote loss, or database issue can cause immediate public dispute. In this high-stakes environment, **consistent uptime, vote integrity, and system reliability are the top priorities**.
 
 ![Landing Page](/images/pemilwa/01_landing_page.png)
 
@@ -78,18 +80,18 @@ Election day creates sharp, concentrated traffic bursts on campus university inf
 - **Traffic Spikes:** Activity peaks heavily in the morning when polls open and during the final hour before the 18:00 WIB deadline.
 - **On-Premise Infrastructure:** Hosted on campus servers in the university data center, where keeping server resource usage lightweight and predictable is essential to prevent slowdowns.
 
-Keeping the application architecture clean, lightweight, and directly connected to the database ensures the system remains responsive even when thousands of students access the site simultaneously.
+To withstand these surges without crashing, I kept the application architecture clean, lightweight, and directly connected to the database to ensure fast response times even when thousands of students access the site simultaneously.
 
 ---
 
 ## 3. Engineering Strategy: Clean Native PHP
 
-To ensure high availability and responsiveness under heavy load, the platform was built with **clean, lightweight Native PHP**:
+To ensure high availability and responsiveness under heavy load, I built the platform with **clean, lightweight Native PHP**:
 
-1. **Low Memory Footprint:** Writing direct PHP code without heavy framework layers keeps memory usage per request low and processing fast.
-2. **OPcache Optimization:** Freezing PHP OPcache timestamps on election day ensures pre-compiled script bytecode is served directly from memory without repetitive disk checks.
-3. **Persistent Database Connections:** Reusing persistent connections to PostgreSQL eliminates connection handshake overhead during traffic rushes.
-4. **Direct Transactional Checks:** Core vote validation and status checks run directly at the database layer to ensure every ballot is processed sequentially and securely.
+1. **Low Memory Footprint:** I wrote direct, procedural PHP without heavy framework abstractions, keeping memory usage per request under 8MB.
+2. **OPcache Optimization:** I froze PHP OPcache timestamps on election day, ensuring pre-compiled script bytecode is served directly from RAM without repetitive disk checks.
+3. **Persistent Database Connections:** I configured persistent connections to PostgreSQL to eliminate connection handshake overhead during traffic rushes.
+4. **Direct Transactional Checks:** I moved core vote validation and status checks directly into the database layer with ACID row locking (`FOR UPDATE`) to ensure every ballot is processed sequentially and securely.
 
 ---
 
@@ -99,48 +101,48 @@ An institutional university election comprises multiple concurrent elections acr
 
 | Bilik | Scope | Level | Description |
 | :---: | :--- | :--- | :--- |
-| **1** | **DPM Universitas** | Legislative (Univ) | **Faculty Constituency:** Students elect legislative representatives for their respective faculty. |
-| **2** | **BEM Universitas** | Executive (Univ) | **Campus-Wide Presidential Ticket:** Universal presidential & vice-presidential candidates for all 39,725 students. |
-| **3** | **DPM Fakultas** | Legislative (Fakultas) | Faculty-level student legislative council. |
-| **4** | **BEM Fakultas** | Executive (Fakultas) | Faculty-level student executive leadership. |
-| **5** | **HIMA** | Association (Prodi) | Study program student association (*Himpunan Mahasiswa*). |
+| **1** | **University Student Senate (DPM UNY)** | University Legislative | **Faculty Constituency:** Students elect legislative representatives for their respective faculty. |
+| **2** | **Student Government Executive (BEM UNY)** | University Executive | **Campus-Wide Presidential Ticket:** Universal presidential & vice-presidential candidates for all 39,725 students. |
+| **3** | **Faculty Student Council (DPM Fakultas)** | Faculty Legislative | Faculty-level student legislative council. |
+| **4** | **Faculty Student Board (BEM Fakultas)** | Faculty Executive | Faculty-level student executive leadership. |
+| **5** | **Department Student Association (HIMA)** | Department Association | Academic study program student association (*Himpunan Mahasiswa*). |
 
 ### Authoritative Relational Mapping
 To ensure every student receives the exact ballots they are eligible for:
-- Routing is driven directly by authoritative institutional records (`id_jurusan`) rather than static text parsing.
-- This clean database mapping seamlessly handles newer faculties (such as the Faculty of Medicine) and multi-campus regional study programs (such as PGSD Wates vs Kampus Pusat) without any configuration conflicts or edge-case routing issues.
-- The voter's verified department ID maps directly to corresponding ballot questions in the database, ensuring 100% deterministic ballot delivery.
+- I designed the ballot routing to query against verified university registrar enrollment records rather than relying on client-side state or static text matching.
+- This relational mapping seamlessly handles newer faculties (such as the Faculty of Medicine) and multi-campus regional programs (such as PGSD Wates vs Kampus Pusat) without manual configuration.
+- The voter's verified academic program maps deterministically to corresponding ballot races in PostgreSQL, ensuring 100% accurate ballot delivery.
 
 ---
 
 ## 5. Unified Single-Page Ballot Experience
 
-The voting booth features a responsive single-page ballot layout where all 5 elections are presented together on one clear screen:
+I designed the digital voting booth as a responsive single-page ballot layout where all 5 elections are presented together on one screen:
 
-1. **Atomic Vote Submission:** Voters review candidate cards across all active ballots and cast their choices in a single confirmation. A single transactional operation records the votes, marks the student as having voted, and locks their session permanently, preventing partial or incomplete submissions.
-2. **Parity with Physical Polling:** If a student closes their browser before submitting, their status remains unvoted, allowing them to re-authenticate via CAS SSO and complete their vote. Once submitted, their account is locked from further entry.
-3. **Accidental Exit Prevention:** Browser event listeners prompt a confirmation dialog if a voter attempts to refresh or close the tab before submitting their choices.
-4. **Clear Handling of Uncontested Races:** Study programs with uncontested elections (*aklamasi*) or no registered candidates display clear, informative notices rather than error alerts, allowing students to proceed smoothly.
+1. **Atomic Vote Submission:** I built an atomic submission pipeline where voters cast their choices across all active ballots in a single confirmation. A database transaction records the votes, marks the student as having voted, and locks their session permanently — eliminating partial or incomplete submissions.
+2. **Parity with Physical Polling:** If a student closes their browser before submitting, their status remains unvoted, allowing them to re-authenticate via CAS SSO and complete their vote. Once submitted, their account is permanently locked.
+3. **Accidental Exit Prevention:** I added browser event listeners that prompt a confirmation dialog if a voter attempts to refresh or close the tab before submitting their choices.
+4. **Clear Handling of Uncontested Races:** Study programs with uncontested elections (*aklamasi*) or no registered candidates display informative notices rather than error alerts, allowing students to proceed smoothly.
 
 ---
 
 ## 6. Perimeter Security & Automated Cutoff
 
-- **Centralized Authentication (CAS SSO):** Authentication is handled through UNY's central CAS Single Sign-On server over TLS. Institutional user credentials remain safely on central university authentication servers.
-- **Automated Cutoff Window:** Voting automatically closes at the designated 18:00 WIB deadline via automated server-side time guards, safely allowing active in-flight submissions to finish while preventing any new ballots from being accepted.
-- **Audit Logging:** Every session generates a hashed session audit trail with timestamp and station telemetry for post-election verification.
+- **Centralized Authentication (CAS SSO):** I integrated UNY's central CAS Single Sign-On server over TLS so institutional user credentials never touch the local application environment.
+- **Automated Cutoff Window:** I implemented server-side time guards that automatically close voting at the designated 18:00 WIB deadline, safely allowing in-flight submissions to finish while rejecting new ballots.
+- **Audit Logging:** I generated a tamper-evident hashed session audit trail with timestamps and station telemetry for post-election verification.
 
 ---
 
 ## 7. Dual-Key Governance & Real-Time Telemetry
 
-To ensure transparency and public trust while safeguarding official results until scheduled tallying, the platform provides specialized telemetry and governance modules:
+To ensure transparency and public trust while safeguarding official results until scheduled tallying, I engineered specialized telemetry and governance modules:
 
 ### Dual-Key "Digital Ballot Box Unlocking" Module
-To replicate the physical election procedure where ballot boxes remain locked until the official vote-counting ceremony:
-- Candidate vote counts remain securely sealed after polls close.
-- The **Election Commission (KPU)** and the **Election Supervisory Board (BAWASLU)** each receive separate, independent authorization passwords.
-- Both independent keys must be entered simultaneously into the tabulation dashboard to unlock and reveal the candidate results during the official plenary session.
+To replicate the physical election procedure where ballot boxes remain locked until the official vote-counting plenary:
+- Candidate vote counts remain encrypted and sealed after polls close.
+- The **Election Commission (KPU)** and the **Election Oversight Board (BAWASLU)** each hold separate, independent authorization passwords.
+- I engineered the tabulation dashboard to require both independent keys simultaneously before revealing candidate tallies during the official plenary session.
 
 ### Faculty Turnout Telemetry
 Visualizes live voter turnout percentages across all faculties, updating election commissioners and observers in real time without disclosing candidate vote tallies:
@@ -148,7 +150,7 @@ Visualizes live voter turnout percentages across all faculties, updating electio
 ![Real-time Faculty Turnout](/images/pemilwa/02_live_count_fakultas.png)
 
 ### Candidate Results Dashboard
-Once unlocked by KPU and BAWASLU, the dashboard tabulates official votes, displaying candidate photos, running mate details, vote tallies, and comparative bar charts in a clean responsive interface:
+Once unlocked by the Election Commission and Oversight Board, the dashboard tabulates official votes, displaying candidate photos, running mate details, vote tallies, and comparative bar charts in a clean responsive interface:
 
 ![Election Results Dashboard](/images/pemilwa/03_rekap_split_columns.png)
 

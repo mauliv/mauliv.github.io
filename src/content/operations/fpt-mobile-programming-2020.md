@@ -56,7 +56,7 @@ The **Online Technology Skills Training: Mobile Programming** was an intensive 1
 
 Administered under course code **`PRM391x_02-A_EN`**, the curriculum merged self-paced technical modules with active faculty mentorship, scheduled code reviews, bilateral cultural exchange sessions, and direct industry workshops hosted by engineering leaders from **SeaDev** (Southeast Asia Development). 
 
-The program was formally integrated into Universitas Negeri Yogyakarta's academic pathway through the **Merdeka Belajar – Kampus Merdeka (MBKM)** framework (Peraturan Rektor UNY No. 5 Tahun 2020), transferring core competencies directly into advanced coursework in *Mobile and Cloud Computing Architecture* (TIN6136 / TIN6237) and *Mobile Application Development* (TIN6145 / TIN6246).
+The program was formally integrated into Universitas Negeri Yogyakarta's (UNY) academic curriculum through the national **Independent Campus (*Kampus Merdeka*)** framework under University Presidential Decree (Peraturan Rektor UNY No. 5/2020), transferring core competencies directly into advanced coursework in *Mobile and Cloud Computing Architecture* (TIN6136 / TIN6237) and *Mobile Application Development* (TIN6145 / TIN6246).
 
 ---
 

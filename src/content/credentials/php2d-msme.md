@@ -1,10 +1,10 @@
 ---
 id: "lead-php2d-msme"
-title: "PHP2D National Grant — Rural MSME Digitalization (Gunungkidul)"
+title: "National Rural MSME Digitalization Grant (PHP2D — Ministry of Education)"
 slug: "php2d-msme"
 institution_logo: "/logos/kemdikbud.svg"
 summary: "National ministry community-empowerment grant directing digital branding, web systems, and industrial machinery procurement for a rural Gunungkidul food cooperative."
-excerpt: "Funded with IDR 44,643,000 (IDR 39,643,000 from Kemendikbudristek Belmawa plus IDR 5,000,000 UNY co-funding), this multi-disciplinary project modernized the cassava cracker (patilo) value chain in Padukuhan Pakel. Interventions included direct-to-consumer web ordering (kerupukpatilo.id), retail packaging redesigns, digital marketing training for rural youth, and two custom production machines handling 200 kg batches."
+excerpt: "Funded with IDR 44,643,000 (IDR 39,643,000 from Ministry of Education Belmawa plus IDR 5,000,000 UNY co-funding), this multi-disciplinary project modernized the cassava cracker (patilo) value chain in Pakel Village, Gunungkidul. Interventions included direct-to-consumer web ordering (kerupukpatilo.id), retail packaging redesigns, digital marketing training for rural youth, and two custom production machines handling 200 kg batches."
 role: "Grant Co-Recipient & Technology Lead"
 period:
   start: "2021-07"
@@ -17,10 +17,10 @@ tech_stack:
   - "Financial Bookkeeping Systems"
 metrics:
   - label: "Total Funding Secured"
-    value: "IDR 44,643,000 (IDR 39.64M Kemendikbud Belmawa + IDR 5.0M UNY matching)"
+    value: "IDR 44,643,000 (~$3,000 USD; Ministry of Education Belmawa + UNY matching)"
     provenance: "Grant contract & project allocation records"
   - label: "Community Beneficiaries"
-    value: "15 KWT Pertiwi members & 100+ village attendees (Padukuhan Pakel)"
+    value: "15 Women Farmer Cooperative (KWT Pertiwi) members & 100+ village attendees (Pakel Village)"
     provenance: "Laporan PPM PHP2D Alif:13-16"
   - label: "Machinery Modernization"
     value: "2 custom industrial processing units (dough kneader + 2-in-1 grater & starch separator)"
@@ -33,7 +33,7 @@ metrics:
     provenance: "Laporan PPM PHP2D Alif:15-18, Lampiran 1"
 live_url: null
 archive_status: "archived"
-organization: "UKM Penelitian KRISTAL FEB UNY & Kemendikbudristek Directorate Belmawa"
+organization: "KRISTAL Student Research Organization (UNY) & Directorate of Learning & Student Affairs (Belmawa Kemendikbudristek)"
 leadership_scope:
   divisions_managed: 5
   focus_areas:
@@ -44,17 +44,17 @@ leadership_scope:
     - "Financial bookkeeping literacy and KWT organizational structure establishment"
 competitive_achievements: []
 community_and_grants:
-  - title: "Program Holistik Pembinaan dan Pemberdayaan Desa (PHP2D)"
-    amount: "IDR 44,643,000 (IDR 39,643,000 Kemendikbudristek Belmawa + IDR 5,000,000 UNY Matching)"
-    target: "KWT Pertiwi & Karang Taruna Padukuhan Pakel, Tepus, Gunungkidul"
-    issuing_body: "Direktorat Belmawa, Ditjen Diktiristek, Kemendikbudristek RI"
+  - title: "Holistic Village Development and Empowerment Program (PHP2D)"
+    amount: "IDR 44,643,000 (IDR 39,643,000 Ministry of Education Belmawa + IDR 5,000,000 UNY Matching)"
+    target: "Women Farmer Cooperative (KWT Pertiwi) & Youth Organization, Pakel Village, Gunungkidul"
+    issuing_body: "Directorate of Learning and Student Affairs, Ministry of Education, Culture, Research, and Technology (Kemendikbudristek RI)"
 provenance_source: "Laporan Akhir PHP2D UKM KRISTAL UNY (2021); Laporan PPM PHP2D; Sertifikat Kemendikbudristek No. 28/E2/KM/2021"
 privacy_level: "public"
 epistemic_status: "verified-fact"
-verification_notes: "National competitive grant funded by Kemendikbudristek (Nomor 28/E2/KM/2021) and Universitas Negeri Yogyakarta; backed by 34-page final report, 25-page individual R&D report, equipment invoices, and ministerial certificate."
+verification_notes: "National competitive grant funded by the Ministry of Education (Kemendikbudristek No. 28/E2/KM/2021) and Universitas Negeri Yogyakarta (UNY); backed by 34-page final report, 25-page individual R&D report, equipment invoices, and ministerial certificate."
 evidence:
   - type: "internal-pdf"
-    label: "Kemendikbudristek PHP2D Award Certificate (No. 28/E2/KM/2021)"
+    label: "Ministry of Education (Kemendikbudristek) Grant Certificate (No. 28/E2/KM/2021)"
     url: "/docs/leadership/sertifikat-php2d-kemdikbud.pdf"
     is_internal: true
     status: "available"
@@ -87,14 +87,14 @@ evidence:
 
 ## 1. The National Mandate & Institutional Grant
 
-The **Program Holistik Pembinaan dan Pemberdayaan Desa (PHP2D)** was a highly competitive national grant program administered by the **Direktorat Pembelajaran dan Kemahasiswaan (Belmawa), Ditjen Diktiristek, Kemendikbudristek RI**. 
+The **Holistic Village Development and Empowerment Program (PHP2D)** was a highly competitive national grant program administered by the **Directorate of Learning and Student Affairs (Belmawa), Ministry of Education, Culture, Research, and Technology of the Republic of Indonesia (Kemendikbudristek)**. 
 
-Our cross-faculty team under **UKMF Komunitas Riset dan Penalaran (UKM KRISTAL), Fakultas Ekonomi, Universitas Negeri Yogyakarta** successfully won a national grant allocation to empower rural food micro-enterprises in Southern Yogyakarta:
+Our interdisciplinary team under the student research organization **UKM KRISTAL at the Faculty of Economics, Universitas Negeri Yogyakarta (UNY)** won the national competitive grant to empower rural food micro-enterprises in Southern Yogyakarta:
 
-* **Official Project Title:** *"Pemberdayaan Pelaku UMKM Kerupuk Patilo Melalui Perbaikan Manajemen Dan Tata Kelola Guna Meningkatkan Kemandirian Dan Kesejahteraan Masyarakat Di Kalurahan Tepus, Gunungkidul"*
-* **Total Funding Secured:** **IDR 44,643,000** comprising **IDR 39,643,000** directly awarded from Kemendikbudristek Belmawa plus **IDR 5,000,000** university matching co-funding from Universitas Negeri Yogyakarta.
-* **Target Beneficiaries:** Kelompok Wanita Tani (KWT) Pertiwi (15 women household producers) and Karang Taruna Padukuhan Pakel, Kalurahan Tepus, Kapanewon Tepus, Kabupaten Gunungkidul.
-* **Official Recognition:** Formally ratified via Kemendikbudristek Certificate **No. 28/E2/KM/2021**, signed by Director Aris Junaidi.
+* **Official Project Title:** *"Pemberdayaan Pelaku UMKM Kerupuk Patilo Melalui Perbaikan Manajemen Dan Tata Kelola Guna Meningkatkan Kemandirian Dan Kesejahteraan Masyarakat Di Kalurahan Tepus, Gunungkidul"* (Empowerment of Rural MSME Cassava Cracker Artisans Through Operational Governance and Market Digitalization).
+* **Total Funding Secured:** **IDR 44,643,000** comprising **IDR 39,643,000** directly awarded from Ministry of Education Belmawa plus **IDR 5,000,000** university matching co-funding from Universitas Negeri Yogyakarta (UNY).
+* **Target Beneficiaries:** Women Farmer Cooperative (*Kelompok Wanita Tani* / KWT Pertiwi — 15 household producers) and local village youth (*Karang Taruna*) in Pakel Village, Gunungkidul Regency, Yogyakarta.
+* **Official Recognition:** Formally ratified via Ministry of Education Certificate **No. 28/E2/KM/2021**, signed by Director Aris Junaidi.
 
 > 🌐 **Related Engineering Project & Software Architecture:**  
 > The custom direct-to-consumer web platform and WhatsApp order dispatch system architected and deployed under this grant is documented in the dedicated case study:  
@@ -104,10 +104,10 @@ Our cross-faculty team under **UKMF Komunitas Riset dan Penalaran (UKM KRISTAL),
 
 ## 2. Village Realities: Middleman Traps in the Karst Highlands
 
-Padukuhan Pakel is located in the dry karst hills of southern Gunungkidul. For decades, cassava (*Manihot utilissima*) has been the primary subsistence harvest, processed locally into **Patilo** (crispy molded cassava-starch crackers).
+Pakel Village is located in the dry karst hills of southern Gunungkidul. For decades, cassava (*Manihot utilissima*) has been the primary subsistence harvest, processed locally into **Patilo** (crispy molded cassava-starch crackers).
 
 Despite continuous local production since 1998, the women producers faced chronic economic stagnation:
-1. **Middleman Dependency (*Tengkulak*):** Without direct market channels, producers sold raw, unpackaged patilo in bulk sacks to visiting middlemen at suppressed prices (often barely breaking even on raw singkong costs), while traders marked up prices 3–4× in regional urban markets.
+1. **Middleman Dependency (*Tengkulak*):** Without direct market channels, producers sold raw, unpackaged patilo in bulk sacks to visiting middlemen at suppressed prices (often barely breaking even on raw cassava costs), while traders marked up prices 3–4× in regional urban markets.
 2. **Exhausting Manual Processing:** Batches of up to 200 kg of cassava had to be grated, squeezed to separate starch from fiber, and kneaded completely by hand without food-grade hygiene gear, leading to severe physical strain and bottlenecked output.
 3. **Severe Connectivity Constraints:** Located in valley pockets between rugged karst ridges, the village suffered from near-zero cellular signal, making online communication and order fulfillment impossible from inside household kitchens without climbing nearby hills.
 
@@ -118,15 +118,15 @@ Despite continuous local production since 1998, the women producers faced chroni
 As the **Technology & Digital Systems Lead**, my responsibilities spanned field training, graphic identity redesign, and custom web development:
 
 ### A. Digital Marketing & Content Creation Academy
-Conducted intensive workshops for village youth (Karang Taruna) and KWT Pertiwi members:
+Conducted intensive workshops for village youth and cooperative members:
 * Taught digital product photography and smartphone lighting techniques to capture high-contrast imagery of fried and raw crackers.
-* Trained youth in copywriting and social media broadcasting to turn local culinary heritage into an attractive regional gift (*oleh-oleh khas*).
+* Trained youth in copywriting and social media broadcasting to turn local culinary heritage into an attractive regional specialty gift.
 
 ### B. Packaging Overhaul: From Unbranded Sacks to Commercial Retail
 Replaced anonymous clear plastic bags with vibrant, consumer-grade packaging designs:
 * Designed full-color retail front sheets for local workshop brands (such as **"Fella"** and **"Nanda"**).
-* Standardized packaging formats (standing pouches, sealed plastic bags) featuring clear variant checklists (Singkong, Beras, Rambak, Gendar, Pathilo) and flavor profiles (Original, Pedas, Manis).
-* Integrated official regulatory labeling: **P-IRT food production registration**, Halal certification insignias, and laboratory-verified nutritional facts tables.
+* Standardized packaging formats (standing pouches, sealed plastic bags) featuring clear variant checklists (Cassava, Rice, Rambak, Gendar, Pathilo) and flavor profiles (Original, Spicy, Sweet).
+* Integrated official regulatory labeling: **P-IRT local health bureau food production licensing**, Halal certification insignias, and laboratory-verified nutritional facts tables.
 
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
   <figure class="space-y-2">
@@ -187,6 +187,6 @@ The grant budget was audited and allocated across four core categories: producti
 
 ## 7. Primary Evidence & Documents
 
-* [Kemendikbudristek Award Certificate](/docs/leadership/sertifikat-php2d-kemdikbud.pdf) — Official ministerial certificate of participation and completion (No. 28/E2/KM/2021).
+* [Ministry of Education (Kemendikbudristek) Grant Certificate](/docs/leadership/sertifikat-php2d-kemdikbud.pdf) — Official ministerial certificate of participation and completion (No. 28/E2/KM/2021).
 * [R&D Systems & Web Report (Laporan PPM Alif)](/docs/leadership/laporan-ppm-php2d-alif-patilo.pdf) — Complete 25-page technical report detailing the SDLC Waterfall development of `kerupukpatilo.id`.
-* [Comprehensive PHP2D Final Report (UKM KRISTAL UNY)](/docs/leadership/laporan-akhir-php2d-kristal-uny.pdf) — Complete 34-page institutional project report with financial ledgers, community attendance, and machine engineering specs.
+* [Comprehensive Grant Final Report (UKM KRISTAL UNY)](/docs/leadership/laporan-akhir-php2d-kristal-uny.pdf) — Complete 34-page institutional project report with financial ledgers, community attendance, and machine engineering specs.
