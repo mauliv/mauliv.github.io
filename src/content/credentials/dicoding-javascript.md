@@ -1,6 +1,6 @@
 ---
 id: "cred-dicoding-javascript"
-title: "Dicoding: Belajar Dasar Pemrograman JavaScript"
+title: "Dicoding: JavaScript Programming Fundamentals (Jun 2023)"
 slug: "dicoding-javascript"
 institution_logo: "/logos/dicoding.png"
 summary: "Dicoding Indonesia course on JavaScript fundamentals, ES6, and execution contexts (Jun 2023)."
@@ -13,7 +13,7 @@ tech_stack:
 metrics: []
 live_url: null
 archive_status: "archived"
-credential_type: "certification"
+credential_type: "course"
 issuing_body: "Dicoding Indonesia"
 validity: "Jun 2023 - Jun 2026"
 provenance_source: "career-archive.md:40, 165"
@@ -30,7 +30,7 @@ evidence:
 
 ## Course
 
-Belajar Dasar Pemrograman JavaScript -- Dicoding Indonesia, June 2023 (certificate validity to June 2026).
+JavaScript Programming Fundamentals (Belajar Dasar Pemrograman JavaScript): Dicoding Indonesia, June 2023 (certificate validity to June 2026).
 
 ## Focus
 

@@ -1,6 +1,6 @@
 ---
 id: "cred-kmmi-scrum"
-title: "Scrum Project Management Professional Micro-Credential (KMMI — Ministry of Education)"
+title: "Scrum Project Management Professional Micro-Credential: KMMI Ministry of Education"
 slug: "kmmi-scrum-project-management"
 institution_logo: "/logos/kemdikbud.svg"
 summary: "National micro-credential in Scrum project management covering Agile workflows, backlog refinement, and sprint planning."
@@ -36,4 +36,4 @@ evidence:
 
 ## Curriculum
 
-Agile workflows, Sprint planning, Scrum roles, backlog management, and retrospectives — the methodology layer applied across subsequent project leadership (RESTek, SIMOBY liaison work).
+Agile workflows, Sprint planning, Scrum roles, backlog management, and retrospectives: the methodology layer applied across subsequent project leadership (RESTek, SIMOBY liaison work).

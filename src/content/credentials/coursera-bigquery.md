@@ -15,7 +15,7 @@ tech_stack:
 metrics: []
 live_url: null
 archive_status: "archived"
-credential_type: "certification"
+credential_type: "course"
 issuing_body: "Google Cloud (Coursera)"
 provenance_source: "career-archive.md:34, 163"
 privacy_level: "public"
@@ -31,7 +31,7 @@ evidence:
 
 ## Course
 
-Exploring and Preparing your Data with BigQuery -- Google Cloud, delivered on Coursera, July 2022.
+Exploring and Preparing your Data with BigQuery: Google Cloud, delivered on Coursera, July 2022.
 
 ## Focus
 

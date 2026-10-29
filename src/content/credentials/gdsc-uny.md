@@ -1,6 +1,6 @@
 ---
 id: "lead-gdsc-uny"
-title: "Google Developer Student Clubs (GDSC) — UNY Chapter Lead"
+title: "Google Developer Student Clubs (GDSC): UNY Chapter Lead"
 slug: "gdsc-uny-chapter"
 institution_logo: "/logos/gdsc.png"
 summary: "Two-year tenure leading Google's developer community at UNY through workshops, panels, and study sessions."
@@ -18,7 +18,7 @@ metrics:
     provenance: "career-archive.md:121"
 live_url: "https://gdsc.community.dev/universitas-negeri-yogyakarta/"
 archive_status: "live"
-organization: "Google Developer Student Clubs — Universitas Negeri Yogyakarta"
+organization: "Google Developer Student Clubs: Universitas Negeri Yogyakarta"
 leadership_scope:
   focus_areas:
     - "Technical workshops and hands-on coding sessions"
@@ -45,11 +45,11 @@ evidence:
 
 ## 1. Executive Scope
 
-Chapter Lead and Event Director of Google Developer Student Clubs (GDSC) — UNY Chapter, the official Google Developers student community at Universitas Negeri Yogyakarta (Aug 2020 – Aug 2022).
+Chapter Lead and Event Director of Google Developer Student Clubs (GDSC): UNY Chapter, the official Google Developers student community at Universitas Negeri Yogyakarta (Aug 2020 – Aug 2022).
 
 ## 2. Community Programming
 
-Organized workshops, hands-on coding sessions, and speaker panels covering Web Development, Android, and Cloud Computing — bridging academic theory and industry practice for the campus developer community.
+Organized workshops, hands-on coding sessions, and speaker panels covering Web Development, Android, and Cloud Computing, bridging academic theory and industry practice for the campus developer community.
 
 ## 3. Leadership Model
 

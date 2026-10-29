@@ -1,6 +1,6 @@
 ---
 id: "cred-bnsp-network-admin"
-title: "Certified Junior Network Administrator — National Professional Certification Board (BNSP)"
+title: "Certified Junior Network Administrator: National Professional Certification Board (BNSP)"
 slug: "bnsp-network-administrator-muda"
 institution_logo: "/logos/bnsp.png"
 summary: "Indonesian national professional competency license (SKKNI No. 321/2016) certifying Layer 1–4 enterprise network operations, IP addressing, switching, WLAN, and routing across Autonomous Systems."
@@ -47,7 +47,7 @@ evidence:
 
 ## 1. National Licensing Framework & Overview
 
-The **Junior Network Administrator** (*Network Administrator Muda*) certification is a state-recognized professional competency license issued by the **National Professional Certification Board (BNSP — Badan Nasional Sertifikasi Profesi)** through the **UNY Professional Certification Body (LSP UNY)**.
+The **Junior Network Administrator** (*Network Administrator Muda*) certification is a state-recognized professional competency license issued by the **National Professional Certification Board (BNSP: Badan Nasional Sertifikasi Profesi)** through the **UNY Professional Certification Body (LSP UNY)**.
 
 Administered under the **Indonesian National Work Competency Standards (SKKNI No. 321/2016)** for the Information and Communication Technology / Telecommunications sector (Category J, Area `J.611000`), the license certifies proven, hands-on mastery in deploying, configuring, and operating local and wide area network infrastructure across Layers 1 through 4 of the OSI model.
 
@@ -95,7 +95,7 @@ This standardized networking baseline directly underpinned several major enginee
 
 ## 5. Credential Verification & Privacy Notice
 
-* **Issuing Body:** National Professional Certification Board (BNSP — Badan Nasional Sertifikasi Profesi) / UNY Professional Certification Body (LSP UNY).
+* **Issuing Body:** National Professional Certification Board (BNSP: Badan Nasional Sertifikasi Profesi) / UNY Professional Certification Body (LSP UNY).
 * **Certificate Registry:** No. 61100 2522 4 0000106 2021.
 * **Issuance Date:** 26 June 2021 (Yogyakarta, Indonesia).
 * **Validity Period:** 26 June 2021 – 26 June 2024 (Earned 3-year national license; permanently preserved in career archives as verified foundational competency).

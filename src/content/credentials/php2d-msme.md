@@ -1,6 +1,6 @@
 ---
 id: "lead-php2d-msme"
-title: "National Rural MSME Digitalization Grant (PHP2D — Ministry of Education)"
+title: "National Rural MSME Digitalization Grant: PHP2D Ministry of Education"
 slug: "php2d-msme"
 institution_logo: "/logos/kemdikbud.svg"
 summary: "National ministry community-empowerment grant directing digital branding, web systems, and industrial machinery procurement for a rural Gunungkidul food cooperative."
@@ -69,7 +69,7 @@ evidence:
     is_internal: true
     status: "available"
   - type: "external-press"
-    label: "UNY News — UKM KRISTAL Dampingi UMKM Patilo"
+    label: "UNY News: UKM KRISTAL Dampingi UMKM Patilo"
     url: "https://www.uny.ac.id/id/berita/ukm-kristal-fe-uny-dampingi-umkm-patilo-di-gunungkidul"
     is_internal: false
     status: "available"
@@ -79,7 +79,7 @@ evidence:
     is_internal: false
     status: "available"
   - type: "external-press"
-    label: "SDGs UNY Feature — Improving Quality of Local Food"
+    label: "SDGs UNY Feature: Improving Quality of Local Food"
     url: "https://sdgs.uny.ac.id/content/improving-quality-patilo-local-food-gunungkidul"
     is_internal: false
     status: "available"
@@ -93,7 +93,7 @@ Our interdisciplinary team under the student research organization **UKM KRISTAL
 
 * **Official Project Title:** *"Pemberdayaan Pelaku UMKM Kerupuk Patilo Melalui Perbaikan Manajemen Dan Tata Kelola Guna Meningkatkan Kemandirian Dan Kesejahteraan Masyarakat Di Kalurahan Tepus, Gunungkidul"* (Empowerment of Rural MSME Cassava Cracker Artisans Through Operational Governance and Market Digitalization).
 * **Total Funding Secured:** **IDR 44,643,000** comprising **IDR 39,643,000** directly awarded from Ministry of Education Belmawa plus **IDR 5,000,000** university matching co-funding from Universitas Negeri Yogyakarta (UNY).
-* **Target Beneficiaries:** Women Farmer Cooperative (*Kelompok Wanita Tani* / KWT Pertiwi — 15 household producers) and local village youth (*Karang Taruna*) in Pakel Village, Gunungkidul Regency, Yogyakarta.
+* **Target Beneficiaries:** Women Farmer Cooperative (*Kelompok Wanita Tani* / KWT Pertiwi, 15 household producers) and local village youth (*Karang Taruna*) in Pakel Village, Gunungkidul Regency, Yogyakarta.
 * **Official Recognition:** Formally ratified via Ministry of Education Certificate **No. 28/E2/KM/2021**, signed by Director Aris Junaidi.
 
 > 🌐 **Related Engineering Project & Software Architecture:**  
@@ -130,12 +130,12 @@ Replaced anonymous clear plastic bags with vibrant, consumer-grade packaging des
 
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
   <figure class="space-y-2">
-    <img src="/images/patilo/patilo-packaging-fella.png" alt="Retail Packaging Design — Rumah Produksi Fella" class="rounded-lg border border-neutral-200 dark:border-neutral-700 w-full max-h-96 object-contain bg-neutral-50 dark:bg-neutral-900 p-2" />
-    <figcaption class="text-xs text-center text-neutral-500 font-mono">Retail Packaging Design — Rumah Produksi Fella</figcaption>
+    <img src="/images/patilo/patilo-packaging-fella.png" alt="Retail Packaging Design: Rumah Produksi Fella" class="rounded-lg border border-neutral-200 dark:border-neutral-700 w-full max-h-96 object-contain bg-neutral-50 dark:bg-neutral-900 p-2" />
+    <figcaption class="text-xs text-center text-neutral-500 font-mono">Retail Packaging Design: Rumah Produksi Fella</figcaption>
   </figure>
   <figure class="space-y-2">
-    <img src="/images/patilo/patilo-packaging-nanda.png" alt="Retail Packaging Design — Rumah Produksi Nanda" class="rounded-lg border border-neutral-200 dark:border-neutral-700 w-full max-h-96 object-contain bg-neutral-50 dark:bg-neutral-900 p-2" />
-    <figcaption class="text-xs text-center text-neutral-500 font-mono">Retail Packaging Design — Rumah Produksi Nanda</figcaption>
+    <img src="/images/patilo/patilo-packaging-nanda.png" alt="Retail Packaging Design: Rumah Produksi Nanda" class="rounded-lg border border-neutral-200 dark:border-neutral-700 w-full max-h-96 object-contain bg-neutral-50 dark:bg-neutral-900 p-2" />
+    <figcaption class="text-xs text-center text-neutral-500 font-mono">Retail Packaging Design: Rumah Produksi Nanda</figcaption>
   </figure>
 </div>
 
@@ -181,12 +181,12 @@ The grant budget was audited and allocated across four core categories: producti
 
 ## 6. Related Engineering Project & Systems Case Study
 
-* 👉 **Web Platform Case Study:** [Kerupuk Patilo MSME Direct-to-Consumer Web Platform (kerupukpatilo.id)](/it/kerupuk-patilo-msme) — Explores the decentralized WhatsApp order dispatch architecture, low-bandwidth optimizations for rural karst topography, SDLC Waterfall process, and branded packaging design.
+* 👉 **Web Platform Case Study:** [Kerupuk Patilo MSME Direct-to-Consumer Web Platform (kerupukpatilo.id)](/it/kerupuk-patilo-msme): Explores the decentralized WhatsApp order dispatch architecture, low-bandwidth optimizations for rural karst topography, SDLC Waterfall process, and branded packaging design.
 
 ---
 
 ## 7. Primary Evidence & Documents
 
-* [Ministry of Education (Kemendikbudristek) Grant Certificate](/docs/leadership/sertifikat-php2d-kemdikbud.pdf) — Official ministerial certificate of participation and completion (No. 28/E2/KM/2021).
-* [R&D Systems & Web Report (Laporan PPM Alif)](/docs/leadership/laporan-ppm-php2d-alif-patilo.pdf) — Complete 25-page technical report detailing the SDLC Waterfall development of `kerupukpatilo.id`.
-* [Comprehensive Grant Final Report (UKM KRISTAL UNY)](/docs/leadership/laporan-akhir-php2d-kristal-uny.pdf) — Complete 34-page institutional project report with financial ledgers, community attendance, and machine engineering specs.
+* [Ministry of Education (Kemendikbudristek) Grant Certificate](/docs/leadership/sertifikat-php2d-kemdikbud.pdf): Official ministerial certificate of participation and completion (No. 28/E2/KM/2021).
+* [R&D Systems & Web Report (Laporan PPM Alif)](/docs/leadership/laporan-ppm-php2d-alif-patilo.pdf): Complete 25-page technical report detailing the SDLC Waterfall development of `kerupukpatilo.id`.
+* [Comprehensive Grant Final Report (UKM KRISTAL UNY)](/docs/leadership/laporan-akhir-php2d-kristal-uny.pdf): Complete 34-page institutional project report with financial ledgers, community attendance, and machine engineering specs.

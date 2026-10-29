@@ -188,7 +188,7 @@ const credentials = defineCollection({
     z
       .object({
         ...base,
-        credential_type: z.enum(['degree', 'license', 'certification', 'ip', 'grant', 'test', 'mobility', 'internship', 'award']),
+        credential_type: z.enum(['degree', 'license', 'certification', 'ip', 'grant', 'test', 'mobility', 'internship', 'award', 'course']),
         institution: z.string().optional(),
         conferred_date: z.string().optional(),
         gpa: z.string().optional(),

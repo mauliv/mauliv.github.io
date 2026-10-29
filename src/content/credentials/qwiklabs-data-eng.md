@@ -14,7 +14,7 @@ tech_stack:
 metrics: []
 live_url: null
 archive_status: "archived"
-credential_type: "certification"
+credential_type: "course"
 issuing_body: "Qwiklabs"
 provenance_source: "user-stated 2026-09"
 privacy_level: "public"

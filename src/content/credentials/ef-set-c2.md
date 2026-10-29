@@ -1,6 +1,6 @@
 ---
 id: "cred-ef-set-c2"
-title: "EF SET English Certificate — C2 Proficient (71/100)"
+title: "EF SET English Certificate: C2 Proficient (71/100)"
 slug: "ef-set-c2-proficient"
 institution_logo: "/logos/ef.svg"
 summary: "C2 Proficient English certification with a score of 71/100."
@@ -36,7 +36,7 @@ evidence:
 
 ## Score
 
-EF SET English certificate: **71/100 — C2 Proficient** (August 2026), the highest EF SET proficiency band.
+EF SET English certificate: **71/100 (C2 Proficient)** (August 2026), the highest EF SET proficiency band.
 
 ## Context
 

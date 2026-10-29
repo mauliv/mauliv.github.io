@@ -1,6 +1,6 @@
 ---
 id: "cred-toeic-925"
-title: "TOEIC Official Score — 925 / 990"
+title: "TOEIC Official Score: 925 / 990"
 slug: "toeic-925"
 institution_logo: "/logos/ets.svg"
 summary: "TOEIC score of 925/990 administered by ETS during vocational high school."
@@ -40,4 +40,4 @@ TOEIC (Test of English for International Communication), administered by ETS: **
 
 ## Context
 
-Achieved during vocational high school — an early signal of English working proficiency that later paired with the EF SET C2 result (2026).
+Achieved during vocational high school: an early signal of English working proficiency that later paired with the EF SET C2 result (2026).

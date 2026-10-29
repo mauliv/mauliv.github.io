@@ -1,6 +1,6 @@
 ---
 id: "cred-bangkit-2023"
-title: "Bangkit Academy 2023 — Cloud Computing Cohort"
+title: "Bangkit Academy 2023: Cloud Computing Cohort"
 slug: "bangkit-academy-cloud-2023"
 institution_logo: "/logos/googlecloud.svg"
 summary: "Graduate of the Google, GoTo, and Traveloka cloud computing cohort under Kampus Merdeka."
@@ -32,7 +32,7 @@ evidence:
 
 ## Program
 
-Bangkit Academy 2023, Cloud Computing Cohort — the flagship Kampus Merdeka industry program run by Google, GoTo, and Traveloka (Feb – Aug 2023).
+Bangkit Academy 2023, Cloud Computing Cohort: the flagship Kampus Merdeka industry program run by Google, GoTo, and Traveloka (Feb – Aug 2023).
 
 ## Curriculum
 
@@ -40,4 +40,4 @@ Deep dive into Google Cloud Platform, cloud architecture, and backend APIs, culm
 
 ## Context
 
-The cloud/data layer of the full-spectrum stack — paired with Google Cloud BigQuery coursework (2022) and Google System Administration training (2023).
+The cloud and data layer of the full-spectrum stack, paired with Google Cloud BigQuery coursework (2022) and Google System Administration training (2023).

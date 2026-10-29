@@ -14,7 +14,7 @@ tech_stack:
 metrics: []
 live_url: null
 archive_status: "archived"
-credential_type: "certification"
+credential_type: "course"
 issuing_body: "Google (Coursera)"
 provenance_source: "career-archive.md:40, 164"
 privacy_level: "public"
@@ -30,7 +30,7 @@ evidence:
 
 ## Course
 
-System Administration and IT Infrastructure Services -- Google, delivered on Coursera, June 2023.
+System Administration and IT Infrastructure Services: Google, delivered on Coursera, June 2023.
 
 ## Focus
 
