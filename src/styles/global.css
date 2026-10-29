@@ -44,14 +44,14 @@
   color: #171717;
 }
 
-/* Motion budget: transitions and the single pulse respect reduced-motion. */
+/* Motion budget: intentional graceful transitions under reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    transition-duration: 0.15s !important;
     scroll-behavior: auto !important;
   }
 }
@@ -154,6 +154,10 @@
   padding: 0 !important;
   border-radius: 0 !important;
   color: inherit;
+}
+/* Shiki code comment contrast boost (WCAG AA 4.5:1 on dark code blocks - prose-slate-dark) */
+.astro-code span[style*="color:#6A737D"] {
+  color: #94a3b8 !important;
 }
 .markdown blockquote {
   border-left: 3px solid #cbd5e1;
