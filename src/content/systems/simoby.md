@@ -4,7 +4,7 @@ title: "SIMOBY International Mobility CRM"
 slug: "simoby-crm"
 institution_logo: "/logos/uny.svg"
 summary: "Enterprise mobility CRM engineered by UNY Central IT (UPT TIK), aligned with the Ministry of State Secretariat's (Kemensetneg) overseas travel clearance system (SIMPEL PDLN) to manage international tracking for university faculty, researchers, and incoming foreign scholars."
-excerpt: "Engineered and maintained by UNY Central IT (UPT TIK). SIMOBY acts as the university's institutional control system, intentionally mirroring the Ministry of State Secretariat's national overseas clearance clearinghouse (SIMPEL Kemensetneg). As a Student Employee at the International Office, I served as the primary cross-functional Project Manager, Lead Operational User, and Evaluation Lead — translating complex state clearance protocols into technical requirements, authoring official staff/student manuals, and evaluating the platform empirically for my Bachelor of Engineering thesis (WebQual 4.0 & IPA)."
+excerpt: "Engineered and maintained by UNY Central IT (UPT TIK). SIMOBY acts as the university's institutional control system, intentionally mirroring the Ministry of State Secretariat's national overseas clearance clearinghouse (SIMPEL Kemensetneg). As a Student Employee at the International Office, I served as the primary cross-functional Project Manager, Lead Operational User, and Evaluation Lead: translating complex state clearance protocols into technical requirements, authoring official staff/student manuals, and evaluating the platform empirically for my Bachelor of Engineering thesis (WebQual 4.0 & IPA)."
 role: "Project Manager & Lead Operational User (Evaluated for S.T. Thesis)"
 period:
   start: "2021"

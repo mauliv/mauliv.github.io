@@ -184,11 +184,11 @@ const operations = defineCollection({
 const credentials = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/credentials' }),
   schema: z.union([
-    // Degrees, licences, certifications, tests
+    // Degrees, licences, certifications, tests, awards
     z
       .object({
         ...base,
-        credential_type: z.enum(['degree', 'license', 'certification', 'ip', 'grant', 'test', 'mobility', 'internship']),
+        credential_type: z.enum(['degree', 'license', 'certification', 'ip', 'grant', 'test', 'mobility', 'internship', 'award']),
         institution: z.string().optional(),
         conferred_date: z.string().optional(),
         gpa: z.string().optional(),

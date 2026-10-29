@@ -4,39 +4,229 @@ import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import ArticleRow from '../components/ArticleRow.astro';
 import ProjectIcon from '../components/ProjectIcon.astro';
+import EvidencePill from '../components/EvidencePill.astro';
 import { gatherEvidence, relatedHref } from '../lib/evidence-index';
 
-// Publications = academic output only (journal evidence), distinct from News (press).
-const rows = (await gatherEvidence()).filter((r) => r.pill.type === 'journal');
+// Peer-reviewed journal publications: deduplicate by evidence URL, prioritizing entries that declare formal publications metadata
+const allJournalRows = (await gatherEvidence()).filter((r) => r.pill.type === 'journal');
+const sortedJournalRows = [...allJournalRows].sort((a, b) => {
+  const aHasPub = 'publications' in a.entry.data && Array.isArray(a.entry.data.publications) && a.entry.data.publications.length > 0;
+  const bHasPub = 'publications' in b.entry.data && Array.isArray(b.entry.data.publications) && b.entry.data.publications.length > 0;
+  return (bHasPub ? 1 : 0) - (aHasPub ? 1 : 0);
+});
+const seenUrls = new Set<string>();
+const journalRows = sortedJournalRows.filter((r) => {
+  if (seenUrls.has(r.pill.url)) return false;
+  seenUrls.add(r.pill.url);
+  return true;
+});
+
+const credentials = await getCollection('credentials');
+
+// Academic Theses & Capstones (Undergraduate Thesis & SMK Capstone)
+const theses = credentials
+  .filter((c) => 'thesis_title' in c.data && Boolean(c.data.thesis_title))
+  .sort((a, b) => b.data.period.start.localeCompare(a.data.period.start));
+
+// LKTI entry
+const lktiEntry = credentials.find((c) => c.data.slug === 'lkti-awards');
 ---
-<Layout title="Publications" description="Peer-reviewed publications, each linked back to the project it documents.">
+<Layout title="Publications" description="Peer-reviewed publications, academic theses, and national scientific research papers.">
   <Breadcrumb crumbs={[{ label: 'Home', href: '/' }, { label: 'Publications' }]} />
   <div class="mt-4 flex items-center gap-2.5">
     <ProjectIcon name="publications" size="sm" />
-    <h1 class="text-2xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">Publications</h1>
+    <h1 class="text-2xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">Publications &amp; Academic Papers</h1>
   </div>
   <p class="mt-2 text-base text-neutral-600 dark:text-neutral-400">
-    Peer-reviewed publications, each linked back to the project it documents.
+    Peer-reviewed journal articles, engineering capstone theses, and national scientific competition papers, each linked directly to primary proof and project dossiers.
   </p>
 
-  <div class="mt-6 space-y-4">
-    {
-      rows.map((r) => {
-        const pubs = 'publications' in r.entry.data ? r.entry.data.publications : [];
-        const pub = pubs[0];
-        return (
-          <div class="rounded-lg border border-neutral-200 bg-white p-5 transition-all duration-200 dark:border-neutral-800 dark:bg-[#2e2e33]">
-            <ArticleRow
-              title={pub?.focus ?? r.pill.label}
-              publisher={pub ? `${pub.journal} · ${pub.volume}` : r.entry.data.title}
-              date={pub?.date ?? r.entry.data.period.start}
-              url={r.pill.url}
-              pending={r.pill.status !== 'available'}
-              project={{ title: r.entry.data.title, href: relatedHref(r) }}
-            />
-          </div>
-        );
-      })
-    }
-  </div>
+  <!-- 1. Peer-Reviewed Journal Articles -->
+  <section class="mt-10 border-t border-neutral-200 pt-6 dark:border-neutral-800" aria-labelledby="sec-journals">
+    <div class="flex items-center gap-2">
+      <ProjectIcon name="publications" size="sm" />
+      <h2 id="sec-journals" class="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
+        Peer-Reviewed Journal Articles
+      </h2>
+    </div>
+    <p class="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
+      Academic research articles evaluated and published in indexed scientific journals.
+    </p>
+
+    <div class="mt-4 space-y-4">
+      {
+        journalRows.map((r) => {
+          const pubs = 'publications' in r.entry.data ? r.entry.data.publications : [];
+          const pub = pubs[0];
+          return (
+            <div class="rounded-lg border border-neutral-200 bg-white p-5 transition-all duration-200 dark:border-neutral-800 dark:bg-[#2e2e33]">
+              <ArticleRow
+                title={pub?.focus ?? r.pill.label}
+                publisher={pub ? `${pub.journal} · ${pub.volume}` : r.entry.data.title}
+                date={pub?.date ?? r.entry.data.period.start}
+                url={r.pill.url}
+                pending={r.pill.status !== 'available'}
+                project={{ title: r.entry.data.title, href: relatedHref(r) }}
+              />
+            </div>
+          );
+        })
+      }
+    </div>
+  </section>
+
+  <!-- 2. Academic Theses & Engineering Capstones -->
+  <section class="mt-10 border-t border-neutral-200 pt-6 dark:border-neutral-800" aria-labelledby="sec-theses">
+    <div class="flex items-center gap-2">
+      <ProjectIcon name="operations" size="sm" />
+      <h2 id="sec-theses" class="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
+        Academic Theses &amp; Engineering Capstones
+      </h2>
+    </div>
+    <p class="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
+      Degree-conferring research theses and vocational engineering capstone projects.
+    </p>
+
+    <div class="mt-4 space-y-4">
+      {
+        theses.map((t) => {
+          const isSmk = t.data.slug.includes('smk');
+          const title = isSmk
+            ? 'Network Attached Storage (NAS) Server Deployment with XigmaNAS'
+            : (t.data.thesis_title || 'Measuring Service Quality of the UNY International Mobility Information System (SIMOBY) Using WebQual 4.0 and Importance-Performance Analysis');
+          const label = isSmk
+            ? 'Vocational Engineering Capstone'
+            : 'Bachelor of Engineering Thesis';
+          const institution = isSmk
+            ? 'SMK Negeri 3 Yogyakarta · Computer Network Engineering'
+            : 'Universitas Negeri Yogyakarta · Information Technology';
+          const year = isSmk ? '2019' : '2026';
+          const summary = isSmk
+            ? 'Designed, deployed, and bench-tested an enterprise Network Attached Storage (NAS) system running XigmaNAS (FreeBSD/ZFS architecture), configuring RAID storage pools, multi-user SMB/NFS sharing, and RBAC security.'
+            : 'Evaluated institutional CRM service quality, database latency, and user accessibility across international scholars and campus staff using WebQual 4.0 dimensions and Importance-Performance Analysis (IPA).';
+
+          return (
+            <div class="rounded-lg border border-neutral-200 bg-white p-5 transition-all duration-200 dark:border-neutral-800 dark:bg-[#2e2e33]">
+              <div class="flex flex-col gap-1.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+                <span class="font-mono text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">
+                  {label}
+                </span>
+                <span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">
+                  {institution} · {year}
+                </span>
+              </div>
+              <h3 class="mt-2 text-base font-semibold text-neutral-900 dark:text-neutral-100">
+                <a href={`/credentials/${t.data.slug}`} class="underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-900 dark:decoration-neutral-700 dark:hover:decoration-neutral-100">
+                  {title}
+                </a>
+              </h3>
+              <p class="mt-1.5 text-sm sm:text-base leading-relaxed text-neutral-600 dark:text-neutral-300">
+                {summary}
+              </p>
+              <div class="mt-3 flex items-center gap-3">
+                <EvidencePill
+                  type="live"
+                  label={`View ${isSmk ? 'SMK Capstone' : 'Degree'} Dossier`}
+                  url={`/credentials/${t.data.slug}`}
+                  status="available"
+                />
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </section>
+
+  <!-- 3. National Scientific Research Papers -->
+  <section class="mt-10 border-t border-neutral-200 pt-6 dark:border-neutral-800" aria-labelledby="sec-research-papers">
+    <div class="flex items-center gap-2">
+      <ProjectIcon name="mobility" size="sm" />
+      <h2 id="sec-research-papers" class="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
+        National Scientific Research Papers
+      </h2>
+    </div>
+    <p class="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
+      Competitively defended research papers in nationwide student scientific writing competitions.
+    </p>
+
+    <div class="mt-4 space-y-4">
+      <!-- National Student Research Competition 2021 -->
+      <div class="rounded-lg border border-neutral-200 bg-white p-5 transition-all duration-200 dark:border-neutral-800 dark:bg-[#2e2e33]">
+        <div class="flex flex-col gap-1.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+          <span class="font-mono text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+            3rd Place National Award · 2021 National Student Research Contest
+          </span>
+          <span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">
+            Universitas Lampung · Dec 2021
+          </span>
+        </div>
+        <h3 class="mt-2 text-base font-semibold text-neutral-900 dark:text-neutral-100">
+          <a href="/credentials/lkti-awards" class="underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-900 dark:decoration-neutral-700 dark:hover:decoration-neutral-100">
+            Vircon Classroom: Synchronous Hybrid Learning System
+          </a>
+        </h3>
+        <p class="mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+          <strong>Authors:</strong> Co-authored by three UNY students across Information Technology, Civic Education, and Automotive Engineering
+        </p>
+        <p class="mt-1.5 text-sm sm:text-base leading-relaxed text-neutral-600 dark:text-neutral-300">
+          Designed a synchronous hybrid learning framework integrating physical classroom audiovisual infrastructure with live teleconferencing platforms, enabling simultaneous instructional delivery to both in-person and remote student cohorts to overcome pandemic schooling fragmentation.
+        </p>
+        <div class="mt-3 flex flex-wrap gap-1.5">
+          <EvidencePill
+            type="internal-pdf"
+            label="National Research Award Certificate (Scan)"
+            url="/images/credentials/himapis-lkti-2021-certificate.jpg"
+            status="available"
+          />
+          <EvidencePill
+            type="external-press"
+            label="UNY News Press Coverage"
+            url="https://www.uny.ac.id/id/berita/sistem-pembelajaran-virtual-conventional-mudahkan-siswa-belajar"
+            status="available"
+          />
+          <EvidencePill
+            type="external-press"
+            label="Republika Online Press Coverage"
+            url="https://rejogja.republika.co.id/berita/r6m7c0399/sistem-pembelajaran-virtual-conventional-mudahkan-siswa-belajar"
+            status="available"
+          />
+          <EvidencePill
+            type="live"
+            label="View Research Dossier"
+            url="/credentials/lkti-awards"
+            status="available"
+          />
+        </div>
+      </div>
+
+      <!-- National Writing Contest 2020 -->
+      <div class="rounded-lg border border-neutral-200 bg-white p-5 transition-all duration-200 dark:border-neutral-800 dark:bg-[#2e2e33]">
+        <div class="flex flex-col gap-1.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+          <span class="font-mono text-xs font-semibold uppercase tracking-wider text-amber-600 dark:text-amber-400">
+            1st Place National Champion · 2020 National Writing Contest
+          </span>
+          <span class="font-mono text-xs text-neutral-500 dark:text-neutral-400">
+            National Writing Contest · 2020
+          </span>
+        </div>
+        <h3 class="mt-2 text-base font-semibold text-neutral-900 dark:text-neutral-100">
+          <a href="/credentials/lkti-awards" class="underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-900 dark:decoration-neutral-700 dark:hover:decoration-neutral-100">
+            National Scientific Paper on Online Distance Education &amp; Technology Adaptation
+          </a>
+        </h3>
+        <p class="mt-1.5 text-sm sm:text-base leading-relaxed text-neutral-600 dark:text-neutral-300">
+          Awarded 1st Place National Champion in a nationwide student scientific paper competition addressing emergency transition strategies to remote digital education during the initial outbreak of COVID-19.
+        </p>
+        <div class="mt-3 flex items-center gap-3">
+          <EvidencePill
+            type="live"
+            label="View Research Dossier"
+            url="/credentials/lkti-awards"
+            status="available"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>

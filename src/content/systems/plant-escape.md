@@ -2,7 +2,7 @@
 id: "xr-plant-escape"
 title: "Plant Escape: Mobile AR & Physical Science Card Games"
 slug: "plant-escape-ar"
-summary: "Unity/Vuforia mobile AR science learning game addressing post-pandemic biology learning loss, field-tested at SMP N 1 Muntilan (Middle School), protected by two national IP copyrights (HKI — Directorate General of Intellectual Property) and funded by the Ministry of Education Belmawa (~IDR 6,000,000)."
+summary: "Unity/Vuforia mobile AR science learning game addressing post-pandemic biology learning loss, field-tested at SMP N 1 Muntilan (Middle School), protected by two national IP copyrights (Directorate General of Intellectual Property) and funded by the Ministry of Education Belmawa (~IDR 6,000,000)."
 excerpt: "To combat biology learning loss in secondary schools, I engineered an interactive mobile AR learning game in Unity and Vuforia paired with 58 physical science cards. Achieving a 100% recognition rate from 5 cm to 100 cm on budget Android phones, the system produced statistically significant comprehension gains in classroom trials and earned 2 national IP copyrights."
 role: "Lead Unity & AR Developer / Co-Researcher"
 period:
@@ -56,14 +56,14 @@ empirical_evaluation:
   statistical_outcome: "Statistically significant improvement in plant anatomy retention"
 intellectual_property:
   - title: "Plant Escape: Science Card Application"
-    type: "Hak Cipta (HKI) - Program Komputer"
+    type: "National Copyright (HKI) · Computer Software"
     number: "000377191"
-    issuing_body: "DJKI Kemenkumham RI"
+    issuing_body: "Directorate General of Intellectual Property (DJKI Kemenkumham RI)"
     url: "https://pdki-indonesia.dgip.go.id/"
   - title: "Plant Escape: Science Card Games"
-    type: "Hak Cipta (HKI) - Alat Peraga"
+    type: "National Copyright (HKI) · Educational Visual Aid"
     number: "000377182"
-    issuing_body: "DJKI Kemenkumham RI"
+    issuing_body: "Directorate General of Intellectual Property (DJKI Kemenkumham RI)"
     url: "https://pdki-indonesia.dgip.go.id/"
 publications:
   - journal: "Jurnal Informatika dan Rekayasa Perangkat Lunak (JATIKA)"

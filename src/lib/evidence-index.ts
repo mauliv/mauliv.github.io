@@ -34,7 +34,7 @@ export function relatedHref(row: EvidenceRow): string {
 }
 
 const CERT_TYPES = new Set(['internal-pdf', 'hki']);
-const CERT_CREDENTIAL_TYPES = new Set(['license', 'certification', 'test', 'degree']);
+const CERT_CREDENTIAL_TYPES = new Set(['license', 'certification', 'test', 'degree', 'award']);
 
 /** Rows shown on the /certificates document repository — single source for count + page. */
 export async function certificatesRows(): Promise<EvidenceRow[]> {

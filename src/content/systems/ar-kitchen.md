@@ -20,13 +20,13 @@ tech_stack:
 metrics:
   - label: "Expert Validation"
     value: "97.00% (Media & Software) · 96.00% (Culinary Matter)"
-    provenance: "FT UNY Undergraduate Thesis (Skripsi), Widad Zita Nuriana (2023)"
+    provenance: "FT UNY Undergraduate Thesis, Widad Zita Nuriana (2023)"
   - label: "Classroom Field Trial"
     value: "87.63% suitability verified across 35 students at SMK Negeri 3 Klaten"
-    provenance: "Skripsi Field Trial Data, SMK Negeri 3 Klaten"
+    provenance: "Undergraduate Field Trial Data, SMK Negeri 3 Klaten"
   - label: "Artifact Package"
     value: "178 MB Unity Android APK + 34-Page Full-Color Manual Book"
-    provenance: "Skripsi Research Output (FT UNY)"
+    provenance: "Undergraduate Research Output (FT UNY)"
   - label: "3D Plating Repertoire"
     value: "11 inspectable continental culinary dishes (Appetizers, Mains, Desserts)"
     provenance: "AR-Menu Unity project assets"
@@ -127,19 +127,19 @@ I engineered the application in **Unity 2021.3 (LTS)** with C# using the **Vufor
 
 ## 5. Empirical Evaluation & Educational Impact
 
-The application and companion manual book were developed following the **ADDIE** (Analysis, Design, Development, Implementation, Evaluation) framework and empirically evaluated through an undergraduate engineering thesis (*Tugas Akhir Skripsi*, Widad Zita Nuriana, FT UNY, 2023), where I served as the technical developer and software partner.
+The application and companion manual book were developed following the **ADDIE** (Analysis, Design, Development, Implementation, Evaluation) framework and empirically evaluated through an undergraduate engineering thesis (Widad Zita Nuriana, Faculty of Engineering UNY, 2023), where I served as the technical developer and software partner.
 
 ![Vocational Culinary Students Testing AR Menu at SMK Negeri 3 Klaten](/images/ar-kitchen/ar-menu-classroom-trial-large.jpg)
 
 ### A. Rigorous Expert & Classroom Validation
-The system underwent both formal academic validation by university faculty and on-site empirical field testing at **SMK Negeri 3 Klaten** with 35 Grade 10 Culinary Arts students (*Kelas X Jurusan Kuliner*):
+The system underwent both formal academic validation by university faculty and on-site empirical field testing at **SMK Negeri 3 Klaten** with 35 Grade 10 Culinary Arts students:
 
 | Evaluation Stage | Evaluator / Audience | Sample Size | Score / Feasibility | Assessment Category |
 | :--- | :--- | :---: | :---: | :--- |
-| **Media & Software Expert** | FT UNY Educational Media Lecturer | 1 Expert | **97.00%** | *Sangat Layak* (Highly Suitable) |
-| **Subject Matter Expert** | FT UNY Culinary Education Lecturer | 1 Expert | **96.00%** | *Sangat Layak* (Highly Suitable) |
-| **Small-Scale Usability Trial** | Grade 10 Culinary Students (SMK N 3 Klaten) | 5 Students | **88.80%** | *Sangat Layak* (Highly Suitable) |
-| **Large-Scale Classroom Trial** | Grade 10 Culinary Students (SMK N 3 Klaten) | 30 Students | **87.63%** | *Sangat Layak* (Highly Suitable) |
+| **Media & Software Expert** | FT UNY Educational Media Lecturer | 1 Expert | **97.00%** | Highly Suitable (*Sangat Layak*) |
+| **Subject Matter Expert** | FT UNY Culinary Education Lecturer | 1 Expert | **96.00%** | Highly Suitable (*Sangat Layak*) |
+| **Small-Scale Usability Trial** | Grade 10 Culinary Students (SMK N 3 Klaten) | 5 Students | **88.80%** | Highly Suitable (*Sangat Layak*) |
+| **Large-Scale Classroom Trial** | Grade 10 Culinary Students (SMK N 3 Klaten) | 30 Students | **87.63%** | Highly Suitable (*Sangat Layak*) |
 
 ![Student Scanning 34-Page Manual Book with AR App during Field Trial](/images/ar-kitchen/ar-menu-classroom-trial-scan.jpg)
 

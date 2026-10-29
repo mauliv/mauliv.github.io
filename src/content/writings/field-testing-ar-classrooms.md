@@ -16,7 +16,7 @@ tech_stack:
 metrics:
   - label: "Classroom Trial Sample"
     value: "110 students across 2 partner schools (SMP N 1 Muntilan & SMK N 3 Klaten)"
-    provenance: "PKM-RSH 2022 & FT UNY Skripsi 2023 Field Trials"
+    provenance: "PKM-RSH 2022 & FT UNY Undergraduate Research 2023 Field Trials"
   - label: "Knowledge Retention Gain"
     value: "+14.81 mean score gain (vs +3.91 conventional lecture control)"
     provenance: "SPSS Normalized Gain Analysis, JATIKA (2022)"
@@ -31,7 +31,7 @@ archive_status: "live"
 category: "edtech-didactics"
 date: "2026-10"
 reading_time_minutes: 8
-summary: "An engineering post-mortem on deploying mobile Augmented Reality across 110 public school students in Central Java — covering 2GB RAM device optimization, marker physics under fluorescent lights, and empirical proof that physical cards + AR produce a 4× knowledge gain over traditional slides."
+summary: "An engineering post-mortem on deploying mobile Augmented Reality across 110 public school students in Central Java: covering 2GB RAM device optimization, marker physics under fluorescent lights, and empirical proof that physical cards + AR produce a 4× knowledge gain over traditional slides."
 related_systems:
   - "xr-plant-escape"
   - "xr-ar-kitchen"
@@ -42,10 +42,10 @@ tags:
   - "Vuforia"
   - "Android"
   - "Pedagogy"
-provenance_source: "Sagita Lintang Cahyani_UNY_PKM-RSH.docx; 04. SKRIPSI.pdf; JATIKA Vol. 3 No. 4 (2022)"
+provenance_source: "Sagita Lintang Cahyani_UNY_PKM-RSH.docx; FT UNY Thesis 2023; JATIKA Vol. 3 No. 4 (2022)"
 privacy_level: "public"
 epistemic_status: "verified-fact"
-verification_notes: "Synthesizes empirical trial data from SMP N 1 Muntilan (PKM-RSH 2022) and SMK N 3 Klaten (FT UNY Skripsi 2023)."
+verification_notes: "Synthesizes empirical trial data from SMP N 1 Muntilan (PKM-RSH 2022) and SMK N 3 Klaten (FT UNY Undergraduate Research 2023)."
 evidence:
   - type: "journal"
     label: "JATIKA Peer-Reviewed Paper"
@@ -71,11 +71,11 @@ evidence:
 
 Most Augmented Reality tutorials operate in an artificial vacuum: high-end iPhones, spacious desks, fiber-optic Wi-Fi, and perfectly diffused studio lighting.
 
-Between 2022 and 2023, I engineered and field-tested two separate educational AR applications — **Plant Escape** (a gamified biology platform) and **AR MENU** (a vocational culinary training simulator) — in actual public school classrooms across Central Java. We tested with over **110 real students** at **SMP Negeri 1 Muntilan** and **SMK Negeri 3 Klaten**.
+Between 2022 and 2023, I engineered and field-tested two separate educational AR applications, **Plant Escape** (a gamified biology platform) and **AR MENU** (a vocational culinary training simulator), in actual public school classrooms across Central Java. We tested with over **110 real students** at **SMP Negeri 1 Muntilan** and **SMK Negeri 3 Klaten**.
 
 Classrooms are hostile operating environments for mobile software. If an educational app crashes on a budget phone, causes thermal throttling after ten minutes, or loses target tracking under flickering fluorescent tubes, the lesson falls apart. 
 
-Here is what I learned about bridging the gap between Unity shaders and classroom reality — and why empirical pedagogical data matters as much as frame rates.
+Here is what I learned about bridging the gap between Unity shaders and classroom reality: and why empirical pedagogical data matters as much as frame rates.
 
 ---
 
