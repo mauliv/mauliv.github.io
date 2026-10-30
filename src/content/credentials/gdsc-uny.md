@@ -3,7 +3,7 @@ id: "lead-gdsc-uny"
 title: "Google Developer Student Clubs (GDSC): UNY Chapter Lead"
 slug: "gdsc-uny-chapter"
 institution_logo: "/logos/gdsc.png"
-summary: "Two-year tenure leading Google's developer community at UNY through workshops, panels, and study sessions."
+summary: "Two-year tenure leading Google's developer community at UNY, launching the 'Code, Collab, Commit' initiative across workshops, panels, and study sessions."
 role: "Chapter Lead & Event Director"
 period:
   start: "2020-08"
@@ -21,7 +21,7 @@ archive_status: "live"
 organization: "Google Developer Student Clubs: Universitas Negeri Yogyakarta"
 leadership_scope:
   focus_areas:
-    - "Technical workshops and hands-on coding sessions"
+    - "Technical workshops and hands-on coding sessions under the 'Code, Collab, Commit' initiative"
     - "Speaker panels on Web Development, Android, and Cloud Computing"
     - "Bridging academic theory and industry practice"
 competitive_achievements: []
@@ -49,7 +49,7 @@ Chapter Lead and Event Director of Google Developer Student Clubs (GDSC): UNY Ch
 
 ## 2. Community Programming
 
-Organized workshops, hands-on coding sessions, and speaker panels covering Web Development, Android, and Cloud Computing, bridging academic theory and industry practice for the campus developer community.
+Spearheaded the chapter's signature "Code, Collab, Commit" initiative, organizing workshops, hands-on coding sessions, and speaker panels covering Web Development, Android, and Cloud Computing to connect academic foundations directly to practical software delivery.
 
 ## 3. Leadership Model
 

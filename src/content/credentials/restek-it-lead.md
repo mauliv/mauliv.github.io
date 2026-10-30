@@ -3,7 +3,7 @@ id: "lead-restek-it-lead"
 title: "Division Lead, INFINITE UNY IT Research Division"
 slug: "restek-it-lead"
 institution_logo: "/logos/infinite.png"
-summary: "Division Lead heading the INFINITE UNY IT Research Division (Dec 2020 - Jan 2022), bridging student engineering teams and campus web infrastructure."
+summary: "Division Lead heading the INFINITE UNY IT Research Division (Dec 2020 - Jan 2022), spearheading the 'Code, Collab, Commit' engineering initiative and campus web infrastructure."
 role: "Division Lead"
 period:
   start: "2020-12"
@@ -20,6 +20,7 @@ leadership_scope:
   divisions_managed: 1
   focus_areas:
     - "Head of the INFINITE UNY IT Research Division"
+    - "Championed the 'Code, Collab, Commit' initiative to establish version control and code review standards"
     - "Campus utility software (unyku.id URL shortener)"
     - "Organizational portals and web infrastructure"
 competitive_achievements: []
@@ -37,7 +38,9 @@ Division Lead heading the INFINITE UNY IT Research Division at UKM Rekayasa Tekn
 
 ## 2. Scope
 
-Directed the IT research division's software work: organizational portals and the architecture of `unyku.id`, a student-owned URL shortener handling high daily redirection volumes with sub-second latency.
+Established the "Code, Collab, Commit" initiative across the research division to introduce structured Git workflows, pull-request peer reviews, and collaborative problem-solving across student engineering cohorts.
+
+Directed the division's core software engineering deliverables: internal organizational portals and the architecture of `unyku.id`, a student-owned URL shortener handling high daily redirection volumes with sub-second latency.
 
 ## 3. Context
 

@@ -55,7 +55,7 @@ evidence:
 
 ## 1. Role
 
-Executive Chairman of the Engineering Technology Student Research Organization (RESTek), Universitas Negeri Yogyakarta (UNY), from January 2022 to January 2023 -- the third and final stage of the internal progression (Network Security Engineer -> Division Lead -> Chairman).
+Executive Chairman of the Engineering Technology Student Research Organization (RESTek), Universitas Negeri Yogyakarta (UNY), from January 2022 to January 2023, representing the third stage of the internal progression (Network Security Engineer -> Division Lead of INFINITE IT Research -> Chairman).
 
 ## 2. Operations & Pipeline
 
@@ -63,4 +63,4 @@ Executive leadership over the organization's 5 research divisions: budget alloca
 
 ## 3. The Championship Campaign
 
-Directed team operations culminating in 1st Place National Champion at KMHE 2022 (National Energy-Efficient Vehicle Contest / Kontes Mobil Hemat Energi), Urban Concept ICE Gasoline category -- awarded by the National Achievement Center (Puspresnas) / Ministry of Education (Kemendikbudristek RI) against major Indonesian technical universities.
+Directed team operations culminating in 1st Place National Champion at KMHE 2022 (National Energy-Efficient Vehicle Contest / Kontes Mobil Hemat Energi), Urban Concept ICE Gasoline category, awarded by the National Achievement Center (Puspresnas) / Ministry of Education (Kemendikbudristek RI) against major Indonesian technical universities.
