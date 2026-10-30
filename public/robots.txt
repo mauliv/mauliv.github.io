@@ -1,5 +1,2 @@
 User-agent: *
-Disallow: /docs/
-Allow: /
-
-Sitemap: https://mauliv.github.io/sitemap-index.xml
+Disallow: /
