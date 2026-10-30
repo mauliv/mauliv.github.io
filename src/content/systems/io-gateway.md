@@ -92,7 +92,7 @@ To eliminate navigation confusion, I redesigned the portal around a **pathway-fi
            │
            ├──► [ 1. Study at UNY ]
            │     • Degree Programs (Undergraduate, Master, Doctoral)
-           │     • Scholarships (UNY-DISS, KNB, Darmasiswa)
+           │     • Scholarships (UNY-DISS, KNB Scholarships, Darmasiswa)
            │     • Language (BIPA Indonesian Immersion)
            │
            ├──► [ 2. Current International Students ]
@@ -125,7 +125,7 @@ The portal organizes UNY's complete international offerings into 11 distinct, se
 | **Language** | **BIPA (*Bahasa Indonesia*)** | Structured Indonesian language immersion coupled with traditional cultural excursions. |
 | **Short Course** | **Cultural Immersion Classes** | Ready-made summer courses covering Javanese arts, batik crafting, and gamelan music. |
 | **Scholarship** | **UNY-DISS Scholarship** | Merit-based university awards providing tuition and living stipends for outstanding international applicants. |
-| **Scholarship** | **KNB Scholarship** | Indonesian Government award (*Kemitraan Negara Berkembang*) for students from developing nations. |
+| **Scholarship** | **KNB Scholarships** | Indonesian Government award (*Kemitraan Negara Berkembang*) for students from developing nations. |
 | **Culture** | **Darmasiswa RI Program** | Ministry-funded non-degree cultural scholarship for foreign language learners. |
 | **Scholar** | **Visiting Professor** | Semester or multi-year academic appointments listed in the official faculty directory. |
 | **Scholar** | **Guest Lecture / Visiting Scholar** | Topic-specific guest residencies, research seminars, and lab workshops. |

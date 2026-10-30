@@ -114,7 +114,7 @@ In Indonesian state administration, every civil servant (PNS/ASN), lecturer, and
    * Prevents embarrassing ministerial rejection cycles, administrative sanctions, and unapproved overseas travel.
 
 2. **Inbound Control (Foreign Nationals Arriving at UNY):**
-   * Operates as the university's compliance radar for all incoming international guests: visiting professors, international degree candidates, Darmasiswa and KNB scholarship recipients, and exchange scholars.
+   * Operates as the university's compliance radar for all incoming international guests: visiting professors, international degree candidates, Darmasiswa and KNB Scholarships recipients, and exchange scholars.
    * Tracks Indonesian legal immigration standing: E-Visa sponsorship letters, Stay Permits (ITAS/KITAS), Temporary Domicile Certificates (SKTT / Dukcapil), and Police Clarification Reports (STM / Kepolisian), ensuring foreign delegates maintain lawful status on campus.
 
 <div class="my-6 grid grid-cols-1 gap-4 sm:grid-cols-2">

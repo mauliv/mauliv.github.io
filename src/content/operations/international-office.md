@@ -54,7 +54,7 @@ regulatory_frameworks:
   - "Exit Permit Only (EPO) & Departure Clearance Protocols"
 scholarship_programs_supported:
   - "Darmasiswa Scholarship (Ministry of Education & Culture)"
-  - "Developing Countries Partnership Scholarship (KNB)"
+  - "KNB Scholarships"
   - "UNY International Full & Partial Degree Scholarships"
   - "Foreign Exchange Scholars & Researchers"
 provenance_source: "career-archive.md:30, 97-109; output/Divider_1_OfficialEmploymentMandates.pdf"
@@ -119,16 +119,16 @@ To provide complete verifiable transparency without burdening visitors with a si
   </div>
 </div>
 
-#### Year-by-Year Appointment Decrees (Rector's Executive Decrees)
+#### Year-by-Year Appointment Decrees (Rector's Executive Decrees): International Office under the Directorate of Partnerships
 
 | Year | Appointment Decree Number | Unit / Directorate | Excerpt Link |
 | :---: | :--- | :--- | :--- |
-| **2026** | Rector's Executive Decree No. 43.2/UN34/I/2026 | Student Employment: International Office | [Download 2-Page PDF (420 KB)](/docs/operations/sk-appointment-2026.pdf) |
+| **2026** | Rector's Executive Decree No. 43.2/UN34/I/2026 | Student Employment: International Office under the Directorate of Partnerships | [Download 2-Page PDF (420 KB)](/docs/operations/sk-appointment-2026.pdf) |
 | **2025** | Rector's Executive Decree No. 8.2/UN34/I/2025 | Student Employment: Directorate of Partnerships, Information Systems, Innovation & Enterprise | [Download 3-Page PDF (553 KB)](/docs/operations/sk-appointment-2025.pdf) |
 | **2024** | Rector's Executive Decree No. 35.2/UN34/I/2024 | Student Employment: Research, Partnerships, Information Systems & Enterprise Division | [Download 2-Page PDF (508 KB)](/docs/operations/sk-appointment-2024.pdf) |
-| **2023** | Rector's Executive Decrees No. 3.20/VI/2023 & No. 46.2/I/2023 | Student Employment: International Office (Semesters 1 & 2) | [Download 4-Page PDF (873 KB)](/docs/operations/sk-appointment-2023.pdf) |
-| **2022** | Rector's Executive Decree No. 69.3/UN34/I/2022 | Student Employment: International Affairs Office | [Download 4-Page PDF (935 KB)](/docs/operations/sk-appointment-2022.pdf) |
-| **2021** | Rector's Executive Decree No. 1.2/UN34/VIII/2021 | Student Employment: International Affairs Office | [Download 3-Page PDF (473 KB)](/docs/operations/sk-appointment-2021.pdf) |
+| **2023** | Rector's Executive Decrees No. 3.20/VI/2023 & No. 46.2/I/2023 | Student Employment: International Office under the Directorate of Partnerships (Semesters 1 & 2) | [Download 4-Page PDF (873 KB)](/docs/operations/sk-appointment-2023.pdf) |
+| **2022** | Rector's Executive Decree No. 69.3/UN34/I/2022 | Student Employment: International Office under the Directorate of Partnerships | [Download 4-Page PDF (935 KB)](/docs/operations/sk-appointment-2022.pdf) |
+| **2021** | Rector's Executive Decree No. 1.2/UN34/VIII/2021 | Student Employment: International Office under the Directorate of Partnerships | [Download 3-Page PDF (473 KB)](/docs/operations/sk-appointment-2021.pdf) |
 | **Archive** | Complete 2021–2026 Historical Dossier | Full compilation including all sequential appointment decrees | [Download Full Dossier (23 pages, 4.7 MB)](/docs/operations/sk-rektor-appointment-excerpt.pdf) |
 
 ***
@@ -152,7 +152,7 @@ Managing the administrative pipeline that enables foreign nationals to legally e
 
 - **Letters of Acceptance (LoA)**: Drafting official unconditional and conditional institutional LoAs for international degree applicants across bachelor's, master's, and doctoral programs.
 - **Sponsorship & Financial Guarantee Letters**: Issuing rector-authorized financial and behavioral guarantee documentation required by ministries and immigration authorities.
-- **Scholarship Administration**: Maintaining administrative records for scholarship awardees under the Darmasiswa Program, the Developing Countries Partnership Scholarship (KNB), and internal UNY international tuition waivers.
+- **Scholarship Administration**: Maintaining administrative records for scholarship awardees under the Darmasiswa Program, KNB Scholarships, and internal UNY international tuition waivers.
 - **SIMOBY Data Integration**: Serving as the lead operational user and data manager translating paper student files into UNY's internal mobility CRM (SIMOBY) and national clearinghouses, including the State Secretariat foreign clearance portal (SIMPEL).
 
 ***
@@ -163,7 +163,7 @@ Serving as the primary operational anchor and first-response contact for foreign
 
 ### Welcoming Ceremony & Academic Orientation
 
-Orchestrating arrival onboarding, official university welcoming ceremonies, and academic orientation for incoming foreign degree scholars (Darmasiswa Program, KNB Scholarship, UNY International Degree Scholarships) and foreign exchange students:
+Orchestrating arrival onboarding, official university welcoming ceremonies, and academic orientation for incoming foreign degree scholars (Darmasiswa Program, KNB Scholarships, UNY International Degree Scholarships) and foreign exchange students:
 
 ![Welcoming Ceremony & Academic Orientation for International Students AY 2024/2025 at UNY Rectorate Main Senate Hall](/images/operations/welcoming-ceremony-2024.png)
 *Welcoming Ceremony and Academic Orientation for Incoming International Students (Academic Year 2024/2025) held at UNY Rectorate Main Senate Hall (25 September 2024). Candidate pictured front-and-center coordinating the student operations team and Liaison Officers (LOs).*
@@ -206,7 +206,7 @@ Founded, branded, and managed the university's official international student pr
 
 - **Platform Inception & Editorial Leadership**: Founded the official Instagram channel `@io.uny` from scratch and served as the lead operational manager across 2021 to 2026, authoring approximately 80% of core creative assets, establishing brand identity, and supervising peer contributions with final approval authority to build an organic audience of 8,000+ followers without advertising spend.
 - **Demographic & Global Reach**: Directed content reaching prospective scholars across Indonesia, Pakistan, Egypt, Yemen, Malaysia, and 30+ other countries (54.4% Men, 45.6% Women, with 81% of followers within the core university age demographic of 18–34).
-- **Admissions & Visa Inquiry Helpdesk**: Served as the frontline digital consultation desk via Instagram Direct Messages and comments, personally answering and triaging hundreds of daily inquiries regarding entry requirements, Darmasiswa/KNB scholarships, and visa protocols.
+- **Admissions & Visa Inquiry Helpdesk**: Served as the frontline digital consultation desk via Instagram Direct Messages and comments, personally answering and triaging hundreds of daily inquiries regarding entry requirements, Darmasiswa and KNB Scholarships, and visa protocols.
 - **High-Fidelity Creative Campaigns**: Designed step-by-step visa guidelines, scholarship catalogs, and event countdowns using Canva Pro and Photoshop.
 - **Verified Portfolio Folio**: Complete historical metrics, follower growth records, and demographic analytics are documented in the [Digital Communications & PR Analytics Folio (PDF)](/docs/operations/digital-communications-and-pr.pdf) and highlighted on the dedicated [Social Media & Digital PR](/social-media) page.
 
