@@ -11,11 +11,12 @@ period:
   start: "2021"
   end: "2023"
 tech_stack:
-  - "Laravel 9 (PHP 8.1)"
-  - "PostgreSQL 15"
+  - "Laravel"
+  - "PHP"
+  - "PostgreSQL"
   - "Google Drive API"
   - "Server-Side DataTables"
-  - "Argon UI / Bootstrap 4"
+  - "Argon UI / Bootstrap"
   - "Select2"
 metrics:
   - label: "Competition Divisions"
@@ -34,7 +35,7 @@ live_url: "https://lomba.uny.ac.id/mtqm"
 archive_status: "archived"
 architecture_type: "mvc-framework"
 database:
-  local_development: "PostgreSQL 15 / MySQL 8.0 Parity"
+  local_development: "PostgreSQL / MySQL Parity"
   production_cluster: "PostgreSQL 15+ (UNY Central Infrastructure)"
   concurrency_mechanism: "Database transactions and status locking upon final contingent submission"
 security_profile:
@@ -82,7 +83,7 @@ evidence:
 
 Before this platform, managing UNY's national student competition meant juggling hundreds of participant registration emails, manual file validation in spreadsheets, and risking judging conflicts of interest if a jury scored students from their own home campus.
 
-As Lead Systems Architect & Developer, I designed and built the **MTQ UNY Competition Portal** (`lomba.uny.ac.id/mtqm` / `mtqm.uny.ac.id`) in Laravel 9 and PostgreSQL to streamline end-to-end registrations, multi-format submissions, and bias-free scoring across nationwide delegations from **2021 through 2023**.
+As Lead Systems Architect & Developer, I designed and built the **MTQ UNY Competition Portal** (`lomba.uny.ac.id/mtqm` / `mtqm.uny.ac.id`) in Laravel and PostgreSQL to streamline end-to-end registrations, multi-format submissions, and bias-free scoring across nationwide delegations from **2021 through 2023**.
 
 The national invitational mirrored the full category structure of the official government MTQMN rounds organized by Belmawa / Puspresnas, growing from 9 branches in 2021 to 12 distinct categories by 2023 and attracting university contingents from across Indonesia.
 

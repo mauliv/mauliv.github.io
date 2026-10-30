@@ -10,11 +10,11 @@ period:
   start: "2020"
   end: "present"
 tech_stack:
-  - "PHP (Native 8.2)"
-  - "PostgreSQL 15"
+  - "PHP (Native)"
+  - "PostgreSQL"
   - "CAS SSO"
   - "Nginx"
-  - "Bootstrap 4"
+  - "Bootstrap"
 metrics:
   - label: "Service Availability"
     value: "100% (Zero Downtime across 5 election cycles)"
@@ -32,7 +32,7 @@ live_url: "https://pemilwa.uny.ac.id"
 archive_status: "live"
 architecture_type: "native"
 database:
-  local_development: "PostgreSQL 15 / MySQL 8.0 Parity"
+  local_development: "PostgreSQL / MySQL Parity"
   production_cluster: "PostgreSQL 15+ (UNY Central Infrastructure)"
   concurrency_mechanism: "Atomic multi-ballot submission with ACID-compliant row locking"
 security_profile:

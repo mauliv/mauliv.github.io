@@ -7,8 +7,8 @@ period:
   start: "2020"
   end: "present"
 tech_stack:
-  - "PHP (Native 8.2)"
-  - "PostgreSQL 15"
+  - "PHP (Native)"
+  - "PostgreSQL"
   - "Nginx"
   - "Linux"
   - "ACID Row Locking"
