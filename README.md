@@ -1,6 +1,6 @@
 # alifah.me — Personal Portfolio & Engineering Archive
 
-Source code for the personal portfolio, engineering projects archive, international operations dossiers, and academic credentials of **Alifah Mauliddin Nur Ikhsan**, hosted live at [mauliv.github.io](https://mauliv.github.io).
+Source code for the personal portfolio, engineering projects archive, international operations dossiers, and academic credentials of myself, hosted live at [mauliv.github.io](https://mauliv.github.io).
 
 ## Overview
 
