@@ -1,4 +1,4 @@
-# alifah.me — Personal Portfolio & Engineering Archive
+# Personal Portfolio & Engineering Archive
 
 Source code for the personal portfolio, engineering projects archive, international operations dossiers, and academic credentials of myself, hosted live at [mauliv.github.io](https://mauliv.github.io).
 
@@ -80,4 +80,4 @@ npm run preview
 
 ## License
 
-Source code is available under the [MIT License](LICENSE), while portfolio content, personal media, and documentation remain proprietary to Alifah Mauliddin Nur Ikhsan.
+Source code is available under the [MIT License](LICENSE). Portfolio content, personal media, and documentation are proprietary, unless otherwise stated.
