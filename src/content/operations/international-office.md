@@ -192,10 +192,11 @@ Operating under the university Directorate of Partnerships, Information Systems,
 * **Western Sydney University (Australia):** Managed pre-arrival arrangements, academic workshop scheduling, and local orientation across three cohorts of Australian students and accompanying faculty.
 * **Post-Visit Follow-Through:** Collected program evaluations, shared debrief reports with overseas coordinators, and resolved administrative items to maintain multi-year collaboration channels.
 
-### Bilateral Institutional Visits & Matchmaking
+### Flagship Events, Institutional Matchmaking & Bilateral Delegations
 
+* **High-Level Partnership Matchmaking (GLOSHIP 2025):** Coordinated the student liaison secretariat for UNY's Global Partnership Forum, managing protocol and 20 Student Liaison Officers across 20 parallel bilateral matchmaking roundtables between international rectors, vice-chancellors, and ministry representatives (including a ministerial keynote by Mendiktisaintek RI), where new MoUs, MoAs, and Implementation Agreements were finalized.
+* **Flagship Cultural Diplomacy (GCF 2024):** Coordinated the student operations committee and 40+ student volunteers for the 11th Global Culture Festival at GOR UNY, managing traditional costume parades, cultural exhibitions, and culinary booths for over 100 international students representing 35 nations before 1,500+ attendees.
 * **Bilateral Delegations:** Handled scheduling, campus tours, and bilateral dialogue logistics for official university visits from Universiti Teknologi MARA (UiTM), Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA), Pukyong National University (PKNU), and Philippine Normal University (PNU).
-* **High-Level Partnership Matchmaking (GLOSHIP 2025):** Coordinated the student liaison secretariat for UNY's Global Partnership Forum, managing protocol across 20 parallel bilateral roundtable rooms between international rectors, vice-chancellors, and ministry representatives where new MoUs, MoAs, and Implementation Agreements were finalized.
 * **Inter-Faculty Coordination:** Connected visiting international delegations with relevant department chairs and deans across UNY to explore student exchange tracks, guest lectures, and joint research possibilities.
 
 ***
