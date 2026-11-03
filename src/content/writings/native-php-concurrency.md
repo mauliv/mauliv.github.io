@@ -71,7 +71,7 @@ Over five consecutive election cycles (2020 through 2025), that architecture pro
 Here is an architectural breakdown of why that choice was made, how concurrency was handled at the metal, and why framework minimalism is often the highest-performance engineering strategy for burst traffic.
 
 ![UNY Pemilwa Official E-Voting Platform](/images/pemilwa/01_landing_page.png)
-*Figure 1: The official UNY Pemilwa e-voting platform landing page, routing 39,725 students into an atomic single-page voting booth.*
+*Figure 1: The official UNY Pemilwa e-voting platform landing page, routing 39,725 students into a unified single-page voting booth.*
 
 ---
 
@@ -82,7 +82,7 @@ In enterprise SaaS, traffic is generally distributed, and temporary degradations
 * **Strict 10-Hour Window:** Voting opens at 08:00 WIB and closes strictly at 18:00 WIB. All 39,725 students must cast their ballots within this single window.
 * **Violent Concurrency Surges:** Traffic is heavily front-loaded and back-loaded: an opening rush at 08:00 WIB as student political coalitions mobilize, followed by a severe panic rush in the final 45 minutes before polls close.
 * **Bounded On-Premise Infrastructure:** Hosted on campus servers in the university data center. Without elastic public cloud scaling, the application was bounded by fixed CPU and memory allocations.
-* **Zero Political Tolerance for Downtime:** Competing student political coalitions and independent election oversight bodies monitor availability minute-by-minute. If a server throws `502 Bad Gateway` during peak voting, it is immediately perceived as political manipulation or intentional voter disenfranchisement. Uptime is not just a performance metric — it is a requirement for institutional trust.
+* **Zero Political Tolerance for Downtime:** Competing student political coalitions and independent election oversight bodies monitor availability minute-by-minute. If a server throws `502 Bad Gateway` during peak voting, it is immediately perceived as political manipulation or intentional voter disenfranchisement. Uptime is not just a performance metric; it is a requirement for institutional trust.
 
 The system had to be structurally incapable of dropping transactions, crashing under bursts, or permitting duplicate votes.
 
@@ -150,10 +150,10 @@ If a student triggers two concurrent requests (for example, double-clicking on a
 
 ### The Architectural Solution: Pessimistic Row Locking (`FOR UPDATE`)
 
-To guarantee data integrity, state validation must be enforced directly at the database engine level using atomic transactions and row-level serialization:
+To guarantee data integrity, state validation must be enforced directly at the database engine level using database transactions and row-level locking:
 
 ```sql
--- CONCEPTUAL ARCHITECTURAL PATTERN: Atomic State Serialization
+-- CONCEPTUAL ARCHITECTURAL PATTERN: Row-Level State Serialization
 BEGIN;
 
 -- 1. Exclusively lock the voter record. Any concurrent transaction for this voter waits here.
@@ -162,7 +162,7 @@ SELECT voter_status FROM voter_registry WHERE voter_id = :id FOR UPDATE;
 -- 2. Verify eligibility inside the locked state
 -- (If already voted, rollback and terminate immediately)
 
--- 3. Transition voter state atomically
+-- 3. Transition voter state inside transaction
 UPDATE voter_registry SET voter_status = 'VOTED', voted_at = NOW() WHERE voter_id = :id;
 
 -- 4. Insert decoupled anonymous ballots across all eligible governance tiers
@@ -221,14 +221,14 @@ An institutional university election comprises multiple concurrent governance ra
 
 ### Why Multi-Step Wizards Fail
 
-Legacy systems often divided these races across multi-step wizard screens. If a student's cellular network dropped mid-way, the session was left corrupted — part of their ballots were recorded, but they were locked out before finishing the remaining races.
+Legacy systems often divided these races across multi-step wizard screens. If a student's cellular network dropped mid-way, the session was left corrupted: part of their ballots were recorded, but they were locked out before finishing the remaining races.
 
-### The Single-Page Atomic Solution
+### The Unified Single-Page Solution
 
 I re-engineered the voting booth as a **unified single-page responsive ballot**:
 * The system evaluates the voter’s verified enrollment against institutional curriculum records, dynamically generating all five eligible races on a single screen.
 * Uncontested races (*aklamasi*) display clear informational notices rather than breaking form validation.
-* Voters make all selections on one screen and submit their complete ballot with a **single atomic confirmation**.
+* Voters make all selections on one screen and submit their complete ballot with a **single unified confirmation**.
 * Either all ballots commit inside the database transaction, or none do. If a connection drops prior to submission, no vote is recorded, and the student can re-authenticate to complete their vote.
 
 ---
@@ -272,13 +272,13 @@ I engineered a **Dual-Key "Digital Ballot Box Unlocking" Protocol**:
 Over five consecutive annual election cycles (2020 through 2025):
 * **100% Service Availability:** Zero minutes of server downtime and zero dropped transactions across 39,725 registered students.
 * **Zero Race Conditions:** Database-level row locking completely eliminated concurrency exploits and duplicate vote attempts.
-* **Zero Recount Disputes:** The combination of single-page atomic submissions, tamper-evident audit logging, and dual-key plenary unlocking earned the formal trust of university leadership, faculty deans, and student governing bodies.
+* **Zero Recount Disputes:** The combination of unified single-page submissions, tamper-evident audit logging, and dual-key plenary unlocking earned the formal trust of university leadership, faculty deans, and student governing bodies.
 
 ### Key Architectural Takeaways:
 
 1. **Design from the hardware outward, not from framework hype inward.**  
    Framework abstractions offer rapid prototyping, but carry non-trivial runtime overhead. Under severe burst concurrency on bounded hardware, choosing a lean execution model ensures rock-solid stability.
 2. **The database engine is the true arbiter of concurrency.**  
-   Never rely on application-level logic to prevent race conditions. Push state serialization into the database layer with atomic transactions and explicit row-level locks (`SELECT ... FOR UPDATE`).
+   Never rely on application-level logic to prevent race conditions. Push state serialization into the database layer with database transactions and explicit row-level locks (`SELECT ... FOR UPDATE`).
 3. **Engineering trust requires aligning code with institutional governance.**  
-   Software reliability alone does not create institutional trust. Designing cryptographic and multi-party procedural checks — like the Dual-Key unlocking module — turns an opaque digital platform into a transparent, verifiable democratic process.
+   Software reliability alone does not create institutional trust. Designing cryptographic and multi-party procedural checks, such as the Dual-Key unlocking module, turns an opaque digital platform into a transparent, verifiable democratic process.

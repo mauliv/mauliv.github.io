@@ -89,7 +89,7 @@ In August 2018, pioneered digital electoral governance for the school by archite
 > *(English translation: "The Student Council Chairperson election voting was conducted online via the application accessible at www.pemilos.skagata.sch.id. This application is the work of Alifah Maulidin Nur Ikhsan, a 2019 Computer Network Engineering alumnus, first created during his studies at SMK Negeri 3 Yogyakarta.")*  
 > (Source: [SMK Negeri 3 Yogyakarta Official Portal, April 2021](https://smkn3jogja.sch.id/2021/04/pelantikan-pengurus-osis-smk-n-3-yogyakarta-masa-bakti-tahun-2021/))
 
-This early high-concurrency production deployment established the foundational database architecture, atomic vote commitment, and tamper-evident auditing workflows that would later evolve into UNY's enterprise-scale campus e-voting engine ([pemilwa.uny.ac.id](/it/pemilwa-evoting)).
+This early high-concurrency production deployment established the foundational database architecture, database row locking, and tamper-evident auditing workflows that would later evolve into UNY's enterprise-scale campus e-voting engine ([pemilwa.uny.ac.id](/it/pemilwa-evoting)).
 
 ---
 

@@ -4,7 +4,7 @@ title: "UNY High-Concurrency Student E-Voting Platform"
 slug: "pemilwa-evoting"
 institution_logo: "/logos/uny.svg"
 summary: "Official university-wide student election platform engineered to replace physical paper ballots, processing 39,725 eligible voters with 100% uptime across 5 consecutive annual election cycles."
-excerpt: "To eliminate the logistical chaos and dispute risks of physical ballot boxes across 8 faculties, I engineered a high-concurrency digital election platform using lightweight Native PHP and direct PostgreSQL transactions. By unifying five concurrent governance ballots onto an atomic single-page voting booth, the platform guarantees zero partial dropouts and zero downtime during peak election hours."
+excerpt: "To eliminate the logistical chaos and dispute risks of physical ballot boxes across 8 faculties, I engineered a high-concurrency digital election platform using lightweight Native PHP and direct PostgreSQL transactions. By unifying five concurrent governance ballots onto a unified single-page voting booth, the platform guarantees zero partial dropouts and zero downtime during peak election hours."
 role: "Lead Systems Architect & Developer"
 period:
   start: "2020"
@@ -34,7 +34,7 @@ architecture_type: "native"
 database:
   local_development: "PostgreSQL / MySQL Parity"
   production_cluster: "PostgreSQL 15+ (UNY Central Infrastructure)"
-  concurrency_mechanism: "Atomic multi-ballot submission with ACID-compliant row locking"
+  concurrency_mechanism: "Multi-ballot submission with ACID-compliant row locking"
 security_profile:
   auth_provider: "Institutional Central Authentication Service (CAS) Single Sign-On over TLS"
   network_perimeter: "Campus on-premise university data center with automated time-window guards"
@@ -119,7 +119,7 @@ To ensure every student receives the exact ballots they are eligible for:
 
 I designed the digital voting booth as a responsive single-page ballot layout where all 5 elections are presented together on one screen:
 
-1. **Atomic Vote Submission:** I built an atomic submission pipeline where voters cast their choices across all active ballots in a single confirmation. A database transaction records the votes, marks the student as having voted, and locks their session permanently — eliminating partial or incomplete submissions.
+1. **Single-Transaction Vote Submission:** I built a multi-ballot submission pipeline where voters cast their choices across all active ballots in a single confirmation. A database transaction with row locking records the votes, marks the student as having voted, and locks their session permanently, eliminating partial or incomplete submissions.
 2. **Parity with Physical Polling:** If a student closes their browser before submitting, their status remains unvoted, allowing them to re-authenticate via CAS SSO and complete their vote. Once submitted, their account is permanently locked.
 3. **Accidental Exit Prevention:** I added browser event listeners that prompt a confirmation dialog if a voter attempts to refresh or close the tab before submitting their choices.
 4. **Clear Handling of Uncontested Races:** Study programs with uncontested elections (*aklamasi*) or no registered candidates display informative notices rather than error alerts, allowing students to proceed smoothly.
