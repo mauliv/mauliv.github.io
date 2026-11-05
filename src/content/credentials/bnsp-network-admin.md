@@ -25,9 +25,9 @@ metrics:
   - label: "Tested Competencies"
     value: "5 core units covering addressing, switching, wireless, and inter-AS routing"
     provenance: "List of Units of Competency on Certificate Back Side"
-  - label: "Industry Alignment"
-    value: "Direct national curriculum equivalent to MikroTik MTCNA / Cisco CCNA fundamentals"
-    provenance: "SKKNI 321/2016 curriculum mapping to RouterOS/CCNA syllabus"
+  - label: "Competency Scope"
+    value: "Enterprise network addressing, Layer 2 switching, wireless deployment, and routing"
+    provenance: "SKKNI No. 321/2016 (ICT Telecommunications Category J.611000)"
 live_url: null
 archive_status: "archived"
 credential_type: "license"
@@ -69,17 +69,17 @@ The practical assessment evaluated five standardized units of competency specifi
 
 ---
 
-## 3. Industry Vendor Alignment: Equivalence to MikroTik MTCNA
+## 3. Standardized Occupational Competency (SKKNI Framework)
 
-In national vocational and engineering practice, the **SKKNI Junior Network Administrator** syllabus directly mirrors the curriculum of the international **MikroTik Certified Network Associate (MTCNA)** and entry-level **Cisco CCNA (Network Fundamentals & Routing/Switching)** tracks:
+The **Junior Network Administrator** competency scheme evaluates practical network administration across five core units under national occupational standards:
 
-* **Addressing & Subnetting (`J.611000.004.01`):** Maps to MTCNA Modules 1 & 2 (IP addressing, DHCP server/client setup, ARP tables, and basic firewall NAT/Masquerade rules in RouterOS).
-* **Wireless Networking (`J.611000.010.02`):** Maps to MTCNA Module 6 (802.11a/b/g/n wireless interfaces, frequency scans, registration tables, AP-bridge configurations, and WPA2 security profiles).
-* **Switching & VLANs (`J.611000.012.02`):** Maps to MTCNA Module 3 & 4 (Bridging, switch-chip hardware offloading, and IEEE 802.1Q VLAN trunking).
-* **Intra-AS Routing (`J.611000.013.02`):** Maps to MTCNA Module 5 (IP routing tables, static routes, distance/metric weights, default gateway paths, and single-area OSPF configuration).
-* **Inter-AS Routing (`J.611000.014.02`):** Maps to MTCNA / MTCRE boundary routing concepts (multi-homed gateway routing, failover routes, and upstream peering interfaces).
+* **Addressing & Subnetting (`J.611000.004.01`):** Designing IPv4/IPv6 allocation schemes, Variable Length Subnet Masking (VLSM), Classless Inter-Domain Routing (CIDR), DHCP server pools, and Network Address Translation (NAT).
+* **Wireless Networking (`J.611000.010.02`):** Configuring IEEE 802.11 infrastructure, RF channel planning, AP/Station modes, and WPA2 wireless security controls.
+* **Switching & VLANs (`J.611000.012.02`):** Layer 2 bridging, broadcast domain segmentation via IEEE 802.1Q VLAN trunking, and access port configurations.
+* **Intra-AS Routing (`J.611000.013.02`):** IP routing table architecture, static routing, default gateway paths, and dynamic Interior Gateway Protocol (IGP) deployment.
+* **Inter-AS Routing (`J.611000.014.02`):** Boundary routing concepts, perimeter gateway policies, and upstream traffic forwarding across distinct autonomous domains.
 
-While vendor-specific credentials test syntax within proprietary operating systems (such as MikroTik RouterOS or Cisco IOS), this BNSP certification validates **vendor-neutral foundational competence**. The assessed principles apply universally across enterprise hardware, Linux server networking (`iptables`, `nftables`, `iproute2`), and production gateway environments.
+As a government-accredited competency license under BNSP, this certification validates **vendor-neutral foundational competence** in networking principles. These core skills apply directly across enterprise network hardware, production routing, and Linux server networking (`iptables`, `nftables`, `iproute2`).
 
 ---
 
