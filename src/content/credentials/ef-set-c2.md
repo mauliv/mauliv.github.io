@@ -14,7 +14,7 @@ metrics:
   - label: "EF SET Score"
     value: "71 / 100 (C2 Proficient)"
     provenance: "career-archive.md:43, 161"
-live_url: null
+live_url: "https://cert.efset.org/iqjffj"
 archive_status: "live"
 credential_type: "test"
 issuing_body: "EF Standard English Test (EF SET)"
@@ -22,16 +22,21 @@ standardized_scores:
   - exam: "EF SET English"
     score: "71 / 100 (C2 Proficient)"
     date: "2026-08"
-provenance_source: "career-archive.md:43, 161"
+provenance_source: "career-archive.md:43, 161; EF SET Certificate (ID: iqjffj)"
 privacy_level: "public"
 epistemic_status: "verified-fact"
-verification_notes: "C2 certificate verification URL to be linked when proof PDF is placed (user will supply link later)."
+verification_notes: "C2 certificate verified via official EF SET online credential registry (cert.efset.org/iqjffj) and archival PDF."
 evidence:
   - type: "internal-pdf"
     label: "EF SET Score Certificate"
     url: "/docs/credentials/efset-c2-certificate.pdf"
     is_internal: true
-    status: "needs-confirmation"
+    status: "available"
+  - type: "live"
+    label: "Online Credential Verification"
+    url: "https://cert.efset.org/iqjffj"
+    is_internal: false
+    status: "available"
 ---
 
 ## Score

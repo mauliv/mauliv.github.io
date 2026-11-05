@@ -40,9 +40,9 @@ verification_notes: "Earned National Professional Competency License (Junior Net
 evidence:
   - type: "internal-pdf"
     label: "National Professional Competency Certificate (BNSP Verified Credential)"
-    url: "#"
+    url: "/docs/credentials/sertifikat-bnsp-network-admin.pdf"
     is_internal: true
-    status: "restricted"
+    status: "available"
 ---
 
 ## 1. National Licensing Framework & Overview

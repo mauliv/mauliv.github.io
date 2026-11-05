@@ -18,16 +18,16 @@ archive_status: "live"
 credential_type: "certification"
 issuing_body: "Google, GoTo, Traveloka (Kampus Merdeka)"
 validity: "2023-02 to 2023-08"
-provenance_source: "career-archive.md:39, 162"
+provenance_source: "career-archive.md:39, 162; Bangkit LoA No: BA23-1/LoA/XXIII-02/C288DSX2712"
 privacy_level: "public"
 epistemic_status: "verified-fact"
-verification_notes: "Kampus Merdeka industry program; certificate available from the Dicoding/Bangkit portal."
+verification_notes: "Officially confirmed and enrolled in Bangkit Academy 2023 Batch 1 Cloud Computing path (Google, GoTo, Traveloka) under Student ID C288DSX2712 (official Letter of Acceptance on file)."
 evidence:
   - type: "internal-pdf"
-    label: "Bangkit Graduation Certificate"
+    label: "Bangkit Official Letter of Acceptance (LoA)"
     url: "/docs/credentials/sertifikat-bangkit-cloud-computing.pdf"
     is_internal: true
-    status: "needs-confirmation"
+    status: "available"
 ---
 
 ## Program

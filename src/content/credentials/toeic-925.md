@@ -31,7 +31,7 @@ evidence:
     label: "Official TOEIC Score Report"
     url: "/docs/credentials/toeic-official-score-925.pdf"
     is_internal: true
-    status: "needs-confirmation"
+    status: "available"
 ---
 
 ## Score

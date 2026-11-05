@@ -40,12 +40,12 @@ evidence:
     label: "KMHE 2022 Champion Certificate"
     url: "/docs/leadership/kmhe-2022-juara-1-nasional.pdf"
     is_internal: true
-    status: "needs-confirmation"
+    status: "available"
   - type: "external-press"
     label: "Tim Garuda UNY Menang Lagi di KMHE 2022 (UNY News)"
     url: "https://uny.ac.id/id/berita/tim-garuda-uny-menang-lagi-pada-kontes-mobil-hemat-energi-2022"
     is_internal: false
-    status: "needs-confirmation"
+    status: "available"
   - type: "external-press"
     label: "Mobil Tim UNY Masih Paling Irit (Kompas)"
     url: "https://www.kompas.com/edu/read/2022/11/06/192914371/mobil-tim-uny-masih-paling-irit-juara-lagi-di-kontes-mobil-hemat-energi-2022"

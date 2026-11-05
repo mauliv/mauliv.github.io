@@ -13,20 +13,25 @@ tech_stack:
   - "SQL"
   - "Google Cloud Platform"
 metrics: []
-live_url: null
+live_url: "https://coursera.org/verify/PEHY5WQD9FW3"
 archive_status: "archived"
 credential_type: "course"
 issuing_body: "Google Cloud (Coursera)"
-provenance_source: "career-archive.md:34, 163"
+provenance_source: "career-archive.md:34, 163; Coursera ID: PEHY5WQD9FW3"
 privacy_level: "public"
 epistemic_status: "verified-fact"
-verification_notes: "Listed in career-archive.md certifications table; Coursera certificate scan pending."
+verification_notes: "Verified via official Coursera credential registry (ID: PEHY5WQD9FW3) and archival certificate PDF."
 evidence:
   - type: "internal-pdf"
     label: "Coursera BigQuery Certificate"
     url: "/docs/credentials/coursera-bigquery.pdf"
     is_internal: true
-    status: "needs-confirmation"
+    status: "available"
+  - type: "live"
+    label: "Coursera Verification"
+    url: "https://coursera.org/verify/PEHY5WQD9FW3"
+    is_internal: false
+    status: "available"
 ---
 
 ## Course

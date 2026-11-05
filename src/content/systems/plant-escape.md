@@ -94,10 +94,10 @@ evidence:
     is_internal: false
     status: "available"
   - type: "internal-pdf"
-    label: "PIMNAS 35 Finalist Letter & Grant Decree"
+    label: "Belmawa PKM Grant Award Certificate (No. 6891/E2/DT.01.00/2022)"
     url: "/docs/edtech/pimnas-35-belmawa-grant-decree.pdf"
     is_internal: true
-    status: "needs-confirmation"
+    status: "available"
   - type: "internal-pdf"
     label: "Project Dossier (PDF)"
     url: "/docs/edtech/05-plant-escape-dossier.pdf"

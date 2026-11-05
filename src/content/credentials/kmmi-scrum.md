@@ -18,16 +18,16 @@ archive_status: "archived"
 credential_type: "certification"
 issuing_body: "Ministry of Education, Culture, Research, and Technology (Kemdikbudristek RI) / UNY"
 validity: "2021-08 to 2021-10"
-provenance_source: "career-archive.md:29, 167"
+provenance_source: "career-archive.md:29, 167; KMMI Certificate No. 28.1/UN34/KM.05/2021"
 privacy_level: "public"
 epistemic_status: "verified-fact"
-verification_notes: "National micro-credential in Scrum project management under the Indonesian Student Micro-Credential (KMMI) program administered by the Ministry of Education (Kemdikbudristek) and UNY."
+verification_notes: "National micro-credential in Scrum project management under the Indonesian Student Micro-Credential (KMMI) program administered by Kemendikbudristek and UNY (Certificate No. 28.1/UN34/KM.05/2021)."
 evidence:
   - type: "internal-pdf"
     label: "Scrum Project Management Certificate (KMMI)"
     url: "/docs/credentials/sertifikat-kmmi-scrum.pdf"
     is_internal: true
-    status: "needs-confirmation"
+    status: "available"
 ---
 
 ## Micro-Credential

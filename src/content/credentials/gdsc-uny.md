@@ -40,7 +40,7 @@ evidence:
     label: "Chapter Lead Tenure Certificate"
     url: "/docs/leadership/gdsc-chapter-lead-certificate.pdf"
     is_internal: true
-    status: "needs-confirmation"
+    status: "available"
 ---
 
 ## 1. Executive Scope

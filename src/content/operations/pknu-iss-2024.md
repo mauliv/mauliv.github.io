@@ -49,12 +49,12 @@ evidence:
     label: "UNY Delegation Urgency Mandate (SK Urgensi)"
     url: "/docs/mobility/pknu-iss-2024.pdf"
     is_internal: true
-    status: "needs-confirmation"
+    status: "available"
   - type: "internal-pdf"
     label: "PKNU Letter of Acceptance & Scholarship Award"
     url: "/docs/mobility/pknu-iss-2024.pdf"
     is_internal: true
-    status: "needs-confirmation"
+    status: "available"
 ---
 
 ## 1. Executive Summary & Institutional Governance
