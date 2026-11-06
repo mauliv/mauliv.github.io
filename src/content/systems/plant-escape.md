@@ -89,8 +89,8 @@ evidence:
     is_internal: false
     status: "available"
   - type: "journal"
-    label: "JATIKA Paper (ResearchGate)"
-    url: "https://www.researchgate.net/publication/375803418_Science_Card_Games_Berbasis_Augmented_Reality_sebagai_Solusi_Mengatasi_Learning_Loss_Pasca_Pandemi_COVID-19"
+    label: "JATIKA Peer-Reviewed Paper (DOI: 10.33365/jatika.v3i4.1903)"
+    url: "https://doi.org/10.33365/jatika.v3i4.1903"
     is_internal: false
     status: "available"
   - type: "internal-pdf"
@@ -185,5 +185,5 @@ To measure whether physical-digital AR games genuinely remediate post-pandemic l
 1. **Official Intellectual Property (HKI Copyrights):**
    * *Computer Software:* Hak Cipta No. **000377191** (*Plant Escape: Science Card Application*) granted by DJKI Kemenkumham RI. Searchable on the official [PDKI Indonesia Registry](https://pdki-indonesia.dgip.go.id/) using registration number `000377191`.
    * *Physical Teaching Device:* Hak Cipta No. **000377182** (*Plant Escape: Science Card Games*) granted by DJKI Kemenkumham RI. Searchable on the official [PDKI Indonesia Registry](https://pdki-indonesia.dgip.go.id/) using registration number `000377182`.
-2. **Peer-Reviewed Journal Publication:** Published in *[Jurnal Informatika dan Rekayasa Perangkat Lunak (JATIKA)](https://www.researchgate.net/publication/375803418_Science_Card_Games_Berbasis_Augmented_Reality_sebagai_Solusi_Mengatasi_Learning_Loss_Pasca_Pandemi_COVID-19)*, Vol. 3 No. 4 (December 2022): *"Science Card Games Berbasis Augmented Reality sebagai Solusi Mengatasi Learning Loss Pasca Pandemi COVID-19"* ([View Paper on ResearchGate](https://www.researchgate.net/publication/375803418_Science_Card_Games_Berbasis_Augmented_Reality_sebagai_Solusi_Mengatasi_Learning_Loss_Pasca_Pandemi_COVID-19)).
+2. **Peer-Reviewed Journal Publication:** Published in *[Jurnal Informatika dan Rekayasa Perangkat Lunak (JATIKA)](https://doi.org/10.33365/jatika.v3i4.1903)*, Vol. 3 No. 4 (December 2022): *"Science Card Games Berbasis Augmented Reality sebagai Solusi Mengatasi Learning Loss Pasca Pandemi COVID-19"* (DOI: [10.33365/jatika.v3i4.1903](https://doi.org/10.33365/jatika.v3i4.1903); also accessible via [ResearchGate](https://www.researchgate.net/publication/375803418_Science_Card_Games_Berbasis_Augmented_Reality_sebagai_Solusi_Mengatasi_Learning_Loss_Pasca_Pandemi_COVID-19)).
 3. **National Research Grant & Finalist:** Awarded competitive **national student research funding (PKM-RSH, ~IDR 6,000,000)** by the Ministry of Education (Belmawa Kemendikbudristek) and selected as a **PIMNAS 35 National Finalist (2022)** — Indonesia's premier national collegiate innovation finals.

@@ -48,8 +48,8 @@ epistemic_status: "verified-fact"
 verification_notes: "Synthesizes empirical trial data from SMP N 1 Muntilan (PKM-RSH 2022) and SMK N 3 Klaten (FT UNY Undergraduate Research 2023)."
 evidence:
   - type: "journal"
-    label: "JATIKA Peer-Reviewed Paper"
-    url: "https://www.researchgate.net/publication/375803418_Science_Card_Games_Berbasis_Augmented_Reality_sebagai_Solusi_Mengatasi_Learning_Loss_Pasca_Pandemi_COVID-19"
+    label: "JATIKA Peer-Reviewed Paper (DOI: 10.33365/jatika.v3i4.1903)"
+    url: "https://doi.org/10.33365/jatika.v3i4.1903"
     is_internal: false
     status: "available"
   - type: "hki"

@@ -3,7 +3,7 @@ id: "cred-bnsp-network-admin"
 title: "Certified Junior Network Administrator: National Professional Certification Board (BNSP)"
 slug: "bnsp-network-administrator-muda"
 institution_logo: "/logos/bnsp.png"
-summary: "Indonesian national professional competency license (SKKNI No. 321/2016) certifying Layer 1–4 enterprise network operations, IP addressing, switching, WLAN, and routing across Autonomous Systems."
+summary: "Indonesian national professional competency license (SKKNI No. 321/2016: Network Administrator Muda / Junior Network Administrator) certifying Layer 1–4 enterprise network operations, IP addressing, switching, setting up wireless networks, and routing across Autonomous Systems."
 role: "Certified Junior Network Administrator"
 period:
   start: "2021-06"
@@ -11,7 +11,7 @@ period:
 tech_stack:
   - "IP Addressing & Subnetting (VLSM)"
   - "Switching & VLANs (802.1Q)"
-  - "WLAN & Wireless Security"
+  - "Setting Up a Wireless Network"
   - "Interior Routing (Static & IGP)"
   - "Inter-AS Routing Concepts"
   - "MikroTik RouterOS / Cisco CLI"
@@ -74,7 +74,7 @@ The practical assessment evaluated five standardized units of competency specifi
 The **Junior Network Administrator** competency scheme evaluates practical network administration across five core units under national occupational standards:
 
 * **Addressing & Subnetting (`J.611000.004.01`):** Designing IPv4/IPv6 allocation schemes, Variable Length Subnet Masking (VLSM), Classless Inter-Domain Routing (CIDR), DHCP server pools, and Network Address Translation (NAT).
-* **Wireless Networking (`J.611000.010.02`):** Configuring IEEE 802.11 infrastructure, RF channel planning, AP/Station modes, and WPA2 wireless security controls.
+* **Setting Up a Wireless Network (`J.611000.010.02`):** Configuring IEEE 802.11 infrastructure, RF channel planning, AP/Station modes, and wireless network security controls.
 * **Switching & VLANs (`J.611000.012.02`):** Layer 2 bridging, broadcast domain segmentation via IEEE 802.1Q VLAN trunking, and access port configurations.
 * **Intra-AS Routing (`J.611000.013.02`):** IP routing table architecture, static routing, default gateway paths, and dynamic Interior Gateway Protocol (IGP) deployment.
 * **Inter-AS Routing (`J.611000.014.02`):** Boundary routing concepts, perimeter gateway policies, and upstream traffic forwarding across distinct autonomous domains.
