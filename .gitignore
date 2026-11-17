@@ -1,0 +1,23 @@
+node_modules/
+dist/
+.astro/
+.env
+
+# Internal engineering notes, planning docs, ADRs, and audit artifacts
+/*.md
+!/README.md
+/docs/
+/.impeccable/
+CURRENT_SITUATION.md
+WEBSITE_CONTENT_DOSSIER.md
+NEXT_MODIFICATIONS.md
+CHANGELOG_AND_NEXT_MODIFICATIONS.md
+CHANGELOG.md
+CONTEXT.md
+PRD.md
+PRODUCT.md
+FIXES.md
+# Job Application tailored files (only main CV PDF is published at top-level public/docs/)
+/public/docs/*.pdf
+!/public/docs/Alifah-Mauliddin-CV-2026.pdf
+TESTIMONIALS.md

@@ -1,0 +1,311 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import ProjectIcon from '../components/ProjectIcon.astro';
+
+interface EvidenceItem {
+  type: 'internal-pdf' | 'journal' | 'hki' | 'external-press' | 'video' | 'live' | 'repository';
+  label: string;
+  url: string;
+  is_internal: boolean;
+  status: 'available' | 'needs-confirmation' | 'restricted';
+}
+
+interface NetworkProject {
+  title: string;
+  role: string;
+  period: { start: string; end: string };
+  track: string;
+  slug: string;
+  project_logo: string;
+  institution_logo?: string;
+  summary: string;
+  tech_stack: string[];
+  metrics: { label: string; value: string; provenance?: string }[];
+  evidence: EvidenceItem[];
+  href: string;
+}
+
+const networkProjects: NetworkProject[] = [
+  {
+    title: 'Vocational High School Diploma in Computer Network Engineering',
+    role: 'Vocational Student in Computer Network Engineering',
+    period: { start: '2016', end: '2019' },
+    track: 'vocational engineering',
+    slug: 'smk-tkj',
+    project_logo: '/logos/smkn3.png',
+    institution_logo: '/logos/smkn3.png',
+    summary:
+      'Three years of rigorous Computer Network Engineering education at SMK Negeri 3 Yogyakarta (graduated with 85.3/100 average score). Built core competencies across physical Layer 1 structured cabling, Cisco and MikroTik routing and switching, Linux server administration, and early electoral software engineering.',
+    tech_stack: [
+      'Cisco & MikroTik Routing',
+      'Structured Cabling & Fiber Optics',
+      'XigmaNAS (ZFS)',
+      'Linux Server Administration',
+      'Native PHP & MySQL',
+    ],
+    metrics: [
+      { label: 'Academic Standing', value: 'Graduated with 85.3 / 100 average score' },
+      { label: 'Capstone Project', value: 'Network Attached Storage (NAS) Server Deployment with XigmaNAS' },
+      { label: 'Pioneering System', value: 'School-Wide E-Voting Platform (2018)' },
+    ],
+    evidence: [
+      {
+        type: 'live',
+        label: 'SMK TKJ Engineering Credentials',
+        url: '/credentials/smk-negeri-3-yogyakarta-tkj',
+        is_internal: true,
+        status: 'available',
+      },
+      {
+        type: 'external-press',
+        label: 'Official School Portal: E-Voting Coverage',
+        url: 'https://smkn3jogja.sch.id/2021/04/pelantikan-pengurus-osis-smk-n-3-yogyakarta-masa-bakti-tahun-2021/',
+        is_internal: false,
+        status: 'available',
+      },
+    ],
+    href: '/credentials/smk-negeri-3-yogyakarta-tkj',
+  },
+  {
+    title: 'Computer Network Engineer Intern: UPN "Veteran" Computer Center',
+    role: 'Network Operations Intern',
+    period: { start: '2018-09', end: '2018-11' },
+    track: 'field practice',
+    slug: 'upn-telematika',
+    project_logo: '/logos/upn.png',
+    institution_logo: '/logos/upn.png',
+    summary:
+      'Three-month vocational industry internship at the UPN "Veteran" Yogyakarta Computer Center. Configured enterprise networking hardware, terminated singlemode and multimode optical fiber backbones, and resolved campus-wide subnet routing conflicts.',
+    tech_stack: [
+      'Cisco Catalyst 3850',
+      'Fiber Optic Termination (SM/MM)',
+      'VLAN Segmentation',
+      'Subnetting (VLSM)',
+      'Patch Panel Cabling',
+    ],
+    metrics: [
+      { label: 'Enterprise Switching', value: 'Configured Cisco Catalyst 3850 series switches & enterprise APs' },
+      { label: 'Optical Infrastructure', value: 'Terminated singlemode and multimode fiber optic lines & CAT5e/CAT6' },
+      { label: 'Routing & Subnets', value: 'Resolved campus IP addressing conflicts, VLANs, and subnet routing' },
+    ],
+    evidence: [
+      {
+        type: 'live',
+        label: 'UPT Telematika Field Practice Context',
+        url: '/credentials/smk-negeri-3-yogyakarta-tkj#4-industry-internship-and-international-highlights',
+        is_internal: true,
+        status: 'available',
+      },
+      {
+        type: 'live',
+        label: 'UPN "Veteran" Yogyakarta Portal',
+        url: 'https://www.upnyk.ac.id',
+        is_internal: false,
+        status: 'available',
+      },
+    ],
+    href: '/credentials/smk-negeri-3-yogyakarta-tkj#4-industry-internship-and-international-highlights',
+  },
+  {
+    title: 'Data Operations & Regulatory Compliance Intern: PrivyID',
+    role: 'Data Entry Intern',
+    period: { start: '2019-06', end: '2019-08' },
+    track: 'industry internship',
+    slug: 'privyid-intern',
+    project_logo: '/logos/privy.png',
+    institution_logo: '/logos/privy.png',
+    summary:
+      "Three-month operations internship during the expansion phase of Indonesia's leading digital identity and electronic certification authority (PSrE). Processed, indexed, and verified customer identification records against strict regulatory compliance frameworks, maintaining data integrity and confidentiality under enterprise information security standards.",
+    tech_stack: [
+      'Digital Identity Verification',
+      'Regulatory Compliance',
+      'Electronic Verification',
+      'Confidentiality Controls',
+      'Database Operations',
+    ],
+    metrics: [
+      { label: 'Operational Scope', value: 'Processed and indexed identification documents for electronic signatures' },
+      { label: 'Regulatory Framework', value: 'Strict compliance adherence under electronic identity standards' },
+      { label: 'Information Security', value: 'Trained in enterprise-level data handling and privacy protocols' },
+    ],
+    evidence: [
+      {
+        type: 'live',
+        label: 'PrivyID Credentials Dossier',
+        url: '/credentials/privyid-intern',
+        is_internal: true,
+        status: 'available',
+      },
+      {
+        type: 'live',
+        label: 'Official Privy Portal',
+        url: 'https://privy.id',
+        is_internal: false,
+        status: 'available',
+      },
+    ],
+    href: '/credentials/privyid-intern',
+  },
+  {
+    title: 'Network Security Engineer: UKM Rekayasa Teknologi (RESTek)',
+    role: 'Network Security Engineer',
+    period: { start: '2019-11', end: '2020-12' },
+    track: 'student engineering',
+    slug: 'restek-network-engineer',
+    project_logo: '/logos/infinite.png',
+    institution_logo: '/logos/infinite.png',
+    summary:
+      'Served as Network Security Engineer within UKM Rekayasa Teknologi UNY: the foundational appointment in a three-stage progression leading to Division Lead and Chairman. Administered internal development servers, safeguarded network perimeter access, and supported multi-division engineering teams with reliable campus IT infrastructure.',
+    tech_stack: [
+      'Network Security',
+      'Server Administration',
+      'Perimeter Access Control',
+      'Linux Infrastructure',
+      'Cross-Division IT Support',
+    ],
+    metrics: [
+      { label: 'Career Progression', value: '1st of 3 internal appointments (Engineer → Division Lead → Chairman)' },
+      { label: 'Systems Managed', value: 'Internal organizational development servers and perimeter security' },
+      { label: 'Organizational Scope', value: 'IT infrastructure support across 5 engineering research divisions' },
+    ],
+    evidence: [
+      {
+        type: 'live',
+        label: 'RESTek Network Security Dossier',
+        url: '/credentials/restek-network-engineer',
+        is_internal: true,
+        status: 'available',
+      },
+      {
+        type: 'live',
+        label: 'RESTek Chairman Credentials',
+        url: '/credentials/restek-chairman',
+        is_internal: true,
+        status: 'available',
+      },
+    ],
+    href: '/credentials/restek-network-engineer',
+  },
+  {
+    title: 'Junior Network Administrator (BNSP / LSP UNY)',
+    role: 'Junior Network Administrator (Network Administrator Muda)',
+    period: { start: '2021-06', end: '2024-06' },
+    track: 'national certification',
+    slug: 'bnsp-network-admin',
+    project_logo: '/logos/bnsp.png',
+    institution_logo: '/logos/bnsp.png',
+    summary:
+      'National professional competency qualification issued by the National Professional Certification Board (BNSP) through the UNY Professional Certification Body under National Occupational Standards (SKKNI J.611000). Standardized practical mastery covering network addressing, switching, setting up wireless networks, and routing within and between Autonomous Systems.',
+    tech_stack: [
+      'Enterprise LAN/WLAN',
+      'Subnetting & Routing (VLSM)',
+      'Switching & VLANs (802.1Q)',
+      'Autonomous Systems Routing',
+      'Access Control Lists',
+    ],
+    metrics: [
+      { label: 'Issuing Body', value: 'National Professional Certification Board (BNSP) / UNY Professional Certification Body (LSP UNY)' },
+      { label: 'Licensing Standard', value: 'National Work Competency Standards (SKKNI No. 321/2016)' },
+      { label: 'Professional Baseline', value: 'State-recognized Layer 1–4 networking competency license' },
+    ],
+    evidence: [
+      {
+        type: 'live',
+        label: 'BNSP Junior Network Admin Dossier',
+        url: '/credentials/bnsp-network-administrator-muda',
+        is_internal: true,
+        status: 'available',
+      },
+      {
+        type: 'internal-pdf',
+        label: 'National Professional Competency Certificate (BNSP)',
+        url: '/docs/credentials/sertifikat-bnsp-network-admin.pdf',
+        is_internal: true,
+        status: 'needs-confirmation',
+      },
+    ],
+    href: '/credentials/bnsp-network-administrator-muda',
+  },
+  {
+    title: 'Campus Web Systems & High-Concurrency Infrastructure',
+    role: 'Lead Systems Developer & Campus Operations',
+    period: { start: '2020', end: 'present' },
+    track: 'systems & web operations',
+    slug: 'infrastructure-operations',
+    project_logo: '/logos/uny.svg',
+    institution_logo: '/logos/uny.svg',
+    summary:
+      'Continuous hands-on campus web systems and operations: engineered and maintained the high-concurrency campus election engine (pemilwa.uny.ac.id) on university servers, ensuring zero downtime via database row-locking across thousands of simultaneous student voters; and supported faculty with digital courseware and quiz configurations on institutional Moodle platforms.',
+    tech_stack: [
+      'Native PHP & PostgreSQL',
+      'Moodle LMS Courseware',
+      'Database Row-Locking',
+      'CAS Single Sign-On',
+      'Nginx & Linux Server',
+    ],
+    metrics: [
+      { label: 'Zero-Downtime Record', value: '5 consecutive university election cycles with 0 downtime under load' },
+      { label: 'Authentication Security', value: 'Integrated with central UNY CAS Single Sign-On (SSO) for tamper-evident voting' },
+      { label: 'EdTech Support', value: 'Faculty digital courseware and quiz configuration on Moodle platforms' },
+    ],
+    evidence: [
+      {
+        type: 'live',
+        label: 'Pemilwa E-Voting System Case Study',
+        url: '/it/pemilwa-evoting',
+        is_internal: true,
+        status: 'available',
+      },
+      {
+        type: 'internal-pdf',
+        label: 'Pemilwa Architecture & Concurrency Dossier',
+        url: '/docs/systems/pemilwa-architecture-folio.pdf',
+        is_internal: true,
+        status: 'available',
+      },
+    ],
+    href: '/it/pemilwa-evoting',
+  },
+];
+---
+
+<Layout
+  title="IT Support & Networks"
+  description="From physical layer to campus infrastructure: vocational networking, field practice, national certification, and enterprise systems operations."
+>
+  <Breadcrumb crumbs={[{ label: 'Home', href: '/' }, { label: 'IT Support & Networks' }]} />
+
+  <div class="mt-4 flex items-center gap-2.5">
+    <ProjectIcon name="networks" size="sm" />
+    <h1 class="text-2xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
+      IT Support &amp; Networks
+    </h1>
+  </div>
+  <p class="mt-2 text-base text-neutral-600 dark:text-neutral-400">
+    From the physical layer up: vocational networking, field practice, national certification, and campus infrastructure operations.
+  </p>
+
+  <div class="mt-8 space-y-4">
+    {
+      networkProjects.map((project) => (
+        <ProjectCard
+          title={project.title}
+          role={project.role}
+          period={project.period}
+          track={project.track}
+          slug={project.slug}
+          project_logo={project.project_logo}
+          institution_logo={project.institution_logo}
+          tech_stack={project.tech_stack}
+          metrics={project.metrics}
+          evidence={project.evidence}
+          summary={project.summary}
+          headingLevel="h2"
+          href={project.href}
+        />
+      ))
+    }
+  </div>
+</Layout>
